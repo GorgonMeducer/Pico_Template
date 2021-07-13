@@ -50,3 +50,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+project/mdk/Objects/template.build_log.htm
+project/mdk/Objects/template.sct
+*.dep
