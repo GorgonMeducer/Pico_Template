@@ -54,3 +54,7 @@ project/mdk/Objects/template.build_log.htm
 project/mdk/Objects/template.sct
 *.dep
 project/mdk/template.uvguix.gabwan01
+project/mdk/template.uvguix.gabriel
+project/mdk/Objects/template.lnp
+project/mdk/Objects/template.htm
+project/mdk/Objects/template.axf

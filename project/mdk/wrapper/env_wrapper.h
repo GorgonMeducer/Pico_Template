@@ -53,6 +53,10 @@
 //! @}
 
 
+#if defined(__IS_COMPILER_ARM_COMPILER_6__)
+#   pragma clang diagnostic ignored "-Wformat-extra-args"
+#endif
+
 #ifndef   __ASM
   #define __ASM                                  __asm
 #endif
@@ -87,6 +91,13 @@
 
 typedef unsigned int        uint;
 
+#undef UNUSED_PARAM
+#define UNUSED_PARAM(__VAR)      __VAR = __VAR
+
+#ifndef __CONCAT
+#   define ____CONCAT(a,b)      a##b
+#   define __CONCAT(a,b)        ____CONCAT(a,b)
+#endif
 
 /**
   \brief   Get Control Register
@@ -99,7 +110,9 @@ static __force_inline uint32_t __get_current_exception(void)
 
   __ASM volatile ("MRS %0, ipsr" : "=r" (result) );
   return(result);
-}
+}   
+
+#define __StackOneBottom        Image$$ARM_LIB_STACK_ONE$$ZI$$Base
 
 
 #include "pico/platform.h"
