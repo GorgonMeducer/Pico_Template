@@ -10,7 +10,7 @@
       <TargetName>AC6</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6160000::V6.16::ARMCLANG</pCCUsed>
+      <pCCUsed>6160001::V6.16.1::..\..\Program Files\ARMCompiler6.16.1</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -357,7 +357,7 @@
               <MiscControls></MiscControls>
               <Define>PICO_MAX_SHARED_IRQ_HANDLERS=4</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_regs\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\pico_platform\include;..\..\pico-sdk\src\common\pico_base\include</IncludePath>
+              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_regs\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\pico_platform\include;..\..\pico-sdk\src\common\pico_base\include;.\wrapper\pico_base;..\..\pico-sdk\src\rp2_common\boot_stage2\asminclude</IncludePath>
             </VariousControls>
           </Aads>
           <LDads>
