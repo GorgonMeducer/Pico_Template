@@ -143,6 +143,9 @@ static __force_inline uint32_t __get_current_exception(void)
 #define __StackOneBottom        Image$$ARM_LIB_STACK_ONE$$ZI$$Base
 
 
+#define PROGRAM_STATUS_REG
+
+
 #include "pico/platform.h"
 
 #endif
