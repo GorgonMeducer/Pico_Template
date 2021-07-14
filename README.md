@@ -7,4 +7,5 @@ An MDK template for Raspberry Pi Pico
 # Known issue
 - Debugger support is not available for now.
 - elf2uf2 cannot convert axf file to uf2 [issue506](https://github.com/raspberrypi/pico-sdk/issues/506)
+- Current project doesn't include second stage boot so the generated image will not work properly. I am working on it.
 
