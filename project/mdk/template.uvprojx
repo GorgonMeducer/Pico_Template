@@ -357,7 +357,7 @@
               <MiscControls></MiscControls>
               <Define>PICO_MAX_SHARED_IRQ_HANDLERS=4</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_regs\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include</IncludePath>
+              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_regs\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\pico_platform\include;..\..\pico-sdk\src\common\pico_base\include</IncludePath>
             </VariousControls>
           </Aads>
           <LDads>
@@ -507,6 +507,11 @@
               <FileName>uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\pico-sdk\src\rp2_common\hardware_uart\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>boot2_w25q080.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\boot_stage2\boot2_w25q080.S</FilePath>
             </File>
           </Files>
         </Group>
