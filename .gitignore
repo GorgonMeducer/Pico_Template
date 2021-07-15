@@ -59,3 +59,4 @@ project/mdk/Objects/template.htm
 project/mdk/Objects/template.axf
 *.uf2
 *.scvd
+*.iex
