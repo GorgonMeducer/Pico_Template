@@ -35,3 +35,47 @@ void __attribute__((noreturn)) panic(const char *fmt, ...)
         __ASM("nop");
     }
 }
+
+#if __IS_COMPILER_ARM_COMPILER_6__
+__asm(".global __use_no_semihosting\n\t");
+#   ifndef __MICROLIB
+__asm(".global __ARM_use_no_argv\n\t");
+#   endif
+
+#if defined(__MICROLIB)
+_ARMABI_NORETURN 
+void __aeabi_assert(const char *chCond, const char *chLine, int wErrCode) 
+{
+    UNUSED_PARAM(chCond);
+    UNUSED_PARAM(chLine);
+    UNUSED_PARAM(wErrCode);
+    while(1) {
+        __NOP();
+    }
+}
+#endif
+
+void _ttywrch(int ch)
+{
+    UNUSED_PARAM(ch);
+}
+
+#include <rt_sys.h>
+
+FILEHANDLE $Sub$$_sys_open(const char *name, int openmode)
+{
+    UNUSED_PARAM(name);
+    UNUSED_PARAM(openmode);
+    return 0;
+}
+
+
+
+__NO_RETURN
+void _sys_exit(int ret)
+{
+    UNUSED_PARAM(ret);
+    while(1) {}
+}
+
+#endif

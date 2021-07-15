@@ -4,7 +4,7 @@
  *      *** Do not modify ! ***
  *
  * Project: 'template' 
- * Target:  'AC6' 
+ * Target:  'MPS2_Simulation' 
  */
 
 #ifndef RTE_COMPONENTS_H
