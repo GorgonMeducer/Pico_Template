@@ -144,7 +144,8 @@ static __force_inline uint32_t __get_current_exception(void)
 
 
 #define PROGRAM_STATUS_REG
-
+#define LIB_CMSIS_CORE                  1
+#define PICO_CMSIS_RENAME_EXCEPTIONS    1
 
 #include "pico/platform.h"
 
