@@ -337,9 +337,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>-include env_wrapper.h</MiscControls>
-              <Define></Define>
+              <Define>PICO</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src;.\lib</IncludePath>
+              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src;.\lib;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -373,7 +373,8 @@
             <ScatterFile>.\RP2040.sct</ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
-            <Misc>--diag_suppress=L6170,L6314 --keep=compile_time_choice.o --entry=_stage2_boot</Misc>
+            <Misc>--diag_suppress=L6170,L6314 --keep=compile_time_choice.o --entry=_stage2_boot
+--keep=ram_vector_table</Misc>
             <LinkerInputFile></LinkerInputFile>
             <DisabledWarnings></DisabledWarnings>
           </LDads>
@@ -555,6 +556,54 @@
               <FileName>boot2_w25q080.S</FileName>
               <FileType>2</FileType>
               <FilePath>..\..\pico-sdk\src\rp2_common\boot_stage2\boot2_w25q080.S</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>0</IncludeInBuild>
+                  <AlwaysBuild>2</AlwaysBuild>
+                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
+                  <PublicsOnly>2</PublicsOnly>
+                  <StopOnExitCode>11</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <ComprImg>1</ComprImg>
+                </CommonProperty>
+                <FileArmAds>
+                  <Aads>
+                    <interw>2</interw>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <thumb>2</thumb>
+                    <SplitLS>2</SplitLS>
+                    <SwStkChk>2</SwStkChk>
+                    <NoWarn>2</NoWarn>
+                    <uSurpInc>2</uSurpInc>
+                    <useXO>2</useXO>
+                    <ClangAsOpt>0</ClangAsOpt>
+                    <VariousControls>
+                      <MiscControls></MiscControls>
+                      <Define></Define>
+                      <Undefine></Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Aads>
+                </FileArmAds>
+              </FileOption>
+            </File>
+            <File>
+              <FileName>runtime.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\wrapper\runtime.c</FilePath>
+            </File>
+            <File>
+              <FileName>printf_none.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_printf\printf_none.S</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -974,7 +1023,7 @@
               <MiscControls>-include env_wrapper.h</MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src;.\lib</IncludePath>
+              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src;.\lib;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1008,7 +1057,8 @@
             <ScatterFile>.\MPS2_CM0Plus.sct</ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
-            <Misc>--diag_suppress=L6170,L6314 --keep=compile_time_choice.o --entry=_stage2_boot</Misc>
+            <Misc>--diag_suppress=L6170,L6314 --keep=compile_time_choice.o --entry=_stage2_boot
+--keep=ram_vector_table</Misc>
             <LinkerInputFile></LinkerInputFile>
             <DisabledWarnings></DisabledWarnings>
           </LDads>
@@ -1190,6 +1240,54 @@
               <FileName>boot2_w25q080.S</FileName>
               <FileType>2</FileType>
               <FilePath>..\..\pico-sdk\src\rp2_common\boot_stage2\boot2_w25q080.S</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>0</IncludeInBuild>
+                  <AlwaysBuild>2</AlwaysBuild>
+                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
+                  <PublicsOnly>2</PublicsOnly>
+                  <StopOnExitCode>11</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <ComprImg>1</ComprImg>
+                </CommonProperty>
+                <FileArmAds>
+                  <Aads>
+                    <interw>2</interw>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <thumb>2</thumb>
+                    <SplitLS>2</SplitLS>
+                    <SwStkChk>2</SwStkChk>
+                    <NoWarn>2</NoWarn>
+                    <uSurpInc>2</uSurpInc>
+                    <useXO>2</useXO>
+                    <ClangAsOpt>0</ClangAsOpt>
+                    <VariousControls>
+                      <MiscControls></MiscControls>
+                      <Define></Define>
+                      <Undefine></Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Aads>
+                </FileArmAds>
+              </FileOption>
+            </File>
+            <File>
+              <FileName>runtime.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\wrapper\runtime.c</FilePath>
+            </File>
+            <File>
+              <FileName>printf_none.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_printf\printf_none.S</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>

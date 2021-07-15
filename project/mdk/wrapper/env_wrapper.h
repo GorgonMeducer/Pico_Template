@@ -142,6 +142,11 @@ static __force_inline uint32_t __get_current_exception(void)
 
 #define __StackOneBottom        Image$$ARM_LIB_STACK_ONE$$ZI$$Base
 
+#define __mutex_array_start     Image$$ER_MUTEX_ARRAY$$ZI$$Base
+#define __mutex_array_end       Image$$ER_MUTEX_ARRAY$$ZI$$Limit
+
+#define __preinit_array_start   Image$$ER_PREINIT_ARRAY$$ZI$$Base
+#define __preinit_array_end     Image$$ER_PREINIT_ARRAY$$ZI$$Limit
 
 #define PROGRAM_STATUS_REG
 #define LIB_CMSIS_CORE                  1

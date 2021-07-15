@@ -130,6 +130,13 @@ extern const VECTOR_TABLE_Type __VECTOR_TABLE[48];
     I2C0_IRQ_Handler,
     I2C1_IRQ_Handler,
     RTC_IRQ_Handler,
+    
+    Default_Handler,
+    Default_Handler,
+    Default_Handler,
+    Default_Handler,
+    Default_Handler,
+    Default_Handler,
                                             /* Interrupts 10..31 are left out */
 };
 
@@ -142,7 +149,9 @@ extern const VECTOR_TABLE_Type __VECTOR_TABLE[48];
  *----------------------------------------------------------------------------*/
 __NO_RETURN void Reset_Handler(void)
 {
-    clocks_init();
+extern void runtime_init(void);
+
+  runtime_init();
   SystemInit();                             /* CMSIS System Initialization */
   __PROGRAM_START();                        /* Enter PreMain (C library entry point) */
 }
