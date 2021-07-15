@@ -149,9 +149,13 @@ void runtime_init(void) {
     runtime_install_stack_guard(&__StackBottom);
 #endif
 
+#if defined(PICO)
     spin_locks_reset();
+#endif
     irq_init_priorities();
+#if defined(PICO)
     alarm_pool_init_default();
+#endif
 
 #if 0
     // Start and end points of the constructor list,

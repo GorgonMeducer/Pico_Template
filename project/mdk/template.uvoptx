@@ -338,9 +338,9 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>151</LineNumber>
+          <LineNumber>155</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>3942</Address>
+          <Address>920</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -349,7 +349,23 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>.\startup_RP2040.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\template\startup_RP2040.c\151</Expression>
+          <Expression>\\template\startup_RP2040.c\155</Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>17</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>1416</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>..\..\main.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\template\../../main.c\17</Expression>
         </Bp>
       </Breakpoint>
       <MemoryWindow1>

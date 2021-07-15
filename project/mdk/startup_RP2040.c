@@ -147,12 +147,17 @@ extern const VECTOR_TABLE_Type __VECTOR_TABLE[48];
 /*----------------------------------------------------------------------------
   Reset Handler called on controller reset
  *----------------------------------------------------------------------------*/
+
+__attribute__((constructor(255), used))
+void __pico_entry(void)
+{
+    extern void runtime_init(void);
+    runtime_init();
+} 
+
 __NO_RETURN void Reset_Handler(void)
 {
-extern void runtime_init(void);
-
-  runtime_init();
-  SystemInit();                             /* CMSIS System Initialization */
+  //SystemInit();                             /* CMSIS System Initialization */
   __PROGRAM_START();                        /* Enter PreMain (C library entry point) */
 }
 
