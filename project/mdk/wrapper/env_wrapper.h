@@ -140,6 +140,8 @@ static __force_inline uint32_t __get_current_exception(void)
   return(result);
 }   
 
+#define __unhandled_user_irq    Default_Handler
+
 #define __StackOneBottom        Image$$ARM_LIB_STACK_ONE$$ZI$$Base
 
 #define __mutex_array_start     Image$$ER_MUTEX_ARRAY$$ZI$$Base
