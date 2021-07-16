@@ -1,3 +1,6 @@
 [submodule "pico-sdk"]
 	path = pico-sdk
 	url = https://github.com/raspberrypi/pico-sdk.git
+[submodule "project/mdk/perf_counter"]
+	path = project/mdk/perf_counter
+	url = https://github.com/GorgonMeducer/perf_counter.git
