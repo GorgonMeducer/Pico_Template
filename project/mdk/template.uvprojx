@@ -373,7 +373,7 @@
             <ScatterFile>.\RP2040.sct</ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
-            <Misc>--diag_suppress=L6170,L6314 --keep=compile_time_choice.o --entry=_stage2_boot
+            <Misc>--diag_suppress=L6170,L6314,L6306 --keep=compile_time_choice.o --entry=_stage2_boot
 --keep=ram_vector_table</Misc>
             <LinkerInputFile></LinkerInputFile>
             <DisabledWarnings></DisabledWarnings>
