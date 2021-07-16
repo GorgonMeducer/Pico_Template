@@ -88,7 +88,7 @@ void runtime_init(void) {
     ));
 #endif
 
-#if 0
+#if defined(__IS_COMPILER_GCC__)
     // pre-init runs really early since we need it even for memcpy and divide!
     // (basically anything in aeabi that uses bootrom)
 
@@ -157,7 +157,7 @@ void runtime_init(void) {
     alarm_pool_init_default();
 #endif
 
-#if 0
+#if defined(__IS_COMPILER_GCC__)
     // Start and end points of the constructor list,
     // defined by the linker script.
     extern void (*__init_array_start)(void);
