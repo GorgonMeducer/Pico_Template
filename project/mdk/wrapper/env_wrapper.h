@@ -157,8 +157,10 @@ static __force_inline uint32_t __get_current_exception(void)
 #define PROGRAM_STATUS_REG
 #define LIB_CMSIS_CORE                  1
 #define PICO_CMSIS_RENAME_EXCEPTIONS    1
+#define PICO_ON_DEVICE                  1
 
 enum {
+    PICO_ERROR_NO_DATA = -3,
     PICO_ERROR_GENERIC = -2,
     PICO_ERROR_TIMEOUT = -1,
 };

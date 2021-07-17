@@ -89,7 +89,7 @@ static void system_init(void)
 int main(void) 
 {
     system_init();
-    
+
     while (true) {
         breath_led();
     }

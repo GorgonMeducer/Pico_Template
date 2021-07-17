@@ -30,19 +30,11 @@ extern int _read(int handle, char *buffer, int length);
 extern int _write(int handle, char *buffer, int length);
 
 /*============================ IMPLEMENTATION ================================*/
-
-void __attribute__((noreturn)) panic(const char *fmt, ...)
-{
-    UNUSED_PARAM(fmt);
-    
-    while(1) {
-        __ASM("nop");
-    }
-}
-
 int __real_vprintf(const char *format, __va_list va) 
 {
-    return vprintf(format, va);
+    extern int $Super$$vprintf(const char *format, __va_list va);
+    
+    return $Super$$vprintf(format, va);
 }
 
 

@@ -170,9 +170,14 @@ __force_inline static int32_t __mul_instruction(int32_t a, int32_t b) {
 (__builtin_popcount(b) >= 2 ? __mul_instruction(a,b) : (a)*(b)), \
 (a)*(b))
 
-#define WRAPPER_FUNC(x) __wrap_ ## x
-#define REAL_FUNC(x) __real_ ## x
 
+#if defined(__IS_COMPILER_ARM_COMPILER_6__)
+#   define WRAPPER_FUNC(__FUNC)     $Sub$$##__FUNC
+#   define REAL_FUNC(__FUNC)        __real_ ## __FUNC
+#else
+#   define WRAPPER_FUNC(x) __wrap_ ## x
+#   define REAL_FUNC(x) __real_ ## x
+#endif
 #define __check_type_compatible(type_a, type_b) static_assert(__builtin_types_compatible_p(type_a, type_b), __STRING(type_a) " is not compatible with " __STRING(type_b));
 
 /**
