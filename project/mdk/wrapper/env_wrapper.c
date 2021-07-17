@@ -47,7 +47,7 @@ int __real_vprintf(const char *format, __va_list va)
 
 
 /*----------------------------------------------------------------------------*
- * bridge the Arm Compiler 5 stdio and the pico-sdk stdio                     *
+ * bridge the Arm Compiler's stdio and the pico-sdk's stdio                   *
  *----------------------------------------------------------------------------*/
 __attribute__((weak))
 int stdin_getchar(void)
