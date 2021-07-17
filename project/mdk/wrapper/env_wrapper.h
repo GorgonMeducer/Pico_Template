@@ -102,6 +102,10 @@
 
 #   undef __packed_aligned
 #   define __packed_aligned     __attribute__((packed, aligned(4)))
+
+#   undef __printflike
+#   define __printflike(...)   __attribute__((format(printf, __VA_ARGS__)))
+
 #endif
 
 #undef __STRING
