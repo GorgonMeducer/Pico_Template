@@ -46,7 +46,8 @@ extern "C" {
  * noinline to prevent it being inlined into a flash function by the compiler
  */
 #define __no_inline_not_in_flash_func(func_name) __noinline __not_in_flash_func(func_name)
-#if 0
+
+#if !defined(__IS_COMPILER_ARM_COMPILER_6__)
 #define __packed_aligned __packed __aligned(4)
 
 
@@ -70,12 +71,14 @@ extern "C" {
 #define MIN(a, b) ((b)>(a)?(a):(b))
 #endif
 
+#if !defined(__CM_CMSIS_VERSION_SUB) || __CM_CMSIS_VERSION_SUB < 5
 /**
  * Execute a breakpoint instruction
  */
 static inline void __breakpoint(void) {
     __asm__("bkpt #0");
 }
+#endif
 
 /**
  * Ensure that the compiler does not move memory access across this method call

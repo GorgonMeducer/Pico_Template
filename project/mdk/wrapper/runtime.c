@@ -32,6 +32,14 @@
 
 extern char __StackLimit; /* Set by linker.  */
 
+
+#if !defined(__CM_CMSIS_VERSION_SUB) || __CM_CMSIS_VERSION_SUB < 5
+#   define __BREAK_POINT()      __breakpoint()
+#else
+#   define __BREAK_POINT()      __breakpoint(0)
+#endif
+
+
 uint32_t __attribute__((section(".ram_vector_table"))) ram_vector_table[48];
 
 // this is called for each thread since they have their own MPU
@@ -41,7 +49,7 @@ void runtime_install_stack_guard(void *stack_bottom) {
     // make sure no one is using the MPU yet
     if (mpu_hw->ctrl) {
         // Note that it would be tempting to change this to a panic, but it happens so early, printing is not a good idea
-        __breakpoint();
+        __BREAK_POINT();
     }
 
     uintptr_t addr = (uintptr_t) stack_bottom;
@@ -177,7 +185,7 @@ void _exit(__unused int status) {
     reset_usb_boot(0,0);
 #else
     while (1) {
-        __breakpoint();
+        __BREAK_POINT();
     }
 #endif
 }
