@@ -1,9 +1,11 @@
-# Pico_Template (0.9.1)
+# Pico_Template (0.9.2)
 An MDK template for Raspberry Pi Pico
 
 - Compiler: Arm Compiler 6.16 (Using non-intrusive wrapper to support pico-sdk which is written in GCC)
 - ***It works as you wanted!***
 - Compatible with CMSIS 5.7.0 and CMSIS 5.8.0
+- Verified with Arm Compiler 6.15 and above.
+
 
 
 
@@ -23,6 +25,8 @@ Instead of using git clone, if you download a release package, then you have to 
 | ------------ | --------------------------------------------- | ----------------------------- |
 | pico-sdk     | https://github.com/raspberrypi/pico-sdk       | ROOT\Pico-sdk\                |
 | perf_counter | https://github.com/GorgonMeducer/perf_counter | ROOT\project\mdk\perf_counter |
+
+
 
 
 
