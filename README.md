@@ -56,6 +56,50 @@ Usually, people want to adjust the size of stack and heap, and it is very easy i
 
 
 
+### 2.2 How to retarget stdout/stdin
+
+To take advantage of pico-sdk, this template uses bridges to retarget low level functions of stdout/stdin to _read and _write implemented by stdio.c inside pico-sdk.  
+
+```
+/*----------------------------------------------------------------------------*
+ * bridge the Arm Compiler's stdio and the pico-sdk's stdio                   *
+ *----------------------------------------------------------------------------*/
+__attribute__((weak))
+int stdin_getchar(void)
+{
+    /*! \note If you don't want to use pico-sdk stdio, then you can implement 
+     *!       function by yourself in other c source code. Your scanf will work
+     *!       directly.
+     *!       by default, we use this function to bridge the _read implemented 
+     *!       in stdio.c of pico-sdk
+     */
+    
+    int byte;
+    _read(0, (char *)&byte, 1);
+    return byte;
+}
+
+__attribute__((weak))
+int stdout_putchar(int ch)
+{
+    /*! \note If you don't want to use pico-sdk stdio, then you can implement 
+     *!       function by yourself in other c source code. Your printf will work
+     *!       directly.
+     *!       by default, we use this function to bridge the _write implemented 
+     *!       in stdio.c of pico-sdk
+     */
+    
+    return _write(1, (char *)&ch, 1);
+}
+
+```
+
+Those bridge functions are decorated as "weak", hence if you want to retarget ***printf/scanf*** directly to a place where you can "***see through***" and/or ***you have total control***, please implement those bridge functions (without delete the weak version) in one of your c source code, for example, sending char to USART or storing some memory block directly. 
+
+**NOTE**: I try to provide you the freedom of choice, and I don't need you to digging deep inside scripts to gain such freedom. 
+
+
+
 
 # Known issue
 - Debugger support is not available for now.
