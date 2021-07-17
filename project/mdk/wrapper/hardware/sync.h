@@ -133,7 +133,7 @@ __force_inline static void __wfi(void) {
     __asm volatile ("wfi");
 }
 
-#endif
+
 
 /*! \brief Insert a DMB instruction in to the code path.
  *  \ingroup hardware_sync
@@ -166,6 +166,8 @@ __force_inline static void __dsb(void) {
 __force_inline static void __isb(void) {
     __asm volatile ("isb");
 }
+
+#endif
 
 /*! \brief Acquire a memory fence
  *  \ingroup hardware_sync

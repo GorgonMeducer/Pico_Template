@@ -160,8 +160,17 @@ enum {
 };
 
 
+#undef __sev  
+#undef __wfe       
+#undef __dmb       
+#undef __dsb       
+#undef __isb       
+
 #define __sev       __SEV
 #define __wfe       __WFE
+#define __dmb       __DMB
+#define __dsb       __DSB
+#define __isb       __ISB
 
 #include "pico/platform.h"
 
