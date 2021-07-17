@@ -104,7 +104,7 @@ typedef volatile uint32_t spin_lock_t;
 #define PICO_SPINLOCK_ID_CLAIM_FREE_LAST 31
 #endif
 
-#if !defined(__CM_CMSIS_VERSION_SUB) || __CM_CMSIS_VERSION_SUB < 5
+#if !defined(__IS_COMPILER_ARM_COMPILER_6__)
 /*! \brief Insert a SEV instruction in to the code path.
  *  \ingroup hardware_sync
 

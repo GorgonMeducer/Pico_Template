@@ -160,6 +160,9 @@ enum {
 };
 
 
+#define __sev       __SEV
+#define __wfe       __WFE
+
 #include "pico/platform.h"
 
 #endif

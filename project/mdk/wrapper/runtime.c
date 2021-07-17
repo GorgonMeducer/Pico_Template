@@ -33,10 +33,9 @@
 extern char __StackLimit; /* Set by linker.  */
 
 
-#if !defined(__CM_CMSIS_VERSION_SUB) || __CM_CMSIS_VERSION_SUB < 5
-#   define __BREAK_POINT()      __breakpoint()
-#else
-#   define __BREAK_POINT()      __breakpoint(0)
+#if defined(__IS_COMPILER_ARM_COMPILER_6__)
+#   undef __breakpoint
+#   define __breakpoint(...)      __BKPT(0)
 #endif
 
 
@@ -49,7 +48,7 @@ void runtime_install_stack_guard(void *stack_bottom) {
     // make sure no one is using the MPU yet
     if (mpu_hw->ctrl) {
         // Note that it would be tempting to change this to a panic, but it happens so early, printing is not a good idea
-        __BREAK_POINT();
+        __breakpoint();
     }
 
     uintptr_t addr = (uintptr_t) stack_bottom;
@@ -147,7 +146,7 @@ void runtime_init(void) {
 #ifndef NDEBUG
     if (__get_current_exception()) {
         // crap; started in exception handler
-        __asm ("bkpt #0");
+        __breakpoint();
     }
 #endif
 
@@ -185,7 +184,7 @@ void _exit(__unused int status) {
     reset_usb_boot(0,0);
 #else
     while (1) {
-        __BREAK_POINT();
+        __breakpoint();
     }
 #endif
 }

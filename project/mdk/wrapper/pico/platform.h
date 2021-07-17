@@ -71,7 +71,7 @@ extern "C" {
 #define MIN(a, b) ((b)>(a)?(a):(b))
 #endif
 
-#if !defined(__CM_CMSIS_VERSION_SUB) || __CM_CMSIS_VERSION_SUB < 5
+#if !defined(__IS_COMPILER_ARM_COMPILER_6__)
 /**
  * Execute a breakpoint instruction
  */
