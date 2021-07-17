@@ -41,6 +41,8 @@ int __real_vprintf(const char *format, __va_list va)
 /*----------------------------------------------------------------------------*
  * bridge the Arm Compiler's stdio and the pico-sdk's stdio                   *
  *----------------------------------------------------------------------------*/
+
+#if !defined(LIB_PICO_STDIO_SEMIHOSTING)
 __attribute__((weak))
 int stdin_getchar(void)
 {
@@ -50,7 +52,7 @@ int stdin_getchar(void)
      *!       by default, we use this function to bridge the _read implemented 
      *!       in stdio.c of pico-sdk
      */
-    
+
     int byte;
     _read(0, (char *)&byte, 1);
     return byte;
@@ -68,10 +70,18 @@ int stdout_putchar(int ch)
     
     return _write(1, (char *)&ch, 1);
 }
+#else
+/*! \note If you want to use semihosting (currently only Arm-DS supports it), 
+ *!       pleae open the RTE configuration and unselect the Compiler->I/O->STDIN
+ *!       and Compiler->I/O->STDOUT
+ */
+#endif
 
 
 
-#if defined(__IS_COMPILER_ARM_COMPILER_6__)
+#if     defined(__IS_COMPILER_ARM_COMPILER_6__)                                 \
+    &&  (   !defined(LIB_PICO_STDIO_SEMIHOSTING)                                \
+        ||  (defined(LIB_PICO_STDIO_SEMIHOSTING) && !LIB_PICO_STDIO_SEMIHOSTING))
 __asm(".global __use_no_semihosting\n\t");
 #   ifndef __MICROLIB
 __asm(".global __ARM_use_no_argv\n\t");
