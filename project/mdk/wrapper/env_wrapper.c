@@ -42,7 +42,8 @@ int __real_vprintf(const char *format, __va_list va)
  * bridge the Arm Compiler's stdio and the pico-sdk's stdio                   *
  *----------------------------------------------------------------------------*/
 
-#if !defined(LIB_PICO_STDIO_SEMIHOSTING)
+#if     !defined(LIB_PICO_STDIO_SEMIHOSTING)                                    \
+    ||  (defined(LIB_PICO_STDIO_SEMIHOSTING) && !LIB_PICO_STDIO_SEMIHOSTING)
 __attribute__((weak))
 int stdin_getchar(void)
 {
