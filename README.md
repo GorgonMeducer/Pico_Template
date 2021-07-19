@@ -6,6 +6,7 @@ An MDK template for Raspberry Pi Pico
 - Compatible with CMSIS 5.7.0 and CMSIS 5.8.0
 - Verified with Arm Compiler 6.15 and above.
 - Provide users an option to use the ***stdio*** solution from ***pico-sdk (by default)*** or retarget the ***stdin/stdout*** to a user specified location directly. (See note in ***env_wrapper.c***).
+- [Support debug in MDK using J-Link](https://wiki.segger.com/Raspberry_Pi_Pico)
 
 
 
@@ -102,7 +103,7 @@ Those bridge functions are decorated as "weak", hence if you want to retarget **
 
 
 # Known issue
-- Debugger support is not available for now.
+- Debugger support is only available for J-Link.
 - Not all peripheral modules are added to the compilation. But I guess it is just a piece of cake for you : P
 - ***Please use the elf2uf2 tool in this template*** to convert the generated axf into uf2.
 - Might need more documents...
