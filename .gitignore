@@ -60,3 +60,4 @@ project/mdk/Objects/template.axf
 *.uf2
 *.scvd
 *.iex
+project/mdk/JLinkLog.txt
