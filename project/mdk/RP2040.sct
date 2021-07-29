@@ -30,7 +30,10 @@ LR_IROM1 0x10000100 FLASH_SIZE - ImageLength(LR_STAGE2_BOOT)  {    ; load region
     ER_FLASH +0 0x00200000  {  ; load address = execution address
         *.o (RESET, +First)
         *(InRoot$$Sections)
-        * (+RO)
+        * (+RO-DATA)
+        
+        startup_RP2040.o (+RO)
+        * (+RO-CODE)
         * (+XO)
     }
     
