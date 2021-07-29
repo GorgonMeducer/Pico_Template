@@ -22,7 +22,12 @@ An MDK template for Raspberry Pi Pico
 I assume that you have the MDK installed on your PC. Please clone the Pico_Template with following command line:
 
 ```
-git clone https://github.com/GorgonMeducer/Pico_Template --recursive
+mkdir pico-mdk
+cd pico-mdk
+
+git clone https://github.com/GorgonMeducer/Pico_Template .
+
+git submodule update --remote --init
 ```
 
 Instead of using git clone, if you download a release package, then you have to download the [pico-sdk](https://github.com/raspberrypi/pico-sdk) and [perf_counter](https://github.com/GorgonMeducer/perf_counter) manually and put them into the corresponding folder:
