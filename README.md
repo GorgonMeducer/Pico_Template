@@ -113,7 +113,26 @@ Those bridge functions are decorated as "weak", hence if you want to retarget **
 
 # Known issue
 - Debugger support is only available for J-Link.
+
 - Not all peripheral modules are added to the compilation. But I guess it is just a piece of cake for you : P
+
 - ***Please use the elf2uf2 tool in this template*** to convert the generated axf into uf2.
+
 - Might need more documents...
+
+- for Debug-In-SRAM feature, the correct sequence should be:
+
+  - Load image to SRAM
+
+  - configure the watchdog scratch registers with following content
+
+    // - Scratch 4:  0xb007c0d3 
+
+    // - Scratch 5:  Entry point ^ -0xb007c0d3 
+
+    // - Scratch 6:  Stack pointer 
+
+    // - Scratch 7:  Entry point
+
+  - Issue a reset 
 
