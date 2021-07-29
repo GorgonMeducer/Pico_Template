@@ -17,17 +17,23 @@
                             STACK_1_SIZE - HEAP_1_SIZE -                        \
                             STACK_0_SIZE - HEAP_0_SIZE - 0x100)
 
-LR_STAGE2_BOOT 0x10000000 0x100 {
+;LR_STAGE2_BOOT 0x10000000 0x100 {
+;    ER_STAGE2_BOOT +0 0x100 {
+;        compile_time_choice.o (+RO)
+;    }
+;    ER_FILL ImageLimit(ER_STAGE2_BOOT) FILL 0xDEADBEEF 0x100 - ImageLength(ER_STAGE2_BOOT) {
+;    }
+;}
+
+LR_IROM1 0x20000000 SRAM_SIZE  {    ; load region size_region
+
     ER_STAGE2_BOOT +0 0x100 {
         compile_time_choice.o (+RO)
     }
     ER_FILL ImageLimit(ER_STAGE2_BOOT) FILL 0xDEADBEEF 0x100 - ImageLength(ER_STAGE2_BOOT) {
     }
-}
 
-LR_IROM1 0x20000000 SRAM_SIZE  {    ; load region size_region
-
-    ER_RAM_VECTOR_TABLE 0x20000000 {
+    ER_RAM_VECTOR_TABLE +0 {
         *  (.ram_vector_table)
     }
 
