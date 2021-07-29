@@ -100,6 +100,9 @@
 #   undef __unused
 #   define __unused             __attribute__((unused))
 
+#   undef __used
+#   define __used               __USED
+
 #   undef __packed_aligned
 #   define __packed_aligned     __attribute__((packed, aligned(4)))
 

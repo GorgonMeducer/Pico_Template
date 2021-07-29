@@ -27,13 +27,12 @@
 
 LR_IROM1 0x20000000 SRAM_SIZE  {    ; load region size_region
 
-    ER_STAGE2_BOOT +0 0x100 {
-        compile_time_choice.o (+RO)
+    ER_BINRAY_INFO +0 {
+        * (:gdef:Reset_Handler)
+        * (.binary_info_header)
     }
-    ER_FILL ImageLimit(ER_STAGE2_BOOT) FILL 0xDEADBEEF 0x100 - ImageLength(ER_STAGE2_BOOT) {
-    }
-
-    ER_RAM_VECTOR_TABLE +0 {
+    
+    ER_RAM_VECTOR_TABLE +0 ALIGN 256 {
         *  (.ram_vector_table)
     }
 
@@ -67,6 +66,13 @@ LR_IROM1 0x20000000 SRAM_SIZE  {    ; load region size_region
 
     RW_IRAM +0 {  ; RW data
         * (+RW +ZI)
+    }
+    
+    RW_IRAM_UNINIT +0 UNINIT {
+        *(.uninitialized_data*)
+    }
+    
+    RW_IRAM_CODE +0 {
         * (+RO-CODE)
         * (+XO)
     }
