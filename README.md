@@ -1,4 +1,4 @@
-# Pico_Template (0.9.3)
+# Pico_Template (0.9.4)
 An MDK template for Raspberry Pi Pico
 
 - Compiler: Arm Compiler 6.15 and above (Using non-intrusive wrapper to support pico-sdk which is written in GCC)
@@ -7,6 +7,10 @@ An MDK template for Raspberry Pi Pico
 - Verified with Arm Compiler 6.15 and above.
 - Provide users an option to use the ***stdio*** solution from ***pico-sdk (by default)*** or retarget the ***stdin/stdout*** to a user specified location directly. (See note in ***env_wrapper.c***).
 - [Support debug in MDK using J-Link](https://wiki.segger.com/Raspberry_Pi_Pico)
+- Add dedicated project configurations for:
+  - [**AC6-flash**] Running code in Flash (XIP)
+  - [**AC6-RunInSRAM**] Running code in SRAM (code is still stored in FLASH)
+  - [**AC6-DebugInSRAM**] No Flash is used and only suitable for RAM based debug.
 
 
 
