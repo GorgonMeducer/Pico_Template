@@ -1,0 +1,46 @@
+SET PATH=C:\Keil_v5\ARM\ARMCLANG\Bin;C:\Program Files\Python39\Scripts\;C:\Program Files\Python39\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\PuTTY\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\PuTTY\;C:\Program Files\dotnet\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Cisco\Cisco AnyConnect Secure Mobility Client\;C:\Program Files (x86)\IncrediBuild;C:\Program Files (x86)\LLVM\bin;C:\Program Files (x86)\STMicroelectronics\STM32 ST-LINK Utility\ST-LINK Utility;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\CMake\bin;C:\Program Files\Git\cmd;C;C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2020-q4-major\bin;C:\Program Files (x86)\GNU Arm Embedded Toolchain\9 2020-q2-update\bin;C:\Program Files (x86)\GNU Tools Arm Embedded\9 2019-q4-major\bin;C:\Python3\Scripts\;C:\Python3\;C:\Users\gabwan01\AppData\Local\Microsoft\WindowsApps;C:\Keil_v5\ARM\ARMCC\bin;C:\Users\gabwan01\AppData\Local\GitHubDesktop\bin;C:\Program Files (x86)\GnuWin32\bin;C:\Users\gabwan01\.dotnet\tools;C:\Keil_v5\ARM\ARMCLANG\bin;C:\Program Files\ffmpeg\bin;C:\MinGW\bin;C:\Users\gabwan01\AppData\Local\Microsoft\WindowsApps;C:\Users\gabwan01\AppData\Local\Programs\Microsoft VS Code\bin
+SET ARMCC6_ASMOPT=--diag_suppress=9931
+SET ARMCC6_CCOPT=--diag_suppress=9931
+SET ARMCC6_LINKOPT=--diag_suppress=9931
+SET CPU_TYPE=ARMCM0P_MPU
+SET CPU_VENDOR=ARM
+SET UV2_TARGET=AC6-flash
+SET CPU_CLOCK=0x00B71B00
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\startup_rp2040.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\system_rp2040.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\clocks.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\watchdog.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\pll.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\platform.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\xosc.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\irq.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\irq_handler_chain._ac"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\gpio.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\multicore.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\sync.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\critical_section.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\lock_core.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\mutex.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\sem.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\time.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\timeout_helper.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\timer.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\claim.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\queue.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\pheap.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\datetime.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\stdlib.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\uart.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\compile_time_choice._ac"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\runtime.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\i2c.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\spi.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\adc.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\bootrom.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\stdio.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\stdio_uart.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\env_wrapper.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\main.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\retarget_io.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmLink" --Via ".\Objects\template.lnp"
+.\axf2uf2.bat

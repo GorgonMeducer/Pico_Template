@@ -1,0 +1,7 @@
+--target=arm-arm-none-eabi -mcpu=cortex-m0plus -masm=gnu -c
+-mlittle-endian -gdwarf-3 -D__MICROLIB -I ../../pico-sdk/src/rp2040/hardware_regs/include -I ../../pico-sdk/src/rp2_common/hardware_irq/include -I ../../pico-sdk/src/rp2_common/pico_platform/include -I ../../pico-sdk/src/common/pico_base/include -I ./wrapper/pico_base -I ../../pico-sdk/src/rp2_common/boot_stage2/asminclude -I ../../pico-sdk/src/rp2_common/boot_stage2/include
+-I./RTE/_AC6-flash
+-IC:/Keil_v5/ARM/PACK/ARM/CMSIS/5.8.0/CMSIS/Core/Include
+-IC:/Keil_v5/ARM/PACK/ARM/CMSIS/5.8.0/Device/ARM/ARMCM0plus/Include
+-D__UVISION_VERSION=535 -D_RTE_ -DARMCM0P_MPU -D_RTE_ -DPICO_MAX_SHARED_IRQ_HANDLERS=4 -DLIB_CMSIS_CORE=1 -DPICO_CMSIS_RENAME_EXCEPTIONS=1
+-o ./objects/compile_time_choice.o "../../pico-sdk/src/rp2_common/boot_stage2/compile_time_choice.S"
