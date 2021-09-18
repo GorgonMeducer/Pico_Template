@@ -5,7 +5,7 @@
 ; *************************************************************
 
 #define FLASH_SIZE          0x00200000  
-#define SRAM_SIZE           (1024*264)
+#define SRAM_SIZE           (1024*248)
 
 #define STACK_0_SIZE        (1024*4)
 #define STACK_1_SIZE        (1024*1)
