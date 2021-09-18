@@ -1,4 +1,4 @@
-# Pico_Template (v1.0.0)
+# Pico_Template (v1.1.0)
 An MDK template for Raspberry Pi Pico
 
 - Compiler: Arm Compiler 6.15 and above (Using non-intrusive wrapper to support pico-sdk which is written in GCC)
@@ -6,7 +6,9 @@ An MDK template for Raspberry Pi Pico
 - Compatible with CMSIS 5.7.0 and CMSIS 5.8.0
 - Verified with Arm Compiler 6.15 and above.
 - Provide users an option to use the ***stdio*** solution from ***pico-sdk (by default)*** or retarget the ***stdin/stdout*** to a user specified location directly. (See note in ***env_wrapper.c***).
-- [Support debug in MDK using J-Link](https://wiki.segger.com/Raspberry_Pi_Pico)
+- Support Debug in MDK
+  - [Using J-Link](https://wiki.segger.com/Raspberry_Pi_Pico) (HW revision 11 and above)
+  - [Using CMSIS-DAP](https://github.com/majbthrd/pico-debug)
 - Add dedicated project configurations for:
   - [**AC6-flash**] Running code in Flash (XIP)
   - [**AC6-RunInSRAM**] Running code in SRAM (code is still stored in FLASH)
@@ -120,19 +122,4 @@ Those bridge functions are decorated as "weak", hence if you want to retarget **
 
 - Might need more documents...
 
-- for Debug-In-SRAM feature, the correct sequence should be:
-
-  - Load image to SRAM
-
-  - configure the watchdog scratch registers with following content
-
-    // - Scratch 4:  0xb007c0d3 
-
-    // - Scratch 5:  Entry point ^ -0xb007c0d3 
-
-    // - Scratch 6:  Stack pointer 
-
-    // - Scratch 7:  Entry point
-
-  - Issue a reset 
 
