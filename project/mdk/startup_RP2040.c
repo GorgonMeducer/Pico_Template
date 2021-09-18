@@ -85,6 +85,7 @@ void RTC_IRQ_Handler        (void) __attribute__ ((weak, alias("Default_Handler"
 #endif
 
 extern const VECTOR_TABLE_Type __VECTOR_TABLE[48];
+__attribute__((aligned(256)))
        const VECTOR_TABLE_Type __VECTOR_TABLE[48] __VECTOR_TABLE_ATTRIBUTE = {
   (VECTOR_TABLE_Type)(&__INITIAL_SP),       /*     Initial Stack Pointer */
   Reset_Handler,                            /*     Reset Handler */
@@ -157,6 +158,7 @@ void __pico_entry(void)
 
 __NO_RETURN void Reset_Handler(void)
 {
+    SCB->VTOR = (uintptr_t)__VECTOR_TABLE;
   //SystemInit();                             /* CMSIS System Initialization */
   __PROGRAM_START();                        /* Enter PreMain (C library entry point) */
 }
