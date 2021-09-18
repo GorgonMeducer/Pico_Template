@@ -1,4 +1,4 @@
-# Pico_Template (v1.1.0)
+# Pico_Template (v1.1.1)
 An MDK template for Raspberry Pi Pico
 
 - Compiler: Arm Compiler 6.15 and above (Using non-intrusive wrapper to support pico-sdk which is written in GCC)
@@ -112,6 +112,42 @@ Those bridge functions are decorated as "weak", hence if you want to retarget **
 
 
 
+### 2.3 How to debug using pico-debug (CMSIS-DAP)
+
+[Pico-debug](https://github.com/majbthrd/pico-debug) is an open-source project which turns one Cortex-M0+ core in RP2040 into a CMSIS-DAP adapter. It means that without an extra one, you can debug a Pico in MDK with just one USB connector. In order to do so, please [download the latest uf2 file](https://github.com/majbthrd/pico-debug/releases) first.
+
+
+
+#### 2.3.1 For DebugInSRAM configuration
+
+Pico-Template provides a dedicated project configuration for downloading and debugging code in SRAM. This is the most convenient one and it delivers the best development experience among the three configurations. To use it, please follow the steps below:
+
+1. Boot the Pico with the BOOTSEL button pressed. 
+2. Drag and drop **pico-debug-gimmecache.uf2 **to RPI-RP2 mass-storage driver in the explorer. It immediately reboots as a CMSIS-DAP adapter. Pico-debug loads as a RAM only .uf2 image, meaning that it is never written to flash and doesn't replace existing user code.
+3. Open your project which is based on our Pico-Template and switch to DebugInSRAM configuration.
+4. Compile and Debug
+5. Enjoy...
+
+**NOTE: In this mode, the "RESET" doesn't really work as we expect. If you do want to RESET, please stop current debug session and start a new one instead.** 
+
+
+
+#### 2.3.2 For Other configurations
+
+Besides the project configuration aforementioned, i.e. **DebugInSRAM** , the rest of configurations require users to download the generated uf2 file, i.e. template.uf2, first. To use those configurations, please follow the steps below:
+
+1. Open your project which is based on our Pico-Template and switch to your desired project configuration, e.g. RunInFlash
+2. Compile and there should be an generated uf2 file. 
+3. Boot the Pico with the BOOTSEL button pressed. 
+4. Drag and drop **your generated uf2 file, e.g. template.uf2 **to RPI-RP2 mass-storage driver in the explorer.
+5. Boot the Pico with the BOOTSEL button pressed. 
+6. Drag and drop **pico-debug-gimmecache.uf2 **to RPI-RP2 mass-storage driver in the explorer. It immediately reboots as a CMSIS-DAP adapter. Pico-debug loads as a RAM only .uf2 image, meaning that it is never written to flash and doesn't replace existing user code.
+7. Enjoy...
+
+ **NOTE: For each update of project, you have to go through the steps above from 2 to 6... I guess the step 7 will never happen...**
+
+
+
 
 # Known issue
 - Debugger support is only available for J-Link.
@@ -121,5 +157,4 @@ Those bridge functions are decorated as "weak", hence if you want to retarget **
 - ***Please use the elf2uf2 tool in this template*** to convert the generated axf into uf2.
 
 - Might need more documents...
-
 
