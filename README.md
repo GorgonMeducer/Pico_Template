@@ -1,4 +1,4 @@
-# Pico_Template (v1.2.0)
+# Pico_Template (v1.2.1)
 An MDK template for Raspberry Pi Pico
 
 - Compiler: Arm Compiler 6.15 and above (Using non-intrusive wrapper to support pico-sdk which is written in GCC)
