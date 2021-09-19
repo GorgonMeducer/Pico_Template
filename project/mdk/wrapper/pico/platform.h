@@ -173,7 +173,7 @@ __force_inline static int32_t __mul_instruction(int32_t a, int32_t b) {
 
 #if defined(__IS_COMPILER_ARM_COMPILER_6__)
 #   define WRAPPER_FUNC(__FUNC)     $Sub$$##__FUNC
-#   define REAL_FUNC(__FUNC)        __real_ ## __FUNC
+#   define REAL_FUNC(__FUNC)        $Super$$## __FUNC
 #else
 #   define WRAPPER_FUNC(x) __wrap_ ## x
 #   define REAL_FUNC(x) __real_ ## x
