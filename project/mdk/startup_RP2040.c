@@ -141,6 +141,21 @@ __attribute__((aligned(256)))
                                             /* Interrupts 10..31 are left out */
 };
 
+#if defined(PICO_NO_FLASH)
+
+
+__attribute__((section (".ARM.__at_0x4005801C"), used))
+const uint32_t c_wScratchMagicTable[] = {
+    0xb007c0d3,                                         //!< scratch 4
+    0x6FF83F2C,                                         //!< scratch 5
+    (uintptr_t)&__INITIAL_SP,                           //!< scratch 6
+    0x20000001,                                         //!< scratch 7
+};
+
+
+
+#endif
+
 #if defined ( __GNUC__ )
 #pragma GCC diagnostic pop
 #endif

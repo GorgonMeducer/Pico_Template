@@ -27,10 +27,10 @@
 
 LR_IROM1 0x20000000 SRAM_SIZE  {    ; load region size_region
 
-    ;ER_BINRAY_INFO +0 {
-    ;    * (:gdef:Reset_Handler)
-    ;    * (.binary_info_header)
-    ;}
+    ER_BINRAY_INFO +0 {
+        * (:gdef:Reset_Handler)     //!< please always make sure that Reset_Handler is placed here.
+        * (.binary_info_header)
+    }
     
     ;ER_RAM_VECTOR_TABLE +0 ALIGN 256 {
     ;    *  (.ram_vector_table)

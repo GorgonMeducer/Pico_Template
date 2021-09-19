@@ -61,3 +61,4 @@ project/mdk/Objects/template.axf
 *.iex
 project/mdk/JLinkLog.txt
 project/mdk/template.uf2
+*._ac
