@@ -128,6 +128,8 @@ Pico-Template provides a dedicated project configuration for downloading and deb
 4. Compile and Debug
 5. Enjoy...
 
+**NOTE: In this mode, the "RESET" doesn't really work as we expect. If you do want to RESET, please stop current debug session and start a new one instead.** 
+
 
 
 #### 2.3.2 For Other configurations
