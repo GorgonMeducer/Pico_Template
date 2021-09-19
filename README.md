@@ -130,7 +130,7 @@ Pico-Template provides a dedicated project configuration for downloading and deb
 
 **NOTE: In this mode, the "RESET" doesn't really work as we expect. If you do want to RESET, please press the "Reset Pico " button shown below:**
 
-![image-20210919180644156](E:\git\Pico_Template\documents\Pictures\Reset_Pico.png) 
+![image-20210919180644156](.\documents\Pictures\Reset_Pico.png) 
 
 
 
