@@ -1,4 +1,4 @@
-# Pico_Template (v1.1.1)
+# Pico_Template (v1.2.0)
 An MDK template for Raspberry Pi Pico
 
 - Compiler: Arm Compiler 6.15 and above (Using non-intrusive wrapper to support pico-sdk which is written in GCC)
@@ -127,8 +127,6 @@ Pico-Template provides a dedicated project configuration for downloading and deb
 3. Open your project which is based on our Pico-Template and switch to DebugInSRAM configuration.
 4. Compile and Debug
 5. Enjoy...
-
-**NOTE: In this mode, the "RESET" doesn't really work as we expect. If you do want to RESET, please stop current debug session and start a new one instead.** 
 
 
 
