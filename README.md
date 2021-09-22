@@ -152,7 +152,6 @@ Besides the project configuration aforementioned, i.e. **DebugInSRAM** , the res
 
 
 # Known issue
-- Debugger support is only available for J-Link.
 
 - Not all peripheral modules are added to the compilation. But I guess it is just a piece of cake for you : P
 
