@@ -1,4 +1,4 @@
-# Pico_Template (v1.2.2)
+# Pico_Template (v1.3.0)
 An MDK template for Raspberry Pi Pico
 
 - Compiler: Arm Compiler 6.15 and above (Using non-intrusive wrapper to support pico-sdk which is written in GCC)
@@ -7,12 +7,12 @@ An MDK template for Raspberry Pi Pico
 - Verified with Arm Compiler 6.15 and above.
 - Provide users an option to use the ***stdio*** solution from ***pico-sdk (by default)*** or retarget the ***stdin/stdout*** to a user specified location directly. (See note in ***env_wrapper.c***).
 - Support Debug in MDK
-  - [Using J-Link](https://wiki.segger.com/Raspberry_Pi_Pico) (HW revision 11 and above)
-  - [Using CMSIS-DAP](https://github.com/majbthrd/pico-debug)
+  - [Using J-Link](https://wiki.segger.com/Raspberry_Pi_Pico) (Not Validated in MDK)
+  - [Using CMSIS-DAP](https://github.com/majbthrd/pico-debug) (Validated in MDK)
 - Add dedicated project configurations for:
   - [**AC6-flash**] Running code in Flash (XIP)
   - [**AC6-RunInSRAM**] Running code in SRAM (code is still stored in FLASH)
-  - [**AC6-DebugInSRAM**] No Flash is used and only suitable for RAM based debug.
+  - [**AC6-DebugInSRAM**] "no_flash" mode in the original pico-sdk. It is suitable for MDK debug.
 
 
 
@@ -128,11 +128,13 @@ Pico-Template provides a dedicated project configuration for downloading and deb
 4. Compile and Debug
 5. Enjoy...
 
-**NOTE: In this mode, the "RESET" doesn't really work as we expect. If you do want to RESET, please press the "Reset Pico " button shown below:**
+**NOTE: **
+
+**1. In this mode, the "RESET" doesn't really work as we expect. If you do want to RESET, please press the "Reset Pico " button shown below:**
 
 ![image-20210919180644156](documents/Pictures/Reset_Pico.png) 
 
-
+**2. If you cannot find this Toolbox, please start your debug session and go to menu "View"->"Toolbox Window".**
 
 #### 2.3.2 For Other configurations
 
@@ -152,8 +154,6 @@ Besides the project configuration aforementioned, i.e. **DebugInSRAM** , the res
 
 
 # Known issue
-- Debugger support is only available for J-Link.
-
 - Not all peripheral modules are added to the compilation. But I guess it is just a piece of cake for you : P
 
 - ***Please use the elf2uf2 tool in this template*** to convert the generated axf into uf2.
