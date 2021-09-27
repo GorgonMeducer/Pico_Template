@@ -1,4 +1,4 @@
-# Pico_Template (v1.3.0)
+# Pico_Template (v1.3.1)
 An MDK template for Raspberry Pi Pico
 
 - Compiler: Arm Compiler 6.15 and above (Using non-intrusive wrapper to support pico-sdk which is written in GCC)
@@ -8,7 +8,7 @@ An MDK template for Raspberry Pi Pico
 - Provide users an option to use the ***stdio*** solution from ***pico-sdk (by default)*** or retarget the ***stdin/stdout*** to a user specified location directly. (See note in ***env_wrapper.c***).
 - Support Debug in MDK
   - [Using J-Link](https://wiki.segger.com/Raspberry_Pi_Pico) (Not Validated in MDK)
-  - [Using CMSIS-DAP](https://github.com/majbthrd/pico-debug) (Validated in MDK)
+  - [Using CMSIS-DAP](https://github.com/majbthrd/pico-debug) (Validated in MDK and **highly recommended**)
 - Add dedicated project configurations for:
   - [**AC6-flash**] Running code in Flash (XIP)
   - [**AC6-RunInSRAM**] Running code in SRAM (code is still stored in FLASH)
@@ -124,7 +124,7 @@ Pico-Template provides a dedicated project configuration for downloading and deb
 
 1. Boot the Pico with the BOOTSEL button pressed. 
 2. Drag and drop **pico-debug-gimmecache.uf2 **to RPI-RP2 mass-storage driver in the explorer. It immediately reboots as a CMSIS-DAP adapter. Pico-debug loads as a RAM only .uf2 image, meaning that it is never written to flash and doesn't replace existing user code.
-3. Open your project which is based on our Pico-Template and switch to DebugInSRAM configuration.
+3. Open your project which is based on our Pico-Template and switch to ***DebugInSRAM*** configuration.
 4. Compile and Debug
 5. Enjoy...
 

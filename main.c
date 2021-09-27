@@ -92,6 +92,10 @@ int main(void)
 
     while (true) {
         breath_led();
+        //gpio_put(PICO_DEFAULT_LED_PIN, 1);
+        //sleep_ms(500);
+        //gpio_put(PICO_DEFAULT_LED_PIN, 0);
+        //sleep_ms(500);
     }
     //return 0;
 }
