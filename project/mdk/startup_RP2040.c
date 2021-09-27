@@ -159,6 +159,7 @@ void __pico_entry(void)
 __NO_RETURN void Reset_Handler(void)
 {
     SCB->VTOR = (uintptr_t)__VECTOR_TABLE;
+    __set_MSP((uintptr_t)(&__INITIAL_SP));
   //SystemInit();                             /* CMSIS System Initialization */
   __PROGRAM_START();                        /* Enter PreMain (C library entry point) */
 }
