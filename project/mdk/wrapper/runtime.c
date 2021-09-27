@@ -126,6 +126,7 @@ void runtime_init(void) {
             hw_clear_alias(padsbank0_hw)->io[28] = hw_clear_alias(padsbank0_hw)->io[29] = PADS_BANK0_GPIO0_IE_BITS;
 #endif
 #endif
+
     extern mutex_t __mutex_array_start;
     extern mutex_t __mutex_array_end;
 
