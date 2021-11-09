@@ -20,24 +20,25 @@
 
 #include "pico/mutex.h"
 #include "pico/time.h"
+
+#if LIB_PICO_PRINTF_PICO
 #include "pico/printf.h"
+#else
+#define weak_raw_printf printf
+#define weak_raw_vprintf vprintf
+#endif
 
 #if PICO_ENTER_USB_BOOT_ON_EXIT
 #include "pico/bootrom.h"
 #endif
-
-#ifndef PICO_NO_RAM_VECTOR_TABLE
-#define PICO_NO_RAM_VECTOR_TABLE 0
-#endif
-
-extern char __StackLimit; /* Set by linker.  */
-
 
 #if defined(__IS_COMPILER_ARM_COMPILER_6__)
 #   undef __breakpoint
 #   define __breakpoint(...)      __BKPT(0)
 #endif
 
+
+extern char __StackLimit; /* Set by linker.  */
 
 uint32_t __attribute__((section(".ram_vector_table"))) ram_vector_table[48];
 
@@ -67,8 +68,6 @@ void runtime_install_stack_guard(void *stack_bottom) {
 }
 
 void runtime_init(void) {
-
-#if defined(PICO)
     // Reset all peripherals to put system into a known state,
     // - except for QSPI pads and the XIP IO bank, as this is fatal if running from flash
     // - and the PLLs, as this is fatal if clock muxing has not been reset on this boot
@@ -93,7 +92,6 @@ void runtime_init(void) {
             RESETS_RESET_UART1_BITS |
             RESETS_RESET_USBCTRL_BITS
     ));
-#endif
 
 #if defined(__IS_COMPILER_GCC__)
     // pre-init runs really early since we need it even for memcpy and divide!
@@ -112,7 +110,6 @@ void runtime_init(void) {
     }
 #endif
 
-#if defined(PICO)
     // After calling preinit we have enough runtime to do the exciting maths
     // in clocks_init
     clocks_init();
@@ -125,17 +122,28 @@ void runtime_init(void) {
     hw_clear_alias(padsbank0_hw)->io[26] = hw_clear_alias(padsbank0_hw)->io[27] =
             hw_clear_alias(padsbank0_hw)->io[28] = hw_clear_alias(padsbank0_hw)->io[29] = PADS_BANK0_GPIO0_IE_BITS;
 #endif
-#endif
 
-    extern mutex_t __mutex_array_start;
-    extern mutex_t __mutex_array_end;
+    // this is an array of either mutex_t or recursive_mutex_t (i.e. not necessarily the same size)
+    // however each starts with a lock_core_t, and the spin_lock is initialized to address 1 for a recursive
+    // spinlock and 0 for a regular one.
 
-    // the first function pointer, not the address of it.
-    for (mutex_t *m = &__mutex_array_start; m < &__mutex_array_end; m++) {
-        if (m->recursion_state) {
-            recursive_mutex_init(m);
+    static_assert(!(sizeof(mutex_t)&3), "");
+    static_assert(!(sizeof(recursive_mutex_t)&3), "");
+    static_assert(!offsetof(mutex_t, core), "");
+    static_assert(!offsetof(recursive_mutex_t, core), "");
+    extern lock_core_t __mutex_array_start;
+    extern lock_core_t __mutex_array_end;
+
+    for (lock_core_t *l = &__mutex_array_start; l < &__mutex_array_end; ) {
+        if (l->spin_lock) {
+            assert(1 == (uintptr_t)l->spin_lock); // indicator for a recursive mutex
+            recursive_mutex_t *rm = (recursive_mutex_t *)l;
+            recursive_mutex_init(rm);
+            l = &rm[1].core; // next
         } else {
+            mutex_t *m = (mutex_t *)l;
             mutex_init(m);
+            l = &m[1].core; // next
         }
     }
 
@@ -147,7 +155,7 @@ void runtime_init(void) {
 #ifndef NDEBUG
     if (__get_current_exception()) {
         // crap; started in exception handler
-        __breakpoint();
+        __asm ("bkpt #0");
     }
 #endif
 
@@ -157,13 +165,9 @@ void runtime_init(void) {
     runtime_install_stack_guard(&__StackBottom);
 #endif
 
-#if defined(PICO)
     spin_locks_reset();
-#endif
     irq_init_priorities();
-#if defined(PICO)
     alarm_pool_init_default();
-#endif
 
 #if defined(__IS_COMPILER_GCC__)
     // Start and end points of the constructor list,
@@ -178,6 +182,7 @@ void runtime_init(void) {
         (*p)();
     }
 #endif
+
 }
 
 void _exit(__unused int status) {
@@ -191,7 +196,6 @@ void _exit(__unused int status) {
 }
 
 #if defined(__IS_COMPILER_GCC__)
-
 void *_sbrk(int incr) {
     extern char end; /* Set by linker.  */
     static char *heap_end;
@@ -223,7 +227,6 @@ void *_sbrk(int incr) {
 void exit(int status) {
     _exit(status);
 }
-
 #endif
 
 #if defined(__IS_COMPILER_GCC__)
@@ -231,7 +234,6 @@ void exit(int status) {
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wsuggest-attribute=format"
 #endif
-
 void __assert_func(const char *file, int line, const char *func, const char *failedexpr) {
     weak_raw_printf("assertion \"%s\" failed: file \"%s\", line %d%s%s\n",
            failedexpr, file, line, func ? ", function: " : "",
@@ -239,14 +241,13 @@ void __assert_func(const char *file, int line, const char *func, const char *fai
 
     _exit(1);
 }
+
 #if defined(__IS_COMPILER_GCC__)
 #pragma GCC diagnostic pop
 #endif
-
 void __attribute__((noreturn)) panic_unsupported() {
     panic("not supported");
 }
-
 
 // PICO_CONFIG: PICO_PANIC_FUNCTION, Name of a function to use in place of the stock panic function or empty string to simply breakpoint on panic, group=pico_runtime
 // note the default is not "panic" it is undefined
@@ -258,7 +259,7 @@ extern void __attribute__((noreturn)) __printflike(1, 0) PICO_PANIC_FUNCTION(__u
 // Use a forwarding method here as it is a little simpler than renaming the symbol as it is used from assembler
 void __attribute__((naked, noreturn)) __printflike(1, 0) panic(__unused const char *fmt, ...) {
     // if you get an undefined reference here, you didn't define your PICO_PANIC_FUNCTION!
-    asm (
+    __asm (
             "push {lr}\n"
 #if !PICO_PANIC_FUNCTION_EMPTY
             "bl " __XSTRING(PICO_PANIC_FUNCTION) "\n"
@@ -271,7 +272,6 @@ void __attribute__((naked, noreturn)) __printflike(1, 0) panic(__unused const ch
     );
 }
 #else
-
 // todo consider making this try harder to output if we panic early
 //  right now, print mutex may be uninitialised (in which case it deadlocks - although after printing "PANIC")
 //  more importantly there may be no stdout/UART initialized yet
@@ -298,7 +298,6 @@ void __attribute__((noreturn)) __printflike(1, 0) panic(const char *fmt, ...) {
     _exit(1);
 }
 #endif
-
 
 void hard_assertion_failure(void) {
     panic("Hard assert");
