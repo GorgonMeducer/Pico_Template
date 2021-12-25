@@ -1,4 +1,4 @@
-# Pico_Template (v1.3.2)
+# Pico_Template (v1.4.0)
 An MDK template for Raspberry Pi Pico
 
 - Compiler: Arm Compiler 6.15 and above (Using non-intrusive wrapper to support pico-sdk which is written in GCC)
@@ -6,8 +6,8 @@ An MDK template for Raspberry Pi Pico
 - Compatible with CMSIS 5.7.0 and CMSIS 5.8.0
 - Verified with Arm Compiler 6.15 and above.
 - Provide users an option to use the ***stdio*** solution from ***pico-sdk (by default)*** or retarget the ***stdin/stdout*** to a user specified location directly. (See note in ***env_wrapper.c***).
+- **Support the latest pico-sdk (v1.3.0)**
 - Support Debug in MDK
-  - [Using J-Link](https://wiki.segger.com/Raspberry_Pi_Pico) (Not Validated in MDK)
   - [Using CMSIS-DAP](https://github.com/majbthrd/pico-debug) (Validated in MDK and **highly recommended**)
 - Add dedicated project configurations for:
   - [**AC6-flash**] Running code in Flash (XIP)

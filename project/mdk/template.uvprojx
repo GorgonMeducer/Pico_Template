@@ -10,7 +10,7 @@
       <TargetName>AC6-flash</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6160000::V6.16::ARMCLANG</pCCUsed>
+      <pCCUsed>6170000::V6.17::.\Arm Compiler 6.17</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -339,7 +339,7 @@
               <MiscControls>-include env_wrapper.h</MiscControls>
               <Define>PICO</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;.\perf_counter\lib;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include</IncludePath>
+              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -801,16 +801,6 @@
               <FilePath>.\wrapper\env_wrapper.c</FilePath>
             </File>
             <File>
-              <FileName>perf_counter.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>.\perf_counter\lib\perf_counter.lib</FilePath>
-            </File>
-            <File>
-              <FileName>perf_counter.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\perf_counter\lib\perf_counter.h</FilePath>
-            </File>
-            <File>
               <FileName>sync.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\wrapper\hardware\sync.h</FilePath>
@@ -833,13 +823,16 @@
         <Group>
           <GroupName>::Compiler</GroupName>
         </Group>
+        <Group>
+          <GroupName>::Utilities</GroupName>
+        </Group>
       </Groups>
     </Target>
     <Target>
       <TargetName>AC6-RunInSRAM</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6160000::V6.16::ARMCLANG</pCCUsed>
+      <pCCUsed>6170000::V6.17::.\Arm Compiler 6.17</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -1168,7 +1161,7 @@
               <MiscControls>-include env_wrapper.h</MiscControls>
               <Define>PICO</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;.\perf_counter\lib;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include</IncludePath>
+              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1630,16 +1623,6 @@
               <FilePath>.\wrapper\env_wrapper.c</FilePath>
             </File>
             <File>
-              <FileName>perf_counter.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>.\perf_counter\lib\perf_counter.lib</FilePath>
-            </File>
-            <File>
-              <FileName>perf_counter.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\perf_counter\lib\perf_counter.h</FilePath>
-            </File>
-            <File>
               <FileName>sync.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\wrapper\hardware\sync.h</FilePath>
@@ -1662,13 +1645,16 @@
         <Group>
           <GroupName>::Compiler</GroupName>
         </Group>
+        <Group>
+          <GroupName>::Utilities</GroupName>
+        </Group>
       </Groups>
     </Target>
     <Target>
       <TargetName>AC6-DebugInSRAM</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6160000::V6.16::ARMCLANG</pCCUsed>
+      <pCCUsed>6170000::V6.17::.\Arm Compiler 6.17</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -1997,7 +1983,7 @@
               <MiscControls>-include env_wrapper.h</MiscControls>
               <Define>PICO, NDEBUG, PICO_NO_FLASH</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;.\perf_counter\lib;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include;..\..\pico-sdk\src\rp2_common\boot_stage2\include;.\wrapper\pico_base</IncludePath>
+              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include;..\..\pico-sdk\src\rp2_common\boot_stage2\include;.\wrapper\pico_base</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -2458,16 +2444,6 @@
               <FilePath>.\wrapper\env_wrapper.c</FilePath>
             </File>
             <File>
-              <FileName>perf_counter.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>.\perf_counter\lib\perf_counter.lib</FilePath>
-            </File>
-            <File>
-              <FileName>perf_counter.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\perf_counter\lib\perf_counter.h</FilePath>
-            </File>
-            <File>
               <FileName>sync.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\wrapper\hardware\sync.h</FilePath>
@@ -2490,6 +2466,9 @@
         <Group>
           <GroupName>::Compiler</GroupName>
         </Group>
+        <Group>
+          <GroupName>::Utilities</GroupName>
+        </Group>
       </Groups>
     </Target>
   </Targets>
@@ -2499,6 +2478,14 @@
     <components>
       <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.5.0" condition="ARMv6_7_8-M Device">
         <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.8.0"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </component>
+      <component Cbundle="Performance Counter" Cclass="Utilities" Cgroup="perf_counter" Csub="Core" Cvariant="Library" Cvendor="GorgonMeducer" Cversion="1.7.2">
+        <package name="perf_counter" schemaVersion="1.4" url="https://raw.githubusercontent.com/GorgonMeducer/perf_counter/CMSIS-Pack/cmsis-pack/" vendor="GorgonMeducer" version="1.7.2"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-RunInSRAM"/>
