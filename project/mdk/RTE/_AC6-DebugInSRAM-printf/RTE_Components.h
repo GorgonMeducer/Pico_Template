@@ -4,7 +4,7 @@
  *      *** Do not modify ! ***
  *
  * Project: 'template' 
- * Target:  'AC6-DebugInSRAM' 
+ * Target:  'AC6-DebugInSRAM-printf' 
  */
 
 #ifndef RTE_COMPONENTS_H

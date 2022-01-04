@@ -18,6 +18,13 @@
 #include "pico/stdlib.h"
 #include "perf_counter.h"
 
+#include <stdio.h>
+
+#include "RTE_Components.h"
+#if defined(RTE_Compiler_EventRecorder) && defined(USE_EVR_FOR_STDOUR)
+#   include <EventRecorder.h>
+#endif
+
 /*============================ MACROS ========================================*/
 #define TOP         (0x1FFF)
 
@@ -74,6 +81,9 @@ static void breath_led(void)
 
 static void system_init(void)
 {
+    extern void SystemCoreClockUpdate();
+
+    SystemCoreClockUpdate();
     /*! \note if you do want to use SysTick in your application, please use 
      *!       init_cycle_counter(true); 
      *!       instead of 
@@ -81,8 +91,13 @@ static void system_init(void)
      */
     init_cycle_counter(false);
 
+#if defined(RTE_Compiler_EventRecorder) && defined(USE_EVR_FOR_STDOUR)
+    EventRecorderInitialize(0, 1);
+#endif
+
     gpio_init(PICO_DEFAULT_LED_PIN);
     gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
+    
 }
 
 
@@ -90,6 +105,9 @@ int main(void)
 {
     system_init();
 
+    printf("Hello Pico-Template\r\n");
+    uint32_t n = 0;
+    
     while (true) {
         breath_led();
         //gpio_put(PICO_DEFAULT_LED_PIN, 1);
