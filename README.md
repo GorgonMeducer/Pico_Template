@@ -115,7 +115,7 @@ Those bridge functions are decorated as "weak", hence if you want to retarget **
 
 When using configuration**AC6-DebugInSRAM-printf**, all ***printf*** output is retargeted to '**Debug (printf) Viewer**' inside MDK (as shown below) with the help from EventRecorder.
 
-![image-20220104201854052](documents/Pictures/Debug (printf) Viewer.png) 
+![image-20220104201854052](documents/Pictures/Debug_printf_Viewer.png) 
 
 
 
