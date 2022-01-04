@@ -1,4 +1,4 @@
-# Pico_Template (v1.4.0)
+# Pico_Template (v1.5.0)
 An MDK template for Raspberry Pi Pico
 
 - Compiler: Arm Compiler 6.15 and above (Using non-intrusive wrapper to support pico-sdk which is written in GCC)
@@ -13,6 +13,7 @@ An MDK template for Raspberry Pi Pico
   - [**AC6-flash**] Running code in Flash (XIP)
   - [**AC6-RunInSRAM**] Running code in SRAM (code is still stored in FLASH)
   - [**AC6-DebugInSRAM**] "no_flash" mode in the original pico-sdk. It is suitable for MDK debug.
+  - [**AC6-DebugInSRAM-printf**] same as [**AC6-DebugInSRAM**] but retargeting printf to 'Debug (printf) Viewer' inside MDK.
 
 
 
@@ -112,19 +113,25 @@ Those bridge functions are decorated as "weak", hence if you want to retarget **
 
 
 
+When using configuration**AC6-DebugInSRAM-printf**, all ***printf*** output is retargeted to '**Debug (printf) Viewer**' inside MDK (as shown below) with the help from EventRecorder.
+
+![image-20220104201854052](documents\Pictures\Debug (printf) Viewer.png) 
+
+
+
 ### 2.3 How to debug using pico-debug (CMSIS-DAP)
 
 [Pico-debug](https://github.com/majbthrd/pico-debug) is an open-source project which turns one Cortex-M0+ core in RP2040 into a CMSIS-DAP adapter. It means that without an extra one, you can debug a Pico in MDK with just one USB connector. In order to do so, please [download the latest uf2 file](https://github.com/majbthrd/pico-debug/releases) first.
 
 
 
-#### 2.3.1 For DebugInSRAM configuration
+#### 2.3.1 For AC6-DebugInSRAM configuration
 
 Pico-Template provides a dedicated project configuration for downloading and debugging code in SRAM. This is the most convenient one and it delivers the best development experience among the three configurations. To use it, please follow the steps below:
 
 1. Boot the Pico with the BOOTSEL button pressed. 
 2. Drag and drop **pico-debug-gimmecache.uf2 **to RPI-RP2 mass-storage driver in the explorer. It immediately reboots as a CMSIS-DAP adapter. Pico-debug loads as a RAM only .uf2 image, meaning that it is never written to flash and doesn't replace existing user code.
-3. Open your project which is based on our Pico-Template and switch to ***DebugInSRAM*** configuration.
+3. Open your project which is based on our Pico-Template and switch to ***AC6-DebugInSRAM*** configuration.
 4. Compile and Debug
 5. Enjoy...
 
