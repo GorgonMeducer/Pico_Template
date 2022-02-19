@@ -3,6 +3,7 @@ An MDK template for Raspberry Pi Pico
 
 - Compiler: Arm Compiler 6.15 and above (Using non-intrusive wrapper to support pico-sdk which is written in GCC)
 - ***It works as you wanted!***
+- [***new***] Add support for popular [LCD 1.3inc module](https://www.waveshare.com/wiki/Pico-LCD-1.3) 
 - Compatible with CMSIS 5.7.0 and CMSIS 5.8.0
 - Verified with Arm Compiler 6.15 and above.
 - Provide users an option to use the ***stdio*** solution from ***pico-sdk (by default)*** or retarget the ***stdin/stdout*** to a user specified location directly. (See note in ***env_wrapper.c***).
@@ -155,6 +156,75 @@ Besides the project configuration aforementioned, i.e. **DebugInSRAM** , the res
 7. Enjoy...
 
  **NOTE: For each update of project, you have to go through the steps above from 2 to 6... I guess the step 7 will never happen...**
+
+
+
+### 2.4 How to enable support for the LCD 1.3inc Module
+
+To make it easier for people to turn Pico into a 'game pad', I've picked a popular [1.3inc LCD module](https://www.waveshare.com/wiki/Pico-LCD-1.3) and added a tailored driver into this Pico template. 
+
+In brief,  it is an
+
+>  1.3inch LCD Display Module For Raspberry Pi Pico, 65K RGB Colors, 240×240 Pixels, SPI Interface
+
+![](https://www.waveshare.com/w/thumb.php?f=Pico-LCD-1.3-1.jpg&width=600) 
+
+ To enable the built in support, please set the macro `__PICO_USE_LCD_1IN3__` to `1` in MDK project configuration as shown below:
+
+![](./documents/Pictures/enable_lcd_1in3) 
+
+After that, you can 
+
+- Use the API `GLCD_DrawBitmap()` to flush a display buffer to the 1.3 inch LCD fully or partially (with specified location and size).
+
+```c
+extern 
+void GLCD_DrawBitmap(   int_fast16_t x, int_fast16_t y, 
+                        int_fast16_t width, int_fast16_t height,
+                        uint16_t *frame_ptr);
+```
+
+- Use the API `dev_read_key()` to read the key status of the 1.3 inch LCD board:
+
+```c
+enum {
+    PIN_KEY_A       = 15,
+    PIN_KEY_B       = 17,
+    PIN_KEY_X       = 19,
+    PIN_KEY_Y       = 21,
+    PIN_KEY_UP      = 2,
+    PIN_KEY_DOWN    = 18,
+    PIN_KEY_LEFT    = 16,
+    PIN_KEY_RIGHT   = 20,
+    PIN_KEY_HOME    = 3, 
+
+    KEY_HOME        = 0,
+    KEY_UP          = 1,
+    KEY_DOWN,
+    KEY_LEFT,
+    KEY_RIGHT,
+    KEY_A,
+    KEY_B,
+    KEY_X,
+    KEY_Y,
+    KEY_NUM,
+};
+
+bool dev_read_key(uint8_t chkey);
+```
+
+For example:
+
+```c
+#include "DEV_Config.h"
+
+...
+//! read key A
+if (dev_read_key(KEY_A)) {
+    printf("Key A is down \r\n");
+}
+...
+```
 
 
 
