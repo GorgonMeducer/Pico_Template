@@ -1,4 +1,4 @@
-# Pico_Template (v1.5.0)
+# Pico_Template (v1.6.0)
 An MDK template for Raspberry Pi Pico
 
 - Compiler: Arm Compiler 6.15 and above (Using non-intrusive wrapper to support pico-sdk which is written in GCC)
@@ -33,14 +33,13 @@ git clone https://github.com/GorgonMeducer/Pico_Template .
 git submodule update --remote --init
 ```
 
-Instead of using git clone, if you download a release package, then you have to download the [pico-sdk](https://github.com/raspberrypi/pico-sdk) and [perf_counter](https://github.com/GorgonMeducer/perf_counter) manually and put them into the corresponding folder:
+Instead of using git clone, if you download a release package, then you have to download the [pico-sdk](https://github.com/raspberrypi/pico-sdk) manually and put them into the corresponding folder:
 
-| submodules   | URL                                           | Directory                     |
-| ------------ | --------------------------------------------- | ----------------------------- |
-| pico-sdk     | https://github.com/raspberrypi/pico-sdk       | ROOT\Pico-sdk\                |
-| perf_counter | https://github.com/GorgonMeducer/perf_counter | ROOT\project\mdk\perf_counter |
+| submodules | URL                                     | Directory      |
+| ---------- | --------------------------------------- | -------------- |
+| pico-sdk   | https://github.com/raspberrypi/pico-sdk | ROOT\Pico-sdk\ |
 
-
+The project template also depends on [perf_counter](https://github.com/GorgonMeducer/perf_counter) which is deployed with a cmsis-pack that you can find in the root folder. 
 
 
 

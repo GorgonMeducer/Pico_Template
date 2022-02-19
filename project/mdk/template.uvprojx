@@ -16,7 +16,7 @@
         <TargetCommonOption>
           <Device>ARMCM0P_MPU</Device>
           <Vendor>ARM</Vendor>
-          <PackID>ARM.CMSIS.5.8.1</PackID>
+          <PackID>ARM.CMSIS.5.8.0</PackID>
           <PackURL>http://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000,0x00020000) IROM(0x00000000,0x00040000) CPUTYPE("Cortex-M0+") CLOCK(12000000) ESEL ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -838,7 +838,7 @@
         <TargetCommonOption>
           <Device>ARMCM0P_MPU</Device>
           <Vendor>ARM</Vendor>
-          <PackID>ARM.CMSIS.5.8.1</PackID>
+          <PackID>ARM.CMSIS.5.8.0</PackID>
           <PackURL>http://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000,0x00020000) IROM(0x00000000,0x00040000) CPUTYPE("Cortex-M0+") CLOCK(12000000) ESEL ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -1660,7 +1660,7 @@
         <TargetCommonOption>
           <Device>ARMCM0P_MPU</Device>
           <Vendor>ARM</Vendor>
-          <PackID>ARM.CMSIS.5.8.1</PackID>
+          <PackID>ARM.CMSIS.5.8.0</PackID>
           <PackURL>http://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000,0x00020000) IROM(0x00000000,0x00040000) CPUTYPE("Cortex-M0+") CLOCK(12000000) ESEL ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -2475,13 +2475,13 @@
       <TargetName>AC6-DebugInSRAM-printf</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6170000::V6.17::.\ARMCompiler6.17</pCCUsed>
+      <pCCUsed>6170000::V6.17::.\Arm Compiler 6.17</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>ARMCM0P_MPU</Device>
           <Vendor>ARM</Vendor>
-          <PackID>ARM.CMSIS.5.8.1</PackID>
+          <PackID>ARM.CMSIS.5.8.0</PackID>
           <PackURL>http://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000,0x00020000) IROM(0x00000000,0x00040000) CPUTYPE("Cortex-M0+") CLOCK(12000000) ESEL ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
