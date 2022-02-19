@@ -149,7 +149,7 @@ __attribute__((aligned(256)))
   Reset Handler called on controller reset
  *----------------------------------------------------------------------------*/
 
-__attribute__((constructor(255), used))
+__attribute__((constructor(101), used))
 void __pico_entry(void)
 {
     extern void runtime_init(void);
