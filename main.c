@@ -18,6 +18,12 @@
 #include "pico/stdlib.h"
 #include "perf_counter.h"
 
+#if defined(__PICO_USE_LCD_1IN3__) && __PICO_USE_LCD_1IN3__
+#include "DEV_Config.h"
+#include "LCD_1In3.h"
+#include "GLCD_Config.h"
+#endif
+
 #include <stdio.h>
 
 #include "RTE_Components.h"
@@ -97,7 +103,24 @@ static void system_init(void)
 
     gpio_init(PICO_DEFAULT_LED_PIN);
     gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
+
+#if defined(__PICO_USE_LCD_1IN3__) && __PICO_USE_LCD_1IN3__
+    DEV_Delay_ms(100);
+
+    if(DEV_Module_Init()!=0){
+        //assert(0);
+    }
+   
+    DEV_SET_PWM(50);
+    /* LCD Init */
     
+    LCD_1IN3_Init(HORIZONTAL);
+    LCD_1IN3_Clear(GLCD_COLOR_BLUE);
+    
+    for (int n = 0; n < KEY_NUM; n++) {
+        dev_key_init(n);
+    }
+#endif
 }
 
 

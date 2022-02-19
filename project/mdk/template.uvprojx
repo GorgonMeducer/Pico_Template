@@ -10,7 +10,7 @@
       <TargetName>AC6-flash</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6160000::V6.16::ARMCLANG</pCCUsed>
+      <pCCUsed>6170000::V6.17::.\Arm Compiler 6.17</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -337,9 +337,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>-include env_wrapper.h</MiscControls>
-              <Define>PICO</Define>
+              <Define>PICO,__PICO_USE_LCD_1IN3__=0</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include</IncludePath>
+              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include;..\..\bsp\Config;..\..\bsp\LCD;..\..\bsp</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -818,6 +818,26 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>BSP</GroupName>
+          <Files>
+            <File>
+              <FileName>LCD_1in3.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\bsp\LCD\LCD_1in3.c</FilePath>
+            </File>
+            <File>
+              <FileName>LCD_1in3.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\bsp\LCD\LCD_1in3.h</FilePath>
+            </File>
+            <File>
+              <FileName>DEV_Config.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\bsp\Config\DEV_Config.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
         <Group>
@@ -832,7 +852,7 @@
       <TargetName>AC6-RunInSRAM</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6170000::V6.17::.\ARMCompiler6.17</pCCUsed>
+      <pCCUsed>6170000::V6.17::.\Arm Compiler 6.17</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -1159,9 +1179,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>-include env_wrapper.h</MiscControls>
-              <Define>PICO</Define>
+              <Define>PICO,__PICO_USE_LCD_1IN3__=0</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include</IncludePath>
+              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include;..\..\bsp\Config;..\..\bsp\LCD;..\..\bsp</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1640,6 +1660,26 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>BSP</GroupName>
+          <Files>
+            <File>
+              <FileName>LCD_1in3.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\bsp\LCD\LCD_1in3.c</FilePath>
+            </File>
+            <File>
+              <FileName>LCD_1in3.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\bsp\LCD\LCD_1in3.h</FilePath>
+            </File>
+            <File>
+              <FileName>DEV_Config.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\bsp\Config\DEV_Config.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
         <Group>
@@ -1654,7 +1694,7 @@
       <TargetName>AC6-DebugInSRAM</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6170000::V6.17::.\ARMCompiler6.17</pCCUsed>
+      <pCCUsed>6170000::V6.17::.\Arm Compiler 6.17</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -1981,9 +2021,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>-include env_wrapper.h</MiscControls>
-              <Define>PICO, NDEBUG, PICO_NO_FLASH</Define>
+              <Define>PICO, NDEBUG, PICO_NO_FLASH,__PICO_USE_LCD_1IN3__=1</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include;..\..\pico-sdk\src\rp2_common\boot_stage2\include;.\wrapper\pico_base</IncludePath>
+              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include;..\..\pico-sdk\src\rp2_common\boot_stage2\include;.\wrapper\pico_base;..\..\bsp\Config;..\..\bsp\LCD;..\..\bsp</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -2457,6 +2497,26 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\main.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>BSP</GroupName>
+          <Files>
+            <File>
+              <FileName>LCD_1in3.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\bsp\LCD\LCD_1in3.c</FilePath>
+            </File>
+            <File>
+              <FileName>LCD_1in3.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\bsp\LCD\LCD_1in3.h</FilePath>
+            </File>
+            <File>
+              <FileName>DEV_Config.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\bsp\Config\DEV_Config.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2802,9 +2862,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>-include env_wrapper.h</MiscControls>
-              <Define>PICO, NDEBUG, PICO_NO_FLASH, USE_EVR_FOR_STDOUR</Define>
+              <Define>PICO, NDEBUG, PICO_NO_FLASH, USE_EVR_FOR_STDOUR,__PICO_USE_LCD_1IN3__=0</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include;..\..\pico-sdk\src\rp2_common\boot_stage2\include;.\wrapper\pico_base</IncludePath>
+              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include;..\..\pico-sdk\src\rp2_common\boot_stage2\include;.\wrapper\pico_base;..\..\bsp\Config;..\..\bsp\LCD;..\..\bsp</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -3278,6 +3338,26 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\main.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>BSP</GroupName>
+          <Files>
+            <File>
+              <FileName>LCD_1in3.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\bsp\LCD\LCD_1in3.c</FilePath>
+            </File>
+            <File>
+              <FileName>LCD_1in3.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\bsp\LCD\LCD_1in3.h</FilePath>
+            </File>
+            <File>
+              <FileName>DEV_Config.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\bsp\Config\DEV_Config.c</FilePath>
             </File>
           </Files>
         </Group>
