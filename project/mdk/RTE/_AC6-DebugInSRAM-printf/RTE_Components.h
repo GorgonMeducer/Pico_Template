@@ -16,9 +16,9 @@
  */
 #define CMSIS_device_header "ARMCM0plus_MPU.h"
 
-/* GorgonMeducer.Performance Counter::Utilities:perf_counter:Core:Library:1.9.2 */
+/* GorgonMeducer.Performance Counter::Utilities:perf_counter:Core:Library:1.9.4 */
 #define __PERF_COUNTER__
-/* Keil.ARM Compiler::Compiler:Event Recorder:DAP:1.4.0 */
+/* Keil.ARM Compiler::Compiler:Event Recorder:DAP:1.5.1 */
 #define RTE_Compiler_EventRecorder
           #define RTE_Compiler_EventRecorder_DAP
 /* Keil.ARM Compiler::Compiler:I/O:STDIN:User:1.2.0 */

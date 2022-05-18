@@ -769,11 +769,6 @@
           <AccSizeX>0</AccSizeX>
         </Mm>
       </MemoryWindow1>
-      <ScvdPack>
-        <Filename>C:\Users\gabriel\AppData\Local\Arm\Packs\Keil\ARM_Compiler\1.6.3\EventRecorder.scvd</Filename>
-        <Type>Keil.ARM_Compiler.1.6.3</Type>
-        <SubType>1</SubType>
-      </ScvdPack>
       <ToolboxButtons>
         <Wi>
           <IntNumber>0</IntNumber>
