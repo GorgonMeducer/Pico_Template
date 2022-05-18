@@ -1,13 +1,13 @@
-# Pico_Template (v1.6.0)
+# Pico_Template (v1.6.1)
 An MDK template for Raspberry Pi Pico
 
 - Compiler: Arm Compiler 6.15 and above (Using non-intrusive wrapper to support pico-sdk which is written in GCC)
 - ***It works as you wanted!***
 - [***new***] Add support for popular [LCD 1.3inc module](https://www.waveshare.com/wiki/Pico-LCD-1.3) 
-- Compatible with CMSIS 5.7.0 and CMSIS 5.8.0
+- Compatible with CMSIS 5.7.0, CMSIS 5.8.0 and above
 - Verified with Arm Compiler 6.15 and above.
 - Provide users an option to use the ***stdio*** solution from ***pico-sdk (by default)*** or retarget the ***stdin/stdout*** to a user specified location directly. (See note in ***env_wrapper.c***).
-- **Support the latest pico-sdk (v1.3.0)**
+- **Support the latest pico-sdk (v1.3.1)**
 - Support Debug in MDK
   - [Using CMSIS-DAP](https://github.com/majbthrd/pico-debug) (Validated in MDK and **highly recommended**)
 - Add dedicated project configurations for:
@@ -40,7 +40,7 @@ Instead of using git clone, if you download a release package, then you have to 
 | ---------- | --------------------------------------- | -------------- |
 | pico-sdk   | https://github.com/raspberrypi/pico-sdk | ROOT\Pico-sdk\ |
 
-The project template also depends on [perf_counter](https://github.com/GorgonMeducer/perf_counter) which is deployed with a cmsis-pack that you can find in the root folder. 
+The project template also depends on [perf_counter](https://github.com/GorgonMeducer/perf_counter) which is deployed with a **cmsis-pack** that you can find in the root folder. 
 
 
 
