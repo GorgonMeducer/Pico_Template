@@ -31,7 +31,7 @@ cd pico-mdk
 
 git clone https://github.com/GorgonMeducer/Pico_Template .
 
-git submodule update --remote --init
+git submodule update --init
 ```
 
 Instead of using git clone, if you download a release package, then you have to download the [pico-sdk](https://github.com/raspberrypi/pico-sdk) manually and put them into the corresponding folder:
