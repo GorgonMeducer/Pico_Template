@@ -1,9 +1,10 @@
-# Pico_Template (v1.7.0)
+# Pico_Template (v1.7.1)
 An MDK template for Raspberry Pi Pico
 
 - Compiler: Arm Compiler 6.15 and above (Using non-intrusive wrapper to support pico-sdk which is written in GCC)
 - ***It works as you wanted!***
-- [***new***] Add support for popular [LCD 1.3inc module](https://www.waveshare.com/wiki/Pico-LCD-1.3) 
+- Add support for popular [LCD 1.3inc module](https://www.waveshare.com/wiki/Pico-LCD-1.3) 
+- **[new]** Support an ultra-lightweight python VM: [PikaScript](https://github.com/pikasTech/pikascript) (via cmsis-pack)
 - Compatible with CMSIS 5.7.0, CMSIS 5.8.0 and above
 - Verified with Arm Compiler 6.15 and above.
 - Provide users an option to use the ***stdio*** solution from ***pico-sdk (by default)*** or retarget the ***stdin/stdout*** to a user specified location directly. (See note in ***env_wrapper.c***).
@@ -228,8 +229,18 @@ if (dev_read_key(KEY_A)) {
 
 
 
+### 2.5 How to enable the PikaScript Support
+
+> PikaScript is an ultra-lightweight Python engine with zero dependencies and zero-configuration, that can run with 4KB of RAM and 32KB of flash (such as STM32G030C8 and STM32F103C8).
+
+Pico-Template supports [PikaScript](https://github.com/pikasTech/pikascript) via cmsis-pack which you can find in the root directory. After the installation, please following the [official guidance](https://pikadoc.readthedocs.io/en/latest/get-start_cmsis-pack.html) to enable the support. 
+
+**NOTE**: The first time compilation after ***selecting the Before Build/Rebuild*** might takes a longer time than you thought. 
+
+![](./documents/Pictures/EnableThePikaBeforeBuild.png) 
 
 # Known issue
+
 - Not all peripheral modules are added to the compilation. But I guess it is just a piece of cake for you : P
 
 - ***Please use the elf2uf2 tool in this template*** to convert the generated axf into uf2.

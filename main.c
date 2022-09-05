@@ -31,6 +31,10 @@
 #   include <EventRecorder.h>
 #endif
 
+#if defined(RTE_Script_PikaScript)
+#   include "pikaScript.h"
+#endif
+
 /*============================ MACROS ========================================*/
 #define TOP         (0x1FFF)
 
@@ -129,7 +133,11 @@ int main(void)
     system_init();
 
     printf("Hello Pico-Template\r\n");
-    uint32_t n = 0;
+    
+#if defined(RTE_Script_PikaScript)
+    pikaScriptInit();
+#endif
+    
     
     while (true) {
         breath_led();

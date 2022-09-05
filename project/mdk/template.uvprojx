@@ -72,7 +72,7 @@
           <BeforeMake>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name></UserProg1Name>
+            <UserProg1Name>RTE\PikaScript\pikaBeforBuild-keil.bat</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
@@ -845,6 +845,9 @@
           <GroupName>::Compiler</GroupName>
         </Group>
         <Group>
+          <GroupName>::PikaScript</GroupName>
+        </Group>
+        <Group>
           <GroupName>::Utilities</GroupName>
         </Group>
       </Groups>
@@ -915,7 +918,7 @@
           <BeforeMake>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name></UserProg1Name>
+            <UserProg1Name>RTE\PikaScript\pikaBeforBuild-keil.bat</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
@@ -1688,6 +1691,9 @@
           <GroupName>::Compiler</GroupName>
         </Group>
         <Group>
+          <GroupName>::PikaScript</GroupName>
+        </Group>
+        <Group>
           <GroupName>::Utilities</GroupName>
         </Group>
       </Groups>
@@ -1758,7 +1764,7 @@
           <BeforeMake>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name></UserProg1Name>
+            <UserProg1Name>RTE\PikaScript\pikaBeforBuild-keil.bat</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
@@ -2530,6 +2536,9 @@
           <GroupName>::Compiler</GroupName>
         </Group>
         <Group>
+          <GroupName>::PikaScript</GroupName>
+        </Group>
+        <Group>
           <GroupName>::Utilities</GroupName>
         </Group>
       </Groups>
@@ -2600,7 +2609,7 @@
           <BeforeMake>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name></UserProg1Name>
+            <UserProg1Name>RTE\PikaScript\pikaBeforBuild-keil.bat</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
@@ -2842,7 +2851,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>6</Optim>
+            <Optim>0</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -2865,7 +2874,7 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls>-include env_wrapper.h</MiscControls>
+              <MiscControls>-include env_wrapper.h -Omax</MiscControls>
               <Define>PICO, NDEBUG, PICO_NO_FLASH, USE_EVR_FOR_STDOUR,__PICO_USE_LCD_1IN3__=0</Define>
               <Undefine></Undefine>
               <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include;..\..\pico-sdk\src\rp2_common\boot_stage2\include;.\wrapper\pico_base;..\..\bsp\Config;..\..\bsp\LCD;..\..\bsp</IncludePath>
@@ -3372,6 +3381,9 @@
           <GroupName>::Compiler</GroupName>
         </Group>
         <Group>
+          <GroupName>::PikaScript</GroupName>
+        </Group>
+        <Group>
           <GroupName>::Utilities</GroupName>
         </Group>
       </Groups>
@@ -3390,8 +3402,8 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </component>
-      <component Cbundle="Performance Counter" Cclass="Utilities" Cgroup="perf_counter" Csub="Core" Cvariant="Library" Cvendor="GorgonMeducer" Cversion="1.9.6" condition="CMSIS-CORE">
-        <package name="perf_counter" schemaVersion="1.4" url="https://raw.githubusercontent.com/GorgonMeducer/perf_counter/CMSIS-Pack/cmsis-pack/" vendor="GorgonMeducer" version="1.9.6"/>
+      <component Cbundle="Performance Counter" Cclass="Utilities" Cgroup="perf_counter" Csub="Core" Cvariant="Library" Cvendor="GorgonMeducer" Cversion="1.9.8" condition="CMSIS-CORE">
+        <package name="perf_counter" schemaVersion="1.4" url="https://raw.githubusercontent.com/GorgonMeducer/perf_counter/CMSIS-Pack/cmsis-pack/" vendor="GorgonMeducer" version="1.9.8"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-DebugInSRAM-printf"/>
@@ -3426,12 +3438,1207 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </component>
+      <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6">
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </component>
+      <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel">
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </component>
     </components>
     <files>
       <file attr="config" category="header" name="Config\EventRecorderConf.h" version="1.1.0">
         <instance index="0">RTE\Compiler\EventRecorderConf.h</instance>
         <component Cbundle="ARM Compiler" Cclass="Compiler" Cgroup="Event Recorder" Cvariant="DAP" Cvendor="Keil" Cversion="1.5.1" condition="Cortex-M Device"/>
         <package name="ARM_Compiler" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="Keil" version="1.7.2"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-core\BaseObj.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\BaseObj.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-core\BaseObj.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\BaseObj.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-core\PikaCompiler.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaCompiler.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-core\PikaCompiler.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaCompiler.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\PikaDebug.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaDebug.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\PikaDebug_Debuger.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaDebug_Debuger.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaDebuger_Debuger.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaDebuger_Debuger.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\PikaMain.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaMain.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-core\PikaObj.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaObj.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-core\PikaObj.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaObj.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-core\PikaParser.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaParser.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-core\PikaParser.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaParser.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-core\PikaPlatform.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaPlatform.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-core\PikaPlatform.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaPlatform.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\PikaStdData.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdData.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdData_ByteArray.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdData_ByteArray.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\PikaStdData_ByteArray.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdData_ByteArray.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdData_Dict.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdData_Dict.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\PikaStdData_Dict.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdData_Dict.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdData_FILEIO.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdData_FILEIO.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\PikaStdData_FILEIO.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdData_FILEIO.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdData_List.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdData_List.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\PikaStdData_List.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdData_List.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdData_String.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdData_String.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\PikaStdData_String.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdData_String.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-lib\PikaStdLib\PikaStdData_String_Util.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdData_String_Util.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdData_Tuple.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdData_Tuple.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\PikaStdData_Tuple.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdData_Tuple.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdData_Utils.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdData_Utils.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\PikaStdData_Utils.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdData_Utils.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\PikaStdData_dict_keys.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdData_dict_keys.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\PikaStdLib.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdLib.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdLib_MemChecker.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdLib_MemChecker.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\PikaStdLib_MemChecker.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdLib_MemChecker.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdLib_RangeObj.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdLib_RangeObj.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\PikaStdLib_RangeObj.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdLib_RangeObj.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdLib_StringObj.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdLib_StringObj.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\PikaStdLib_StringObj.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdLib_StringObj.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdLib_SysObj.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdLib_SysObj.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\PikaStdLib_SysObj.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdLib_SysObj.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\PikaStdTask.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdTask.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdTask_Task.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdTask_Task.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\PikaStdTask_Task.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaStdTask_Task.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-core\PikaVM.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaVM.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-core\PikaVM.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaVM.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-core\PikaVersion.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\PikaVersion.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-core\TinyObj.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\TinyObj.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-core\TinyObj.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\TinyObj.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-api\__asset_pikaModules_py_a.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\__asset_pikaModules_py_a.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-core\__instruction_def.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\__instruction_def.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="pikascript-core\__instruction_table.cfg" version="1.10.6">
+        <instance index="0">RTE\PikaScript\__instruction_table.cfg</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-api\__pikaBinding.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\__pikaBinding.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="__pika_ooc.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\__pika_ooc.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="utility" name="clean.bat" version="1.0.1">
+        <instance index="0">RTE\PikaScript\clean.bat</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-core\dataArg.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\dataArg.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-core\dataArg.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\dataArg.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-core\dataArgs.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\dataArgs.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-core\dataArgs.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\dataArgs.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-core\dataLink.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\dataLink.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-core\dataLink.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\dataLink.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-core\dataLinkNode.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\dataLinkNode.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-core\dataLinkNode.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\dataLinkNode.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-core\dataMemory.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\dataMemory.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-core\dataMemory.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\dataMemory.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-core\dataQueue.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\dataQueue.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-core\dataQueue.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\dataQueue.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-core\dataQueueObj.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\dataQueueObj.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-core\dataQueueObj.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\dataQueueObj.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-core\dataStack.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\dataStack.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-core\dataStack.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\dataStack.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-core\dataString.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\dataString.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-core\dataString.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\dataString.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-core\dataStrs.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\dataStrs.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-core\dataStrs.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\dataStrs.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="main.py" version="1.10.6">
+        <instance index="0">RTE\PikaScript\main.py</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="utility" name="pikaBeforBuild-keil.bat" version="1.1.0">
+        <instance index="0">RTE\PikaScript\pikaBeforBuild-keil.bat</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="utility" name="pikaPackage.exe" version="1.0.0">
+        <instance index="0">RTE\PikaScript\pikaPackage.exe</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="pikascript-api\pikaScript.c" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pikaScript.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pikaScript.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pikaScript.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-core\pika_config_valid.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_config_valid.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_ALIGN.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_ALIGN.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_ANIM.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_ANIM.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_EVENT.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_EVENT.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_OPA.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_OPA.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_PALETTE.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_PALETTE.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_STATE.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_STATE.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_arc.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_arc.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_bar.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_bar.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_btn.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_btn.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_checkbox.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_checkbox.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_dropdown.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_dropdown.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_indev_t.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_indev_t.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_label.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_label.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_lv_color_t.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_lv_color_t.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_lv_event.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_lv_event.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_lv_obj.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_lv_obj.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_lv_timer_t.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_lv_timer_t.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_point_t.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_point_t.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_roller.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_roller.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_slider.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_slider.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_style_t.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_style_t.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_switch.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_switch.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_table.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_table.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_textarea.h" version="1.10.6">
+        <instance index="0">RTE\PikaScript\pika_lvgl_textarea.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="requestment.txt" version="1.1.0">
+        <instance index="0">RTE\PikaScript\requestment.txt</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="utility" name="rust-msc-latest-win10.exe" version="1.0.0">
+        <instance index="0">RTE\PikaScript\rust-msc-latest-win10.exe</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-DebugInSRAM-printf"/>
