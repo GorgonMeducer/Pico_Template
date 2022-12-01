@@ -4041,7 +4041,7 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </file>
-      <file attr="config" category="header" name="__pika_ooc.h" version="1.10.6">
+      <file attr="config" category="header" name="pikascript-core\__pika_ooc.h" version="1.10.6">
         <instance index="0">RTE\PikaScript\__pika_ooc.h</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
         <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
