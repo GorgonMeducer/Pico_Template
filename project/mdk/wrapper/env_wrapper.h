@@ -107,7 +107,10 @@
 #   define __packed_aligned     __attribute__((packed, aligned(4)))
 
 #   undef __printflike
-#   define __printflike(...)   __attribute__((format(printf, __VA_ARGS__)))
+#   define __printflike(...)    __attribute__((format(printf, __VA_ARGS__)))
+
+#   undef __noinline
+#   define __noinline           __attribute__((noinline))
 
 #endif
 
