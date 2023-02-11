@@ -137,18 +137,18 @@ typedef unsigned int        uint;
 #   define __CONCAT(a,b)        ____CONCAT(a,b)
 #endif
 
-/**
-  \brief   Get Control Register
-  \details Returns the content of the Control Register.
-  \return               Control Register value
- */
-static __force_inline uint32_t __get_current_exception(void)
-{
-  uint32_t result;
+///**
+//  \brief   Get Control Register
+//  \details Returns the content of the Control Register.
+//  \return               Control Register value
+// */
+//static __force_inline uint32_t __get_current_exception(void)
+//{
+//  uint32_t result;
 
-  __ASM volatile ("MRS %0, ipsr" : "=r" (result) );
-  return(result);
-}   
+//  __ASM volatile ("MRS %0, ipsr" : "=r" (result) );
+//  return(result);
+//}   
 
 #define __unhandled_user_irq    Default_Handler
 

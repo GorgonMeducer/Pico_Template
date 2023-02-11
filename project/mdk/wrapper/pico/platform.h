@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#ifndef _PICO_PLATFORM_H_
-#define _PICO_PLATFORM_H_
+#ifndef _PICO_PLATFORM_H
+#define _PICO_PLATFORM_H
 
 /** \file platform.h
  *  \defgroup pico_platform pico_platform
@@ -153,14 +153,14 @@ extern "C" {
  *
  * For example a `uint32_t` foo that will retain its value if the program is restarted by reset.
  *
- *     uint32_t __uninitialized_ram("my_group_name") foo;
+ *     uint32_t __uninitialized_ram(foo);
  *
- * The section attribute is `.uninitialized_ram.<group>`
+ * The section attribute is `.uninitialized_data.<group>`
  *
  * \param group a string suffix to use in the section name to distinguish groups that can be linker
  *              garbage-collected independently
  */
-#define __uninitialized_ram(group) __attribute__((section(".uninitialized_ram." #group))) group
+#define __uninitialized_ram(group) __attribute__((section(".uninitialized_data." #group))) group
 
 /*! \brief Section attribute macro for placement in flash even in a COPY_TO_RAM binary
  *  \ingroup pico_platform
@@ -174,7 +174,7 @@ extern "C" {
  * \param group a string suffix to use in the section name to distinguish groups that can be linker
  *              garbage-collected independently
  */
-#define __in_flash(group) __attribute__((section(".flashdata" group)))
+#define __in_flash(group) __attribute__((section(".flashdata." group)))
 
 /*! \brief Indicates a function should not be stored in flash
  *  \ingroup pico_platform
@@ -318,6 +318,12 @@ void __attribute__((noreturn)) panic_unsupported(void);
  */
 void __attribute__((noreturn)) panic(const char *fmt, ...);
 
+#ifdef NDEBUG
+#define panic_compact(...) panic(__VA_ARGS__)
+#else
+#define panic_compact(...) panic("")
+#endif
+
 // PICO_CONFIG: PICO_NO_FPGA_CHECK, Remove the FPGA platform check for small code size reduction, type=bool, default=0, advanced=true, group=pico_runtime
 #ifndef PICO_NO_FPGA_CHECK
 #define PICO_NO_FPGA_CHECK 0
@@ -400,7 +406,11 @@ __force_inline static int32_t __mul_instruction(int32_t a, int32_t b) {
  *
  * \return the exception number if the CPU is handling an exception, or 0 otherwise
  */
-uint __get_current_exception(void);
+static inline uint __get_current_exception(void) {
+    uint exception;
+    asm ("mrs %0, ipsr" : "=l" (exception));
+    return exception;
+}
 
 #if defined(__IS_COMPILER_ARM_COMPILER_6__)
 #   define WRAPPER_FUNC(__FUNC)     $Sub$$##__FUNC
@@ -409,7 +419,6 @@ uint __get_current_exception(void);
 #   define WRAPPER_FUNC(x) __wrap_ ## x
 #   define REAL_FUNC(x) __real_ ## x
 #endif
-
 
 #ifdef __cplusplus
 }
