@@ -168,7 +168,7 @@ In brief,  it is an
 
 >  1.3inch LCD Display Module For Raspberry Pi Pico, 65K RGB Colors, 240×240 Pixels, SPI Interface
 
-![](https://www.waveshare.com/w/thumb.php?f=Pico-LCD-1.3-1.jpg&width=600) 
+![](https://www.waveshare.com/w/fkbk/swtumb.php?f=Pico-LCD-1.3-1.jpg&width=600) 
 
  To enable the built in support, please set the macro `__PICO_USE_LCD_1IN3__` to `1` in MDK project configuration as shown below:
 
