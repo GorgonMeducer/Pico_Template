@@ -104,7 +104,8 @@ static void system_init(void)
 #if defined(RTE_Compiler_EventRecorder) && defined(USE_EVR_FOR_STDOUR)
     EventRecorderInitialize(0, 1);
 #endif
-
+    stdio_init_all();
+    
     gpio_init(PICO_DEFAULT_LED_PIN);
     gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
 
@@ -125,6 +126,8 @@ static void system_init(void)
         dev_key_init(n);
     }
 #endif
+
+    
 }
 
 
