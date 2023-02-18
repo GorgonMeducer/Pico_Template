@@ -1,4 +1,4 @@
-# Pico_Template (v1.8.0)
+# Pico_Template (v1.8.1)
 An MDK template for Raspberry Pi Pico
 
 - **[new]Support the latest pico-sdk (v1.5.0)**

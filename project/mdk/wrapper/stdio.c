@@ -142,6 +142,7 @@ static int stdio_get_until(char *buf, int len, absolute_time_t until) {
     } while (true);
 }
 
+#if __IS_COMPILER_GCC__
 int WRAPPER_FUNC(putchar)(int c) {
     char cc = (char)c;
     stdio_put_string(&cc, 1, false, false);
@@ -154,6 +155,7 @@ int WRAPPER_FUNC(puts)(const char *s) {
     stdio_flush();
     return len;
 }
+#endif
 
 int putchar_raw(int c) {
     char cc = (char)c;
