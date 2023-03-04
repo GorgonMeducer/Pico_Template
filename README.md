@@ -1,7 +1,7 @@
 # Pico_Template (v2.0.1)
 An MDK template for Raspberry Pi Pico
 
-- **[new] Add Flash Programming algorithm. **
+- **[new] Add Flash Programming algorithm.**
 
   - **Special Thanks to [Aladdin-Wang](https://github.com/Aladdin-Wang)**, his great efforts makes our life much easier!
 
