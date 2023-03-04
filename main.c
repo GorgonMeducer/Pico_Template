@@ -35,13 +35,24 @@
 #   include "pikaScript.h"
 #endif
 
+#if defined(__RTE_ACCELERATION_ARM_2D__)
+#   include "arm_2d.h"
+#endif
+
+#if     defined(__RTE_ACCELERATION_ARM_2D_EXTRA_BENCHMARK_WATCH_PANEL__)            \
+    ||  defined(__RTE_ACCELERATION_ARM_2D_EXTRA_BENCHMARK_GENERIC__)
+#   include "arm_2d_benchmark.h"
+#endif
 /*============================ MACROS ========================================*/
 #define TOP         (0x1FFF)
 
 /*============================ MACROFIED FUNCTIONS ===========================*/
-#define ABS(__N)    ((__N) < 0 ? -(__N) : (__N))
-#define _BV(__N)    ((uint32_t)1<<(__N))
-
+#ifndef ABS
+#   define ABS(__N)    ((__N) < 0 ? -(__N) : (__N))
+#endif
+#ifndef _BV
+#   define _BV(__N)    ((uint32_t)1<<(__N))
+#endif
 
 
 /*============================ TYPES =========================================*/
@@ -145,6 +156,12 @@ int main(void)
     printf("\r\nRun Coremark 1.0...\r\n");
     coremark_main();
 #endif
+
+#if     defined(__RTE_ACCELERATION_ARM_2D_EXTRA_BENCHMARK_WATCH_PANEL__)            \
+    ||  defined(__RTE_ACCELERATION_ARM_2D_EXTRA_BENCHMARK_GENERIC__)
+    arm_2d_run_benchmark();
+#endif
+
 
     while (true) {
         breath_led();

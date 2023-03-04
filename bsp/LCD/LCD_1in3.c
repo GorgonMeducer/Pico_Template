@@ -269,6 +269,8 @@ void LCD_1IN3_Display(UWORD *Image)
     LCD_1IN3_SendCommand(0x29);
 }
 
+
+
 void GLCD_DrawBitmap(   int_fast16_t x, int_fast16_t y, 
                         int_fast16_t width, int_fast16_t height,
                         uint16_t *frame_ptr)
@@ -282,6 +284,15 @@ void GLCD_DrawBitmap(   int_fast16_t x, int_fast16_t y,
     
     DEV_Digital_Write(EPD_CS_PIN, 1);
     LCD_1IN3_SendCommand(0x29);
+}
+
+void Disp0_DrawBitmap(  int16_t x, 
+                        int16_t y, 
+                        int16_t width, 
+                        int16_t height, 
+                        const uint8_t *bitmap)
+{
+    GLCD_DrawBitmap(x, y, width, height, (uint16_t *)bitmap);
 }
 
 void LCD_1IN3_DisplayWindows(UWORD Xstart, UWORD Ystart, UWORD Xend, UWORD Yend, UWORD *Image)
