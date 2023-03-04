@@ -1,4 +1,4 @@
-# Pico_Template (v2.0.0)
+# Pico_Template (v2.0.1)
 An MDK template for Raspberry Pi Pico
 
 - **[new] Add Flash Programming algorithm. **
@@ -15,9 +15,11 @@ An MDK template for Raspberry Pi Pico
 
 - Compatible with CMSIS 5.7.0, CMSIS 5.8.0 and above
 
-- Verified with Arm Compiler 6.15 and above.
-
 - Provide users an option to use the ***stdio*** solution from ***pico-sdk (by default)*** or retarget the ***stdin/stdout*** to a user specified location directly. (See note in ***env_wrapper.c***).
+
+- **[new] Ready for running [Arm-2D](https://github.com/ARM-software/Arm-2D) benchmarks**
+
+- **[new] Ready for coremark**
 
 - **Support Debug in MDK**
 
@@ -182,6 +184,8 @@ void GLCD_DrawBitmap(   int_fast16_t x, int_fast16_t y,
                         uint16_t *frame_ptr);
 ```
 
+**NOTE**: an alternative API, i.e. `Disp0_DrawBitmap`, is ready for working with Arm-2D. 
+
 - Use the API `dev_read_key()` to read the key status of the 1.3 inch LCD board:
 
 ```c
@@ -235,6 +239,48 @@ Pico-Template supports [PikaScript](https://github.com/pikasTech/pikascript) via
 **NOTE**: The first time compilation after ***selecting the Before Build/Rebuild*** might takes a longer time than you thought. 
 
 ![](./documents/Pictures/EnableThePikaBeforeBuild.png) 
+
+### 2.6 How to run Coremark
+
+With the help from `perf_counter v2.0.0` , we can now run **[coremark](https://github.com/eembc/coremark)** on Pico-Template with just one click in RTE as shown below:
+
+![](./documents/Pictures/Select_Coremark_In_RTE.png) 
+
+A code in `main()` will run the coremark after that:
+
+```c
+int main(void) 
+{
+    system_init();
+
+    printf("Hello Pico-Template\r\n");
+    
+    ...
+
+#if defined( __PERF_COUNTER_COREMARK__ ) && __PERF_COUNTER_COREMARK__
+    printf("\r\nRun Coremark 1.0...\r\n");
+    coremark_main();
+#endif
+    ...
+    
+    while (true) {
+        breath_led();
+        ...
+    }
+}
+```
+
+By default, you can observe the test result in **Debug (printf) View** as shown below:
+
+![](./documents/Pictures/coremark_result.png) 
+
+
+
+**NOTE**: **The coremark has to run at least 10 secs to generate a valid result**. Fail to do so,  you can change the macro `ITERATIONS` defined in `core_portme.h` to a bigger value and try again.
+
+![](./documents/Pictures/core_portme.png) 
+
+
 
 # Known issue
 

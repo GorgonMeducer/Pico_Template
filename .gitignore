@@ -63,3 +63,6 @@ project/mdk/template.uf2
 project/mdk/RTE/PikaScript
 RTE_Components.h
 Pre_Include_*
+project/mdk/RTE/Acceleration/README.md
+project/mdk/RTE/Acceleration/img2c.py
+project/mdk/RTE/Acceleration/arm_2d.c
