@@ -144,8 +144,8 @@ When using configuration**AC6-DebugInSRAM-printf**, all ***printf*** output is r
 
 Pico-Template provides a dedicated project configuration for downloading and debugging code in SRAM. This is the most convenient one and it delivers the best development experience among the three configurations. To use it, please follow the steps below:
 
-1. Boot the Pico with the BOOTSEL button pressed. 
-2. Drag and drop **pico-debug-gimmecache.uf2 **to RPI-RP2 mass-storage driver in the explorer. It immediately reboots as a CMSIS-DAP adapter. Pico-debug loads as a RAM only .uf2 image, meaning that it is never written to flash and doesn't replace existing user code.
+1. Boot the Pico with the **BOOTSEL** button pressed. 
+2. Drag and drop **pico-debug-gimmecache.uf2** to RPI-RP2 mass-storage driver in the explorer. It immediately reboots as a **CMSIS-DAP adapter**. Pico-debug loads as a RAM only `.uf2` image, meaning that it is never written to flash and doesn't replace existing user code.
 3. Compile and Debug
 5. Enjoy...
 
