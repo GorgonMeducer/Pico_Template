@@ -59,9 +59,13 @@ LR_IROM1 0x10000100 FLASH_SIZE - ImageLength(LR_STAGE2_BOOT)  {    ; load region
     ;}
 
     RW_IRAM +0 RAMSIZE_VALID {  ; RW data
-        * (+RW +ZI)
+        .ANY (+RW +ZI)
         * (+RO-CODE)
         * (+XO)
+    }
+    
+    RW_IRAM_NO_INIT +0 UNINIT {
+        .ANY (.bss.noinit)
     }
 
 }

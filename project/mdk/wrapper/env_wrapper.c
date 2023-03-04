@@ -65,7 +65,7 @@ int stdin_getchar(void)
     return byte;
 }
 
-#if defined(RTE_Compiler_EventRecorder) && defined(USE_EVR_FOR_STDOUR)
+#if defined(RTE_Compiler_EventRecorder) && defined(RTE_Compiler_IO_STDOUT_EVR)
 static int stdout_putchar (int ch) {
   static uint32_t index = 0U;
   static uint8_t  buffer[8];

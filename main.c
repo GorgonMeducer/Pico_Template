@@ -27,7 +27,7 @@
 #include <stdio.h>
 
 #include "RTE_Components.h"
-#if defined(RTE_Compiler_EventRecorder) && defined(USE_EVR_FOR_STDOUR)
+#if defined(RTE_Compiler_EventRecorder) && defined(RTE_Compiler_IO_STDOUT_EVR)
 #   include <EventRecorder.h>
 #endif
 
@@ -101,7 +101,7 @@ static void system_init(void)
      */
     init_cycle_counter(false);
 
-#if defined(RTE_Compiler_EventRecorder) && defined(USE_EVR_FOR_STDOUR)
+#if defined(RTE_Compiler_EventRecorder) && defined(RTE_Compiler_IO_STDOUT_EVR)
     EventRecorderInitialize(0, 1);
 #endif
     stdio_init_all();
@@ -140,8 +140,12 @@ int main(void)
 #if defined(RTE_Script_PikaScript)
     pikaScriptInit();
 #endif
-    
-    
+
+#if defined( __PERF_COUNTER_COREMARK__ ) && __PERF_COUNTER_COREMARK__
+    printf("\r\nRun Coremark 1.0...\r\n");
+    coremark_main();
+#endif
+
     while (true) {
         breath_led();
         //gpio_put(PICO_DEFAULT_LED_PIN, 1);

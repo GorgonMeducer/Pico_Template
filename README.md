@@ -1,23 +1,37 @@
-# Pico_Template (v1.8.1)
+# Pico_Template (v2.0.0)
 An MDK template for Raspberry Pi Pico
 
-- **[new]Support the latest pico-sdk (v1.5.0)**
+- **[new] Add Flash Programming algorithm. **
+
+  - **Special Thanks to [Aladdin-Wang](https://github.com/Aladdin-Wang)**, his great efforts makes our life much easier!
+
+- **Support the latest pico-sdk (v1.5.0)**
+
 - Compiler: Arm Compiler 6.15 and above (Using non-intrusive wrapper to support pico-sdk which is written in GCC)
-- ***It works as you wanted!***
+
 - Add support for popular [LCD 1.3inc module](https://www.waveshare.com/wiki/Pico-LCD-1.3) 
-- **[new]** Support an ultra-lightweight python VM: [PikaScript](https://github.com/pikasTech/pikascript) (via cmsis-pack)
+
+- Support an ultra-lightweight python VM: [PikaScript](https://github.com/pikasTech/pikascript) (via cmsis-pack)
+
 - Compatible with CMSIS 5.7.0, CMSIS 5.8.0 and above
+
 - Verified with Arm Compiler 6.15 and above.
+
 - Provide users an option to use the ***stdio*** solution from ***pico-sdk (by default)*** or retarget the ***stdin/stdout*** to a user specified location directly. (See note in ***env_wrapper.c***).
-- Support Debug in MDK
+
+- **Support Debug in MDK**
+
   - [Using CMSIS-DAP](https://github.com/majbthrd/pico-debug) (Validated in MDK and **highly recommended**)
+  - **Support Flash Downloading**
+
 - Add dedicated project configurations for:
   - [**AC6-flash**] Running code in Flash (XIP)
+
   - [**AC6-RunInSRAM**] Running code in SRAM (code is still stored in FLASH)
-  - [**AC6-DebugInSRAM**] "no_flash" mode in the original pico-sdk. It is suitable for MDK debug.
-  - [**AC6-DebugInSRAM-printf**] same as [**AC6-DebugInSRAM**] but retargeting printf to 'Debug (printf) Viewer' inside MDK.
 
+  - [**AC6-DebugInSRAM**] "no_flash" mode in the original pico-sdk.
 
+    
 
 
 # How to Use
@@ -126,14 +140,11 @@ When using configuration**AC6-DebugInSRAM-printf**, all ***printf*** output is r
 
 
 
-#### 2.3.1 For AC6-DebugInSRAM configuration
-
 Pico-Template provides a dedicated project configuration for downloading and debugging code in SRAM. This is the most convenient one and it delivers the best development experience among the three configurations. To use it, please follow the steps below:
 
 1. Boot the Pico with the BOOTSEL button pressed. 
 2. Drag and drop **pico-debug-gimmecache.uf2 **to RPI-RP2 mass-storage driver in the explorer. It immediately reboots as a CMSIS-DAP adapter. Pico-debug loads as a RAM only .uf2 image, meaning that it is never written to flash and doesn't replace existing user code.
-3. Open your project which is based on our Pico-Template and switch to ***AC6-DebugInSRAM*** configuration.
-4. Compile and Debug
+3. Compile and Debug
 5. Enjoy...
 
 **NOTE: **
@@ -143,20 +154,6 @@ Pico-Template provides a dedicated project configuration for downloading and deb
 ![image-20210919180644156](documents/Pictures/Reset_Pico.png) 
 
 **2. If you cannot find this Toolbox, please start your debug session and go to menu "View"->"Toolbox Window".**
-
-#### 2.3.2 For Other configurations
-
-Besides the project configuration aforementioned, i.e. **DebugInSRAM** , the rest of configurations require users to download the generated uf2 file, i.e. template.uf2, first. To use those configurations, please follow the steps below:
-
-1. Open your project which is based on our Pico-Template and switch to your desired project configuration, e.g. RunInFlash
-2. Compile and there should be an generated uf2 file. 
-3. Boot the Pico with the BOOTSEL button pressed. 
-4. Drag and drop **your generated uf2 file, e.g. template.uf2 **to RPI-RP2 mass-storage driver in the explorer.
-5. Boot the Pico with the BOOTSEL button pressed. 
-6. Drag and drop **pico-debug-gimmecache.uf2 **to RPI-RP2 mass-storage driver in the explorer. It immediately reboots as a CMSIS-DAP adapter. Pico-debug loads as a RAM only .uf2 image, meaning that it is never written to flash and doesn't replace existing user code.
-7. Enjoy...
-
- **NOTE: For each update of project, you have to go through the steps above from 2 to 6... I guess the step 7 will never happen...**
 
 
 
