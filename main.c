@@ -146,7 +146,9 @@ int main(void)
 {
     system_init();
 
-    printf("Hello Pico-Template\r\n");
+    __cycleof__("printf") {
+        printf("Hello Pico-Template\r\n");
+    }
     
 #if defined(RTE_Script_PikaScript)
     pikaScriptInit();
