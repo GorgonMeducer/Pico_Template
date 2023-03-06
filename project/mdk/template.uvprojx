@@ -82,7 +82,7 @@
           <AfterMake>
             <RunUserProg1>1</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name>.\axf2uf2.bat</UserProg1Name>
+            <UserProg1Name>.\axf2uf2.bat $K</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
@@ -2585,8 +2585,8 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </component>
-      <component Cbundle="Performance Counter" Cclass="Utilities" Cgroup="perf_counter" Csub="Benchmark" Cvariant="Coremark" Cvendor="GorgonMeducer" Cversion="1.0.0" condition="perf_counter">
-        <package name="perf_counter" schemaVersion="1.4" url="https://raw.githubusercontent.com/GorgonMeducer/perf_counter/CMSIS-Pack/cmsis-pack/" vendor="GorgonMeducer" version="2.0.0"/>
+      <component Cbundle="Performance Counter" Cclass="Utilities" Cgroup="perf_counter" Csub="Benchmark" Cvariant="Coremark" Cvendor="GorgonMeducer" Cversion="1.1.0" condition="perf_counter">
+        <package name="perf_counter" schemaVersion="1.4" url="https://raw.githubusercontent.com/GorgonMeducer/perf_counter/CMSIS-Pack/cmsis-pack/" vendor="GorgonMeducer" version="2.1.0-dev2"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-RunInSRAM"/>
@@ -3309,20 +3309,20 @@
         <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
         <targetInfos/>
       </file>
-      <file attr="config" category="source" name="benchmark\coremark_port\core_portme.c" version="1.0.0">
+      <file attr="config" category="source" name="benchmark\coremark_port\core_portme.c" version="1.1.0">
         <instance index="0">RTE\Utilities\core_portme.c</instance>
-        <component Cbundle="Performance Counter" Cclass="Utilities" Cgroup="perf_counter" Csub="Benchmark" Cvariant="Coremark" Cvendor="GorgonMeducer" Cversion="1.0.0" condition="perf_counter"/>
-        <package name="perf_counter" schemaVersion="1.4" url="https://raw.githubusercontent.com/GorgonMeducer/perf_counter/CMSIS-Pack/cmsis-pack/" vendor="GorgonMeducer" version="2.0.0"/>
+        <component Cbundle="Performance Counter" Cclass="Utilities" Cgroup="perf_counter" Csub="Benchmark" Cvariant="Coremark" Cvendor="GorgonMeducer" Cversion="1.1.0" condition="perf_counter"/>
+        <package name="perf_counter" schemaVersion="1.4" url="https://raw.githubusercontent.com/GorgonMeducer/perf_counter/CMSIS-Pack/cmsis-pack/" vendor="GorgonMeducer" version="2.1.0-dev2"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-RunInSRAM"/>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </file>
-      <file attr="config" category="header" name="benchmark\coremark_port\core_portme.h" version="1.0.0">
+      <file attr="config" category="header" name="benchmark\coremark_port\core_portme.h" version="1.1.0">
         <instance index="0">RTE\Utilities\core_portme.h</instance>
-        <component Cbundle="Performance Counter" Cclass="Utilities" Cgroup="perf_counter" Csub="Benchmark" Cvariant="Coremark" Cvendor="GorgonMeducer" Cversion="1.0.0" condition="perf_counter"/>
-        <package name="perf_counter" schemaVersion="1.4" url="https://raw.githubusercontent.com/GorgonMeducer/perf_counter/CMSIS-Pack/cmsis-pack/" vendor="GorgonMeducer" version="2.0.0"/>
+        <component Cbundle="Performance Counter" Cclass="Utilities" Cgroup="perf_counter" Csub="Benchmark" Cvariant="Coremark" Cvendor="GorgonMeducer" Cversion="1.1.0" condition="perf_counter"/>
+        <package name="perf_counter" schemaVersion="1.4" url="https://raw.githubusercontent.com/GorgonMeducer/perf_counter/CMSIS-Pack/cmsis-pack/" vendor="GorgonMeducer" version="2.1.0-dev2"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-RunInSRAM"/>

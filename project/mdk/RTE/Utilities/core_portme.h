@@ -76,7 +76,7 @@ Original Author: Shay Gal-on
 /* Configuration : CORE_TICKS
         Define type of return from the timing functions.
  */
-typedef int32_t CORE_TICKS;
+typedef int64_t CORE_TICKS;
 
 /* Definitions : COMPILER_VERSION, COMPILER_FLAGS, MEM_LOCATION
         Initialize these strings per platform
@@ -205,7 +205,7 @@ typedef size_t         ee_size_t;
 #endif
 
 #ifndef ITERATIONS
-#define ITERATIONS  3200
+#define ITERATIONS  4000
 #endif
 
 /* Variable : default_num_contexts
