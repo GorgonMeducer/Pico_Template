@@ -4,6 +4,7 @@ An MDK template for Raspberry Pi Pico
 - **[new] Add Flash Programming algorithm.**
 
   - **Special thanks to [Aladdin-Wang](https://github.com/Aladdin-Wang)**. [His extraordinary work](https://github.com/Aladdin-Wang/RP2040_Flash_Algorithm) makes our life much easier!
+  - **Special thanks to [fang316](https://github.com/fang316)**, whoes suggestion improves the way of how the flash programming algorithm is deployed. 
 
 - **Support the latest pico-sdk (v1.5.0)**
 
