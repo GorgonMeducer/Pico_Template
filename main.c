@@ -35,8 +35,11 @@
 #   include "pikaScript.h"
 #endif
 
-#if defined(__RTE_ACCELERATION_ARM_2D__)
+#if defined(__RTE_ACCELERATION_ARM_2D__) || defined(RTE_Acceleration_Arm_2D)
 #   include "arm_2d.h"
+#   include "arm_2d_helper.h"
+#   include "arm_2d_disp_adapters.h"
+#   include "arm_2d_scenes.h"
 #endif
 
 #if     defined(__RTE_ACCELERATION_ARM_2D_EXTRA_BENCHMARK_WATCH_PANEL__)            \
@@ -141,7 +144,6 @@ static void system_init(void)
     
 }
 
-
 int main(void) 
 {
     system_init();
@@ -164,9 +166,19 @@ int main(void)
     arm_2d_run_benchmark();
 #endif
 
+#if defined(__RTE_ACCELERATION_ARM_2D__) || defined(RTE_Acceleration_Arm_2D)
+    arm_2d_init();
+    disp_adapter0_init();
+    
+    //arm_2d_scene_player_switch_to_next_scene(&DISP0_ADAPTER);
+#endif
 
     while (true) {
         breath_led();
+
+#if defined(__RTE_ACCELERATION_ARM_2D__) || defined(RTE_Acceleration_Arm_2D)
+        disp_adapter0_task();
+#endif
         //gpio_put(PICO_DEFAULT_LED_PIN, 1);
         //sleep_ms(500);
         //gpio_put(PICO_DEFAULT_LED_PIN, 0);

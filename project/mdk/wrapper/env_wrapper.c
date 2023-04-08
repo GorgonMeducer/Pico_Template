@@ -166,7 +166,7 @@ void _sys_exit(int ret)
 #endif
 
 
-#if defined(RTE_Compiler_EventRecorder)
+#if defined(RTE_Compiler_EventRecorder) && !defined(__PERF_COUNTER__)
 
 uint32_t EventRecorderTimerSetup(void)
 {
