@@ -27,7 +27,7 @@
 
 //   <o>Time Stamp Clock Frequency [Hz] <0-1000000000>
 //   <i>Defines initial time stamp clock frequency (0 when not used)
-#define EVENT_TIMESTAMP_FREQ    125000000U
+#define EVENT_TIMESTAMP_FREQ    0
 
 // </h>
 
