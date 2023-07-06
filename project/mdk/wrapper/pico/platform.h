@@ -68,8 +68,79 @@
 
 #ifndef __ASSEMBLER__
 
+#if defined __GNUC__
 #include <sys/cdefs.h>
+// note LLVM defines __GNUC__
+#ifdef __clang__
+#define PICO_C_COMPILER_IS_CLANG 1
+#else
+#define PICO_C_COMPILER_IS_GNU 1
+#endif
+#elif defined __ICCARM__
+#ifndef __aligned
+#define __aligned(x)	__attribute__((__aligned__(x)))
+#endif
+#ifndef __always_inline
+#define __always_inline __attribute__((__always_inline__))
+#endif
+#ifndef __noinline
+#define __noinline      __attribute__((__noinline__))
+#endif
+#ifndef __packed
+#define __packed        __attribute__((__packed__))
+#endif
+#ifndef __printflike
+#define __printflike(a, b)
+#endif
+#ifndef __unused
+#define __unused        __attribute__((__unused__))
+#endif
+#ifndef __used
+#define __used          __attribute__((__used__))
+#endif
+#ifndef __CONCAT1
+#define __CONCAT1(a, b) a ## b
+#endif
+#ifndef __CONCAT
+#define __CONCAT(a, b)  __CONCAT1(a, b)
+#endif
+#ifndef __STRING
+#define __STRING(a)     #a
+#endif
+/* Compatible definitions of GCC builtins */
+
+static inline uint __builtin_ctz(uint x) {
+  extern uint32_t __ctzsi2(uint32_t);
+  return __ctzsi2(x);
+}
+#define __builtin_expect(x, y) (x)
+#define __builtin_isnan(x) __iar_isnan(x)
+#else
+#error Unsupported toolchain
+#endif
+
 #include "pico/types.h"
+
+// GCC_Like_Pragma(x) is a pragma on GNUC compatible compilers
+#ifdef __GNUC__
+#define GCC_Like_Pragma _Pragma
+#else
+#define GCC_Like_Pragma(x)
+#endif
+
+// Clang_Pragma(x) is a pragma on Clang only
+#ifdef __clang__
+#define Clang_Pragma _Pragma
+#else
+#define Clang_Pragma(x)
+#endif
+
+// GCC_Pragma(x) is a pragma on GCC only
+#if PICO_C_COMPILER_IS_GNU
+#define GCC_Pragma _Pragma
+#else
+#define GCC_Pragma(x)
+#endif
 
 #ifdef __cplusplus
 extern "C" {
@@ -77,6 +148,7 @@ extern "C" {
 
 /*! \brief Marker for an interrupt handler
  *  \ingroup pico_platform
+ *
  * For example an IRQ handler function called my_interrupt_handler:
  *
  *     void __isr my_interrupt_handler(void) {
@@ -228,19 +300,19 @@ extern "C" {
 #if !defined(__IS_COMPILER_ARM_COMPILER_6__)
     #define __packed_aligned __packed __aligned(4)
 
-    /*! \brief Attribute to force inlining of a function regardless of optimization level
-     *  \ingroup pico_platform
-     *
-     *  For example my_function here will always be inlined:
-     *
-     *      int __force_inline my_function(int x) {
-     *
-     */
-    #if defined(__GNUC__) && (__GNUC__ <= 6 || (__GNUC__ == 7 && (__GNUC_MINOR__ < 3 || !defined(__cplusplus))))
-    #define __force_inline inline __always_inline
-    #else
-    #define __force_inline __always_inline
-    #endif
+/*! \brief Attribute to force inlining of a function regardless of optimization level
+ *  \ingroup pico_platform
+ *
+ *  For example my_function here will always be inlined:
+ *
+ *      int __force_inline my_function(int x) {
+ *
+ */
+
+#if PICO_C_COMPILER_IS_GNU && (__GNUC__ <= 6 || (__GNUC__ == 7 && (__GNUC_MINOR__ < 3 || !defined(__cplusplus))))
+#define __force_inline inline __always_inline
+#else
+#define __force_inline __always_inline
 #endif
 
 /*! \brief Macro to determine the number of elements in an array
@@ -265,11 +337,14 @@ extern "C" {
 #endif
 
 #if !defined(__IS_COMPILER_ARM_COMPILER_6__)
+#define pico_default_asm(...) __asm (".syntax unified\n" __VA_ARGS__)
+#define pico_default_asm_volatile(...) __asm volatile (".syntax unified\n" __VA_ARGS__)
+
 /*! \brief Execute a breakpoint instruction
  *  \ingroup pico_platform
  */
 static inline void __breakpoint(void) {
-    __asm__("bkpt #0");
+    pico_default_asm ("bkpt #0");
 }
 #endif
 
@@ -286,7 +361,7 @@ static inline void __breakpoint(void) {
  * might - even above the memory store!)
  */
 __force_inline static void __compiler_memory_barrier(void) {
-    __asm__ volatile ("" : : : "memory");
+    pico_default_asm_volatile ("" : : : "memory");
 }
 
 /*! \brief Macro for converting memory addresses to 32 bit addresses suitable for DMA
@@ -346,10 +421,10 @@ uint8_t rp2040_chip_version(void);
  * @return the RP2040 rom version number (1 for RP2040-B0, 2 for RP2040-B1, 3 for RP2040-B2)
  */
 static inline uint8_t rp2040_rom_version(void) {
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Warray-bounds"
+GCC_Pragma("GCC diagnostic push")
+GCC_Pragma("GCC diagnostic ignored \"-Warray-bounds\"")
     return *(uint8_t*)0x13;
-#pragma GCC diagnostic pop
+GCC_Pragma("GCC diagnostic pop")
 }
 
 /*! \brief No-op function for the body of tight loops
@@ -372,7 +447,7 @@ static __force_inline void tight_loop_contents(void) {}
  * \return a * b
  */
 __force_inline static int32_t __mul_instruction(int32_t a, int32_t b) {
-    asm ("mul %0, %1" : "+l" (a) : "l" (b) : );
+    pico_default_asm ("muls %0, %1" : "+l" (a) : "l" (b) : );
     return a;
 }
 
@@ -406,9 +481,9 @@ __force_inline static int32_t __mul_instruction(int32_t a, int32_t b) {
  *
  * \return the exception number if the CPU is handling an exception, or 0 otherwise
  */
-static inline uint __get_current_exception(void) {
+static __force_inline uint __get_current_exception(void) {
     uint exception;
-    asm ("mrs %0, ipsr" : "=l" (exception));
+    pico_default_asm( "mrs %0, ipsr" : "=l" (exception));
     return exception;
 }
 
@@ -439,11 +514,10 @@ static inline uint __get_current_exception(void) {
  * \param minimum_cycles the minimum number of system clock cycles to delay for
  */
 static inline void busy_wait_at_least_cycles(uint32_t minimum_cycles) {
-    __asm volatile (
-        ".syntax unified\n"
+    pico_default_asm_volatile(
         "1: subs %0, #3\n"
         "bcs 1b\n"
-        : "+r" (minimum_cycles) : : "memory"
+        : "+l" (minimum_cycles) : : "memory"
     );
 }
 
@@ -456,7 +530,23 @@ __force_inline static uint get_core_num(void) {
     return (*(uint32_t *) (SIO_BASE + SIO_CPUID_OFFSET));
 }
 
+#ifdef __cplusplus
+}
+#endif
+
 #else // __ASSEMBLER__
+
+#if defined __GNUC__
+// note LLVM defines __GNUC__
+#ifdef __clang__
+#define PICO_ASSEMBLER_IS_CLANG 1
+#else
+#define PICO_ASSEMBLER_IS_GNU 1
+#endif
+#elif defined __ICCARM__
+#else
+#error Unsupported toolchain
+#endif
 
 #define WRAPPER_FUNC_NAME(x) __wrap_##x
 #define SECTION_NAME(x) .text.##x

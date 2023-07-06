@@ -786,6 +786,56 @@
               <FileType>1</FileType>
               <FilePath>..\..\pico-sdk\src\rp2_common\hardware_dma\dma.c</FilePath>
             </File>
+            <File>
+              <FileName>divider.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\hardware_divider\divider.S</FilePath>
+            </File>
+            <File>
+              <FileName>bit_ops_aeabi.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_bit_ops\bit_ops_aeabi.S</FilePath>
+            </File>
+            <File>
+              <FileName>double_aeabi.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_aeabi.S</FilePath>
+            </File>
+            <File>
+              <FileName>double_init_rom.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_init_rom.c</FilePath>
+            </File>
+            <File>
+              <FileName>double_math.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_math.c</FilePath>
+            </File>
+            <File>
+              <FileName>double_none.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_none.S</FilePath>
+            </File>
+            <File>
+              <FileName>double_v1_rom_shim.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_v1_rom_shim.S</FilePath>
+            </File>
+            <File>
+              <FileName>pico_int64_ops_aeabi.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_int64_ops\pico_int64_ops_aeabi.S</FilePath>
+            </File>
+            <File>
+              <FileName>rand.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_rand\rand.c</FilePath>
+            </File>
+            <File>
+              <FileName>printf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_printf\printf.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1649,6 +1699,56 @@
               <FileType>1</FileType>
               <FilePath>..\..\pico-sdk\src\rp2_common\hardware_dma\dma.c</FilePath>
             </File>
+            <File>
+              <FileName>divider.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\hardware_divider\divider.S</FilePath>
+            </File>
+            <File>
+              <FileName>bit_ops_aeabi.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_bit_ops\bit_ops_aeabi.S</FilePath>
+            </File>
+            <File>
+              <FileName>double_aeabi.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_aeabi.S</FilePath>
+            </File>
+            <File>
+              <FileName>double_init_rom.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_init_rom.c</FilePath>
+            </File>
+            <File>
+              <FileName>double_math.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_math.c</FilePath>
+            </File>
+            <File>
+              <FileName>double_none.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_none.S</FilePath>
+            </File>
+            <File>
+              <FileName>double_v1_rom_shim.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_v1_rom_shim.S</FilePath>
+            </File>
+            <File>
+              <FileName>pico_int64_ops_aeabi.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_int64_ops\pico_int64_ops_aeabi.S</FilePath>
+            </File>
+            <File>
+              <FileName>rand.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_rand\rand.c</FilePath>
+            </File>
+            <File>
+              <FileName>printf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_printf\printf.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2510,6 +2610,56 @@
               <FileName>dma.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\pico-sdk\src\rp2_common\hardware_dma\dma.c</FilePath>
+            </File>
+            <File>
+              <FileName>divider.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\hardware_divider\divider.S</FilePath>
+            </File>
+            <File>
+              <FileName>bit_ops_aeabi.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_bit_ops\bit_ops_aeabi.S</FilePath>
+            </File>
+            <File>
+              <FileName>double_aeabi.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_aeabi.S</FilePath>
+            </File>
+            <File>
+              <FileName>double_init_rom.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_init_rom.c</FilePath>
+            </File>
+            <File>
+              <FileName>double_math.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_math.c</FilePath>
+            </File>
+            <File>
+              <FileName>double_none.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_none.S</FilePath>
+            </File>
+            <File>
+              <FileName>double_v1_rom_shim.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_v1_rom_shim.S</FilePath>
+            </File>
+            <File>
+              <FileName>pico_int64_ops_aeabi.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_int64_ops\pico_int64_ops_aeabi.S</FilePath>
+            </File>
+            <File>
+              <FileName>rand.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_rand\rand.c</FilePath>
+            </File>
+            <File>
+              <FileName>printf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_printf\printf.c</FilePath>
             </File>
           </Files>
         </Group>
