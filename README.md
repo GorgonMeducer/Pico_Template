@@ -175,6 +175,7 @@ To make it easier for people to turn Pico into a 'game pad', I've picked a popul
 In brief,  it is an
 
 >  1.3inch LCD Display Module For Raspberry Pi Pico, 65K RGB Colors, 240×240 Pixels, SPI Interface
+![1 3inch-lcd-hat-1](https://github.com/GorgonMeducer/Pico_Template/assets/13148491/36df1b2b-54da-4059-b44e-25688224ff21)
 
 
 
@@ -204,6 +205,7 @@ To make it easier for people to create watch faces, I've picked a popular  [LCD 
 In brief,  it is an
 
 >  RP2040 MCU Board, With 1.28inch Round LCD, accelerometer and gyroscope Sensor
+![rp2040-lcd-1 28-1_1](https://github.com/GorgonMeducer/Pico_Template/assets/13148491/da754f96-e384-45a0-96c5-4804a1c9434d)
 
 
 
@@ -223,7 +225,7 @@ Pico-Template supports [PikaScript](https://github.com/pikasTech/pikascript) via
 
 ![](./documents/Pictures/EnableThePikaBeforeBuild.png) 
 
-### 2.6 How to run Coremark
+### 2.7 How to run Coremark
 
 With the help from `perf_counter v2.0.0` , we can now run **[coremark](https://github.com/eembc/coremark)** on Pico-Template with just one click in RTE as shown below:
 
