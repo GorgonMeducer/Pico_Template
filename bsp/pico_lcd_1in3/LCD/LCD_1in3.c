@@ -12,7 +12,7 @@
 *
 ******************************************************************************/
 #include "LCD_1in3.h"
-#include "DEV_Config.h"
+#include "../Config/DEV_Config.h"
 
 #include <stdlib.h>		//itoa()
 #include <stdio.h>

@@ -17,12 +17,7 @@
 /*============================ INCLUDES ======================================*/
 #include "pico/stdlib.h"
 #include "perf_counter.h"
-
-#if defined(__PICO_USE_LCD_1IN3__) && __PICO_USE_LCD_1IN3__
-#include "DEV_Config.h"
-#include "LCD_1In3.h"
-#include "GLCD_Config.h"
-#endif
+#include "bsp/bsp.h"
 
 #include <stdio.h>
 
@@ -42,22 +37,13 @@
 #   include "arm_2d_scenes.h"
 #endif
 
-#if     defined(__RTE_ACCELERATION_ARM_2D_EXTRA_BENCHMARK_WATCH_PANEL__)            \
+#if     defined(__RTE_ACCELERATION_ARM_2D_EXTRA_BENCHMARK_WATCH_PANEL__)        \
     ||  defined(__RTE_ACCELERATION_ARM_2D_EXTRA_BENCHMARK_GENERIC__)
 #   include "arm_2d_benchmark.h"
 #endif
+
 /*============================ MACROS ========================================*/
-#define TOP         (0x1FFF)
-
 /*============================ MACROFIED FUNCTIONS ===========================*/
-#ifndef ABS
-#   define ABS(__N)    ((__N) < 0 ? -(__N) : (__N))
-#endif
-#ifndef _BV
-#   define _BV(__N)    ((uint32_t)1<<(__N))
-#endif
-
-
 /*============================ TYPES =========================================*/
 /*============================ GLOBAL VARIABLES ==============================*/
 /*============================ LOCAL VARIABLES ===============================*/
@@ -67,40 +53,6 @@
 void SysTick_Handler(void)
 {
 
-}
-
-/*! \brief set the 16-level led gradation
- *! \param hwLevel gradation
- *! \return none
- */
-static void set_led_gradation(uint16_t hwLevel)
-{
-    static uint16_t s_hwCounter = 0;
-    
-    if (hwLevel >= s_hwCounter) {
-        gpio_put(PICO_DEFAULT_LED_PIN, 1);
-    } else {
-        gpio_put(PICO_DEFAULT_LED_PIN, 0);
-    }
-    
-    s_hwCounter++;
-    s_hwCounter &= TOP;
-}
-
-static void breath_led(void)
-{
-    static uint16_t s_hwCounter = 0;
-    static int16_t s_nGray = (TOP >> 1);
-    
-    s_hwCounter++;
-    if (!(s_hwCounter & (_BV(10)-1))) {
-        s_nGray++; 
-        if (s_nGray == TOP) {
-            s_nGray = 0;
-        }
-    }
-    
-    set_led_gradation(ABS(s_nGray - (TOP >> 1)));
 }
 
 static void system_init(void)
@@ -119,29 +71,8 @@ static void system_init(void)
     EventRecorderInitialize(0, 1);
 #endif
     stdio_init_all();
-    
-    gpio_init(PICO_DEFAULT_LED_PIN);
-    gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
 
-#if defined(__PICO_USE_LCD_1IN3__) && __PICO_USE_LCD_1IN3__
-    DEV_Delay_ms(100);
-
-    if(DEV_Module_Init()!=0){
-        //assert(0);
-    }
-   
-    DEV_SET_PWM(50);
-    /* LCD Init */
-    
-    LCD_1IN3_Init(HORIZONTAL);
-    LCD_1IN3_Clear(GLCD_COLOR_BLUE);
-    
-    for (int n = 0; n < KEY_NUM; n++) {
-        dev_key_init(n);
-    }
-#endif
-
-    
+    bsp_init();
 }
 
 int main(void) 
@@ -179,10 +110,6 @@ int main(void)
 #if defined(__RTE_ACCELERATION_ARM_2D__) || defined(RTE_Acceleration_Arm_2D)
         disp_adapter0_task();
 #endif
-        //gpio_put(PICO_DEFAULT_LED_PIN, 1);
-        //sleep_ms(500);
-        //gpio_put(PICO_DEFAULT_LED_PIN, 0);
-        //sleep_ms(500);
     }
     //return 0;
 }
