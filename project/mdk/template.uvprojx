@@ -337,10 +337,10 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls>-include env_wrapper.h -Wno-macro-redefined  -Omax</MiscControls>
-              <Define>PICO,__PICO_USE_LCD_1IN3__=1</Define>
+              <MiscControls>-include env_wrapper.h -Wno-macro-redefined -Omax</MiscControls>
+              <Define>PICO,__PICO_USE_LCD_1IN3__=0</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_flash\include\;..\..\pico-sdk\src\rp2_common\hardware_dma\include\;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include;..\mdk</IncludePath>
+              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_flash\include\;..\..\pico-sdk\src\rp2_common\hardware_dma\include\;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include;..\mdk;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_double\include;..\..\pico-sdk\src\rp2_common\hardware_divider\include;..\..\pico-sdk\src\rp2_common\pico_rand\include;..\..\pico-sdk\src\rp2_common\pico_unique_id\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -791,51 +791,6 @@
               <FileType>2</FileType>
               <FilePath>..\..\pico-sdk\src\rp2_common\hardware_divider\divider.S</FilePath>
             </File>
-            <File>
-              <FileName>bit_ops_aeabi.S</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_bit_ops\bit_ops_aeabi.S</FilePath>
-            </File>
-            <File>
-              <FileName>double_aeabi.S</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_aeabi.S</FilePath>
-            </File>
-            <File>
-              <FileName>double_init_rom.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_init_rom.c</FilePath>
-            </File>
-            <File>
-              <FileName>double_math.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_math.c</FilePath>
-            </File>
-            <File>
-              <FileName>double_none.S</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_none.S</FilePath>
-            </File>
-            <File>
-              <FileName>double_v1_rom_shim.S</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_v1_rom_shim.S</FilePath>
-            </File>
-            <File>
-              <FileName>pico_int64_ops_aeabi.S</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_int64_ops\pico_int64_ops_aeabi.S</FilePath>
-            </File>
-            <File>
-              <FileName>rand.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_rand\rand.c</FilePath>
-            </File>
-            <File>
-              <FileName>printf.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_printf\printf.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -882,29 +837,14 @@
           <GroupName>BSP</GroupName>
           <Files>
             <File>
-              <FileName>DEV_Config.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\bsp\pico_lcd_1in3\Config\DEV_Config.c</FilePath>
+              <FileName>pr2040_bsp.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>..\..\bsp\lib\pr2040_bsp.lib</FilePath>
             </File>
             <File>
-              <FileName>LCD_1in3.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\bsp\pico_lcd_1in3\LCD\LCD_1in3.c</FilePath>
-            </File>
-            <File>
-              <FileName>LCD_1in3.h</FileName>
+              <FileName>bsp.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\..\bsp\pico_lcd_1in3\LCD\LCD_1in3.h</FilePath>
-            </File>
-            <File>
-              <FileName>bsp_standard.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\bsp\pico_standard\bsp_standard.c</FilePath>
-            </File>
-            <File>
-              <FileName>bsp_lcd_1in3.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\bsp\pico_lcd_1in3\bsp_lcd_1in3.c</FilePath>
+              <FilePath>..\..\bsp\bsp.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -1704,51 +1644,6 @@
               <FileType>2</FileType>
               <FilePath>..\..\pico-sdk\src\rp2_common\hardware_divider\divider.S</FilePath>
             </File>
-            <File>
-              <FileName>bit_ops_aeabi.S</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_bit_ops\bit_ops_aeabi.S</FilePath>
-            </File>
-            <File>
-              <FileName>double_aeabi.S</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_aeabi.S</FilePath>
-            </File>
-            <File>
-              <FileName>double_init_rom.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_init_rom.c</FilePath>
-            </File>
-            <File>
-              <FileName>double_math.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_math.c</FilePath>
-            </File>
-            <File>
-              <FileName>double_none.S</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_none.S</FilePath>
-            </File>
-            <File>
-              <FileName>double_v1_rom_shim.S</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_v1_rom_shim.S</FilePath>
-            </File>
-            <File>
-              <FileName>pico_int64_ops_aeabi.S</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_int64_ops\pico_int64_ops_aeabi.S</FilePath>
-            </File>
-            <File>
-              <FileName>rand.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_rand\rand.c</FilePath>
-            </File>
-            <File>
-              <FileName>printf.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_printf\printf.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -1795,29 +1690,14 @@
           <GroupName>BSP</GroupName>
           <Files>
             <File>
-              <FileName>DEV_Config.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\bsp\pico_lcd_1in3\Config\DEV_Config.c</FilePath>
+              <FileName>pr2040_bsp.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>..\..\bsp\lib\pr2040_bsp.lib</FilePath>
             </File>
             <File>
-              <FileName>LCD_1in3.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\bsp\pico_lcd_1in3\LCD\LCD_1in3.c</FilePath>
-            </File>
-            <File>
-              <FileName>LCD_1in3.h</FileName>
+              <FileName>bsp.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\..\bsp\pico_lcd_1in3\LCD\LCD_1in3.h</FilePath>
-            </File>
-            <File>
-              <FileName>bsp_standard.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\bsp\pico_standard\bsp_standard.c</FilePath>
-            </File>
-            <File>
-              <FileName>bsp_lcd_1in3.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\bsp\pico_lcd_1in3\bsp_lcd_1in3.c</FilePath>
+              <FilePath>..\..\bsp\bsp.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2616,51 +2496,6 @@
               <FileType>2</FileType>
               <FilePath>..\..\pico-sdk\src\rp2_common\hardware_divider\divider.S</FilePath>
             </File>
-            <File>
-              <FileName>bit_ops_aeabi.S</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_bit_ops\bit_ops_aeabi.S</FilePath>
-            </File>
-            <File>
-              <FileName>double_aeabi.S</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_aeabi.S</FilePath>
-            </File>
-            <File>
-              <FileName>double_init_rom.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_init_rom.c</FilePath>
-            </File>
-            <File>
-              <FileName>double_math.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_math.c</FilePath>
-            </File>
-            <File>
-              <FileName>double_none.S</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_none.S</FilePath>
-            </File>
-            <File>
-              <FileName>double_v1_rom_shim.S</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_double\double_v1_rom_shim.S</FilePath>
-            </File>
-            <File>
-              <FileName>pico_int64_ops_aeabi.S</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_int64_ops\pico_int64_ops_aeabi.S</FilePath>
-            </File>
-            <File>
-              <FileName>rand.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_rand\rand.c</FilePath>
-            </File>
-            <File>
-              <FileName>printf.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\pico_printf\printf.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -2707,29 +2542,14 @@
           <GroupName>BSP</GroupName>
           <Files>
             <File>
-              <FileName>DEV_Config.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\bsp\pico_lcd_1in3\Config\DEV_Config.c</FilePath>
+              <FileName>pr2040_bsp.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>..\..\bsp\lib\pr2040_bsp.lib</FilePath>
             </File>
             <File>
-              <FileName>LCD_1in3.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\bsp\pico_lcd_1in3\LCD\LCD_1in3.c</FilePath>
-            </File>
-            <File>
-              <FileName>LCD_1in3.h</FileName>
+              <FileName>bsp.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\..\bsp\pico_lcd_1in3\LCD\LCD_1in3.h</FilePath>
-            </File>
-            <File>
-              <FileName>bsp_standard.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\bsp\pico_standard\bsp_standard.c</FilePath>
-            </File>
-            <File>
-              <FileName>bsp_lcd_1in3.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\bsp\pico_lcd_1in3\bsp_lcd_1in3.c</FilePath>
+              <FilePath>..\..\bsp\bsp.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2765,8 +2585,8 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </component>
-      <component Cclass="Utilities" Cgroup="perf_counter" Csub="Core" Cvariant="Source" Cvendor="GorgonMeducer" Cversion="2.1.0" condition="CMSIS-CORE">
-        <package name="perf_counter" schemaVersion="1.4" url="https://raw.githubusercontent.com/GorgonMeducer/perf_counter/CMSIS-Pack/cmsis-pack/" vendor="GorgonMeducer" version="2.1.0"/>
+      <component Cclass="Utilities" Cgroup="perf_counter" Csub="Core" Cvariant="Source" Cvendor="GorgonMeducer" Cversion="2.2.2" condition="CMSIS-CORE">
+        <package name="perf_counter" schemaVersion="1.7.7" url="https://raw.githubusercontent.com/GorgonMeducer/perf_counter/CMSIS-Pack/cmsis-pack/" vendor="GorgonMeducer" version="2.2.2"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-RunInSRAM"/>

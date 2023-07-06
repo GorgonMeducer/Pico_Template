@@ -300,19 +300,19 @@ extern "C" {
 #if !defined(__IS_COMPILER_ARM_COMPILER_6__)
     #define __packed_aligned __packed __aligned(4)
 
-/*! \brief Attribute to force inlining of a function regardless of optimization level
- *  \ingroup pico_platform
- *
- *  For example my_function here will always be inlined:
- *
- *      int __force_inline my_function(int x) {
- *
- */
-
-#if PICO_C_COMPILER_IS_GNU && (__GNUC__ <= 6 || (__GNUC__ == 7 && (__GNUC_MINOR__ < 3 || !defined(__cplusplus))))
-#define __force_inline inline __always_inline
-#else
-#define __force_inline __always_inline
+    /*! \brief Attribute to force inlining of a function regardless of optimization level
+     *  \ingroup pico_platform
+     *
+     *  For example my_function here will always be inlined:
+     *
+     *      int __force_inline my_function(int x) {
+     *
+     */
+    #if defined(__GNUC__) && (__GNUC__ <= 6 || (__GNUC__ == 7 && (__GNUC_MINOR__ < 3 || !defined(__cplusplus))))
+    #define __force_inline inline __always_inline
+    #else
+    #define __force_inline __always_inline
+    #endif
 #endif
 
 /*! \brief Macro to determine the number of elements in an array
@@ -336,7 +336,6 @@ extern "C" {
 #define MIN(a, b) ((b)>(a)?(a):(b))
 #endif
 
-#if !defined(__IS_COMPILER_ARM_COMPILER_6__)
 #define pico_default_asm(...) __asm (".syntax unified\n" __VA_ARGS__)
 #define pico_default_asm_volatile(...) __asm volatile (".syntax unified\n" __VA_ARGS__)
 
@@ -346,7 +345,6 @@ extern "C" {
 static inline void __breakpoint(void) {
     pico_default_asm ("bkpt #0");
 }
-#endif
 
 /*! \brief Ensure that the compiler does not move memory access across this method call
  *  \ingroup pico_platform
@@ -493,10 +491,6 @@ static __force_inline uint __get_current_exception(void) {
 #else
 #   define WRAPPER_FUNC(x) __wrap_ ## x
 #   define REAL_FUNC(x) __real_ ## x
-#endif
-
-#ifdef __cplusplus
-}
 #endif
 
 /*! \brief Helper method to busy-wait for at least the given number of cycles

@@ -1,12 +1,12 @@
-# Pico_Template (v2.0.3)
+# Pico_Template (v2.1.0)
 An MDK template for Raspberry Pi Pico
 
-- **[new] Add Flash Programming algorithm.**
+- Add Flash Programming algorithm.
 
-  - **Special thanks to [Aladdin-Wang](https://github.com/Aladdin-Wang)**. [His extraordinary work](https://github.com/Aladdin-Wang/RP2040_Flash_Algorithm) makes our life much easier!
-  - **Special thanks to [fang316](https://github.com/fang316)**, whose suggestion improves how the flash programming algorithm is deployed.
+  - Special thanks to [Aladdin-Wang](https://github.com/Aladdin-Wang). [His extraordinary work](https://github.com/Aladdin-Wang/RP2040_Flash_Algorithm) makes our life much easier!
+  - Special thanks to [fang316](https://github.com/fang316), whose suggestion improves how the flash programming algorithm is deployed.
 
-- **Support the latest pico-sdk (v1.5.0)**
+- **[new]Support the latest pico-sdk (v1.5.1)**
 
 - Compiler: Arm Compiler 6.15 and above (Using non-intrusive wrapper to support pico-sdk which is written in GCC)
 
@@ -18,9 +18,9 @@ An MDK template for Raspberry Pi Pico
 
 - Provide users an option to use the ***stdio*** solution from ***pico-sdk (by default)*** or retarget the ***stdin/stdout*** to a user specified location directly. (See note in ***env_wrapper.c***).
 
-- **[new] Ready for running [Arm-2D](https://github.com/ARM-software/Arm-2D) benchmarks**
+- **Ready for running [Arm-2D](https://github.com/ARM-software/Arm-2D) benchmarks**
 
-- **[new] Ready for coremark**
+- **Ready for coremark**
 
 - **Support Debug in MDK**
 
@@ -54,11 +54,12 @@ git submodule update --init
 
 Instead of using git clone, if you download a release package, then you have to download the [pico-sdk](https://github.com/raspberrypi/pico-sdk) manually and put them into the corresponding folder:
 
-| submodules | URL                                     | Directory      |
-| ---------- | --------------------------------------- | -------------- |
-| pico-sdk   | https://github.com/raspberrypi/pico-sdk | ROOT\Pico-sdk\ |
+| submodules | URL                                         | Directory      |
+| ---------- | ------------------------------------------- | -------------- |
+| pico-sdk   | https://github.com/raspberrypi/pico-sdk     | ROOT\Pico-sdk\ |
+| bsp        | https://github.com/GorgonMeducer/RP2040_BSP | ROOT\bsp       |
 
-The project template also depends on [perf_counter](https://github.com/GorgonMeducer/perf_counter) which is deployed with a **cmsis-pack** that you can find in the root folder. 
+The project template also depends on [perf_counter](https://github.com/GorgonMeducer/perf_counter) which is deployed with a **cmsis-pack** that you can find in the **MDK pack installer**. 
 
 
 
