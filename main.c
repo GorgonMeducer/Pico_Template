@@ -37,8 +37,7 @@
 #   include "arm_2d_scenes.h"
 #endif
 
-#if     defined(__RTE_ACCELERATION_ARM_2D_EXTRA_BENCHMARK_WATCH_PANEL__)        \
-    ||  defined(__RTE_ACCELERATION_ARM_2D_EXTRA_BENCHMARK_GENERIC__)
+#if defined(RTE_Acceleration_Arm_2D_Extra_Benchmark)
 #   include "arm_2d_benchmark.h"
 #endif
 
@@ -92,16 +91,18 @@ int main(void)
     coremark_main();
 #endif
 
-#if     defined(__RTE_ACCELERATION_ARM_2D_EXTRA_BENCHMARK_WATCH_PANEL__)            \
-    ||  defined(__RTE_ACCELERATION_ARM_2D_EXTRA_BENCHMARK_GENERIC__)
-    arm_2d_run_benchmark();
-#endif
+
 
 #if defined(__RTE_ACCELERATION_ARM_2D__) || defined(RTE_Acceleration_Arm_2D)
     arm_2d_init();
     disp_adapter0_init();
-    
+
+#   if defined(RTE_Acceleration_Arm_2D_Extra_Benchmark)
+    arm_2d_run_benchmark();
+#else
     //arm_2d_scene_player_switch_to_next_scene(&DISP0_ADAPTER);
+#   endif
+
 #endif
 
     while (true) {

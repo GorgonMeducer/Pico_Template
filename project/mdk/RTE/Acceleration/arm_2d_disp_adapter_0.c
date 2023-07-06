@@ -145,30 +145,6 @@ IMPL_PFB_ON_DRAW(__pfb_draw_handler)
     return arm_fsm_rt_cpl;
 }
 
-//static
-//IMPL_PFB_ON_DRAW(__pfb_draw_background_handler)
-//{
-//    ARM_2D_UNUSED(pTarget);
-//    ARM_2D_UNUSED(ptTile);
-
-//    arm_2d_canvas(ptTile, __top_container) {
-//    
-//        arm_2d_fill_colour(ptTile, NULL, GLCD_COLOR_WHITE);
-//        
-//        arm_2d_align_centre(__top_container, 100, 100) {
-//            draw_round_corner_box(  ptTile,
-//                                    &__centre_region,
-//                                    GLCD_COLOR_BLACK,
-//                                    64,
-//                                    bIsNewFrame);
-//        }
-//    }
-
-//    arm_2d_op_wait_async(NULL);
-
-//    return arm_fsm_rt_cpl;
-//}
-
 #if !__DISP0_CFG_DISABLE_NAVIGATION_LAYER__
 static
 IMPL_PFB_ON_DRAW(__pfb_draw_navigation)
@@ -206,7 +182,7 @@ IMPL_PFB_ON_DRAW(__pfb_draw_navigation)
         if (BENCHMARK.wAverage) {
             arm_lcd_printf(
                 "FPS:%3d:%dms ",
-                arm_2d_helper_get_reference_clock_frequency() / BENCHMARK.wAverage,
+                MIN(arm_2d_helper_get_reference_clock_frequency() / BENCHMARK.wAverage, 999),
                 (int32_t)arm_2d_helper_convert_ticks_to_ms(BENCHMARK.wAverage));
         }
 
@@ -333,10 +309,11 @@ static bool __on_each_frame_complete(void *ptTarget)
             if (0 == BENCHMARK.wIterations) {
                 BENCHMARK.wAverage =
                     (uint32_t)(BENCHMARK.dwTotal / (uint64_t)__DISP0_CFG_ITERATION_CNT__);
+                BENCHMARK.wAverage = MAX(1, BENCHMARK.wAverage);
 //                BENCHMARK.fFPS30Freq = (float)
 //                ((      (double)(BENCHMARK.wAverage * 30) 
 //                    /   (double)arm_2d_helper_get_reference_clock_frequency()) 
-//                 * ((float)SystemCoreClock / 1000000.0f));
+//                 * ((double)SystemCoreClock / 1000000.0f));
                  
                 BENCHMARK.wMin = UINT32_MAX;
                 BENCHMARK.wMax = 0;
@@ -392,6 +369,13 @@ static void __user_scene_player_init(void)
         //! error detected
         assert(false);
     }
+
+    arm_lcd_text_init((arm_2d_region_t []) {
+                        { .tSize = {
+                            .iWidth = __DISP0_CFG_SCEEN_WIDTH__,
+                            .iHeight = __DISP0_CFG_SCEEN_HEIGHT__,
+                        }}});
+
 }
 
 /*----------------------------------------------------------------------------*
@@ -431,6 +415,7 @@ void disp_adapter0_init(void)
 #endif
 
     if (!__DISP0_CFG_DISABLE_DEFAULT_SCENE__) {
+    #if 0
         /*! define dirty regions */
         IMPL_ARM_2D_REGION_LIST(s_tDirtyRegions, const static)
 
@@ -447,12 +432,12 @@ void disp_adapter0_init(void)
             ),
 
         END_IMPL_ARM_2D_REGION_LIST()
-        
+    #endif
+    
         static arm_2d_scene_t s_tScenes[] = {
             [0] = {
-                //.fnBackground   = &__pfb_draw_background_handler,
                 .fnScene        = &__pfb_draw_handler,
-                .ptDirtyRegion  = (arm_2d_region_list_item_t *)s_tDirtyRegions,
+                //.ptDirtyRegion  = (arm_2d_region_list_item_t *)s_tDirtyRegions,
                 .fnOnFrameStart = &__on_frame_start,
                 .fnOnFrameCPL   = &__on_frame_complete,
                 .fnDepose       = NULL,

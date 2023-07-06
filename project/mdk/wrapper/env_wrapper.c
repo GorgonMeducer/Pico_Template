@@ -19,7 +19,6 @@
 #include "cmsis_compiler.h"
 #include "RTE_Components.h"
 #include <stdio.h>
-
 #include "perf_counter.h"
 
 #ifdef RTE_Compiler_EventRecorder
@@ -41,16 +40,6 @@ int __real_vprintf(const char *format, __va_list va)
     extern int $Super$$vprintf(const char *format, __va_list va);
     
     return $Super$$vprintf(format, va);
-}
-
-
-__attribute__((weak))
-void breath_led(void) {
-}
-
-
-__attribute__((weak))
-void bsp_init(void) {
 }
 
 

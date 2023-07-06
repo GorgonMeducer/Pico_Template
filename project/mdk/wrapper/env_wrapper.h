@@ -186,4 +186,9 @@ enum {
 
 #include "pico/platform.h"
 
+#define PLL_SYS_POSTDIV2                    1
+#define PLL_SYS_POSTDIV1                    6
+#define PLL_SYS_VCO_FREQ_KHZ                (1500 * KHZ)
+#define SYS_CLK_KHZ                         (250 * KHZ)
+
 #endif

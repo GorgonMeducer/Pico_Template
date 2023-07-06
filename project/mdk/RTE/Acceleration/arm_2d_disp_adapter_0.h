@@ -76,7 +76,7 @@ extern "C" {
 // <o>Height of the PFB block
 // <i> The height of your PFB block size used in disp0
 #ifndef __DISP0_CFG_PFB_BLOCK_HEIGHT__
-#   define __DISP0_CFG_PFB_BLOCK_HEIGHT__                          60
+#   define __DISP0_CFG_PFB_BLOCK_HEIGHT__                          240
 #endif
 
 // <o>Width Alignment of generated PFBs
@@ -171,6 +171,13 @@ extern "C" {
 #   define __DISP0_CFG_USE_HEAP_FOR_VIRTUAL_RESOURCE_HELPER__      0
 #endif
 // <<< end of configuration section >>>
+
+
+
+#if __RP2040_USE_LCD_1IN28__
+#undef __DISP0_CFG_SWAP_RGB16_HIGH_AND_LOW_BYTES__
+#define __DISP0_CFG_SWAP_RGB16_HIGH_AND_LOW_BYTES__     1
+#endif
 
 
 /*============================ MACROFIED FUNCTIONS ===========================*/
