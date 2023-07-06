@@ -1,4 +1,4 @@
-# Pico_Template (v2.1.0)
+# Pico_Template (v2.2.0)
 An MDK template for Raspberry Pi Pico
 
 - Add Flash Programming algorithm.
@@ -10,7 +10,14 @@ An MDK template for Raspberry Pi Pico
 
 - Compiler: Arm Compiler 6.15 and above (Using non-intrusive wrapper to support pico-sdk which is written in GCC)
 
-- Add support for popular [LCD 1.3inc module](https://www.waveshare.com/wiki/Pico-LCD-1.3) 
+- Improved BSP support
+
+  - Add support for popular [LCD 1.3inc module](https://www.waveshare.com/wiki/Pico-LCD-1.3) : define macro `__PICO_USE_LCD_1IN3__` to enable it.
+
+  - **[new]**Add support for RP2040 [LCD 1.28inch development kit](https://www.waveshare.com/wiki/RP2040-LCD-1.28): define macro `__RP2040_USE_LCD_1IN28__` to enable it.
+
+
+  
 
 - Support an ultra-lightweight python VM: [PikaScript](https://github.com/pikasTech/pikascript) (via cmsis-pack)
 
@@ -169,7 +176,7 @@ In brief,  it is an
 
 >  1.3inch LCD Display Module For Raspberry Pi Pico, 65K RGB Colors, 240×240 Pixels, SPI Interface
 
-![](https://www.waveshare.com/w/fkbk/swtumb.php?f=Pico-LCD-1.3-1.jpg&width=600) 
+
 
  To enable the built in support, please set the macro `__PICO_USE_LCD_1IN3__` to `1` in MDK project configuration as shown below:
 
@@ -188,51 +195,25 @@ void GLCD_DrawBitmap(   int_fast16_t x, int_fast16_t y,
 
 **NOTE**: an alternative API, i.e. `Disp0_DrawBitmap`, is ready for working with Arm-2D. 
 
-- Use the API `dev_read_key()` to read the key status of the 1.3 inch LCD board:
+- 
 
-```c
-enum {
-    PIN_KEY_A       = 15,
-    PIN_KEY_B       = 17,
-    PIN_KEY_X       = 19,
-    PIN_KEY_Y       = 21,
-    PIN_KEY_UP      = 2,
-    PIN_KEY_DOWN    = 18,
-    PIN_KEY_LEFT    = 16,
-    PIN_KEY_RIGHT   = 20,
-    PIN_KEY_HOME    = 3, 
+### 2.5 How to enable support for the RP2040 LCD 1.28inch development kit
 
-    KEY_HOME        = 0,
-    KEY_UP          = 1,
-    KEY_DOWN,
-    KEY_LEFT,
-    KEY_RIGHT,
-    KEY_A,
-    KEY_B,
-    KEY_X,
-    KEY_Y,
-    KEY_NUM,
-};
+To make it easier for people to create watch faces, I've picked a popular  [LCD 1.28inch development kit](https://www.waveshare.com/wiki/RP2040-LCD-1.28) and added a tailored driver into this Pico template. 
 
-bool dev_read_key(uint8_t chkey);
-```
+In brief,  it is an
 
-For example:
-
-```c
-#include "DEV_Config.h"
-
-...
-//! read key A
-if (dev_read_key(KEY_A)) {
-    printf("Key A is down \r\n");
-}
-...
-```
+>  RP2040 MCU Board, With 1.28inch Round LCD, accelerometer and gyroscope Sensor
 
 
 
-### 2.5 How to enable the PikaScript Support
+ To enable the built in support, please set the macro `__RP2040_USE_LCD_1IN28__` to `1` in MDK project configuration as shown below:
+
+![EnbaleRP2040LCD1in28](./documents/Pictures/Enable_RP2040_LCD_1in28.png) 
+
+
+
+### 2.6 How to enable the PikaScript Support
 
 > PikaScript is an ultra-lightweight Python engine with zero dependencies and zero-configuration, that can run with 4KB of RAM and 32KB of flash (such as STM32G030C8 and STM32F103C8).
 
