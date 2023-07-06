@@ -837,14 +837,14 @@
           <GroupName>BSP</GroupName>
           <Files>
             <File>
-              <FileName>pr2040_bsp.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>..\..\bsp\lib\pr2040_bsp.lib</FilePath>
-            </File>
-            <File>
               <FileName>bsp.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\bsp\bsp.h</FilePath>
+            </File>
+            <File>
+              <FileName>RP2040_bsp.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>..\..\bsp\lib\RP2040_bsp.lib</FilePath>
             </File>
           </Files>
         </Group>
@@ -1690,14 +1690,14 @@
           <GroupName>BSP</GroupName>
           <Files>
             <File>
-              <FileName>pr2040_bsp.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>..\..\bsp\lib\pr2040_bsp.lib</FilePath>
-            </File>
-            <File>
               <FileName>bsp.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\bsp\bsp.h</FilePath>
+            </File>
+            <File>
+              <FileName>RP2040_bsp.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>..\..\bsp\lib\RP2040_bsp.lib</FilePath>
             </File>
           </Files>
         </Group>
@@ -2542,14 +2542,14 @@
           <GroupName>BSP</GroupName>
           <Files>
             <File>
-              <FileName>pr2040_bsp.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>..\..\bsp\lib\pr2040_bsp.lib</FilePath>
-            </File>
-            <File>
               <FileName>bsp.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\bsp\bsp.h</FilePath>
+            </File>
+            <File>
+              <FileName>RP2040_bsp.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>..\..\bsp\lib\RP2040_bsp.lib</FilePath>
             </File>
           </Files>
         </Group>
