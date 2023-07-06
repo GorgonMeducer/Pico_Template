@@ -44,6 +44,16 @@ int __real_vprintf(const char *format, __va_list va)
 }
 
 
+__attribute__((weak))
+void breath_led(void) {
+}
+
+
+__attribute__((weak))
+void bsp_init(void) {
+}
+
+
 /*----------------------------------------------------------------------------*
  * bridge the Arm Compiler's stdio and the pico-sdk's stdio                   *
  *----------------------------------------------------------------------------*/
