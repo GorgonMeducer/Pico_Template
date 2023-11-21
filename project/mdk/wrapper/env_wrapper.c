@@ -21,6 +21,8 @@
 #include <stdio.h>
 #include "perf_counter.h"
 
+#include "hardware/clocks.h"
+
 #ifdef RTE_Compiler_EventRecorder
 #   include <EventRecorder.h>
 #endif
@@ -42,6 +44,18 @@ int __real_vprintf(const char *format, __va_list va)
     return $Super$$vprintf(format, va);
 }
 
+extern uint32_t SystemCoreClock;
+void SystemCoreClockUpdate (void)
+{
+    SystemCoreClock = clock_get_hz(clk_sys);
+}
+
+__attribute__((constructor(101), used))
+void __pico_entry(void)
+{
+    extern void runtime_init(void);
+    runtime_init();
+} 
 
 /*----------------------------------------------------------------------------*
  * bridge the Arm Compiler's stdio and the pico-sdk's stdio                   *
