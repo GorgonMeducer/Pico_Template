@@ -1,11 +1,12 @@
 /******************************************************************************
- * @file     startup_ARMCM0plus.c
- * @brief    CMSIS-Core(M) Device Startup File for a Cortex-M0+ Device
- * @version  V2.0.3
- * @date     31. March 2020
+ * @file     startup_rp2040.c
+ * @brief    CMSIS-Core(M) Device Startup File for
+ *           Raspberry Pi RP2040
+ * @version  V1.0.0
+ * @date     10. August 2021
  ******************************************************************************/
 /*
- * Copyright (c) 2009-2020 Arm Limited. All rights reserved.
+ * Copyright (c) 2021 Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -22,7 +23,7 @@
  * limitations under the License.
  */
 
-#include "RP2040.h"
+#include "rp2040.h"
 
 /*----------------------------------------------------------------------------
   External References
@@ -46,7 +47,6 @@ void HardFault_Handler      (void) __attribute__ ((weak));
 void SVC_Handler            (void) __attribute__ ((weak, alias("Default_Handler")));
 void PendSV_Handler         (void) __attribute__ ((weak, alias("Default_Handler")));
 void SysTick_Handler        (void) __attribute__ ((weak, alias("Default_Handler")));
-
 
 void TIMER_IRQ_0_Handler    (void) __attribute__ ((weak, alias("Default_Handler"))); 
 void TIMER_IRQ_1_Handler    (void) __attribute__ ((weak, alias("Default_Handler"))); 
@@ -75,6 +75,7 @@ void I2C0_IRQ_Handler       (void) __attribute__ ((weak, alias("Default_Handler"
 void I2C1_IRQ_Handler       (void) __attribute__ ((weak, alias("Default_Handler")));
 void RTC_IRQ_Handler        (void) __attribute__ ((weak, alias("Default_Handler")));
 
+
 /*----------------------------------------------------------------------------
   Exception / Interrupt Vector table
  *----------------------------------------------------------------------------*/
@@ -85,7 +86,6 @@ void RTC_IRQ_Handler        (void) __attribute__ ((weak, alias("Default_Handler"
 #endif
 
 extern const VECTOR_TABLE_Type __VECTOR_TABLE[48];
-__attribute__((aligned(256)))
        const VECTOR_TABLE_Type __VECTOR_TABLE[48] __VECTOR_TABLE_ATTRIBUTE = {
   (VECTOR_TABLE_Type)(&__INITIAL_SP),       /*     Initial Stack Pointer */
   Reset_Handler,                            /*     Reset Handler */
@@ -105,40 +105,32 @@ __attribute__((aligned(256)))
   SysTick_Handler,                          /*  -1 SysTick Handler */
 
   /* Interrupts */
-    TIMER_IRQ_0_Handler, 
-    TIMER_IRQ_1_Handler, 
-    TIMER_IRQ_2_Handler, 
-    TIMER_IRQ_3_Handler, 
-    PWM_IRQ_WRAP_Handler, 
-    USBCTRL_IRQ_Handler,
-    XIP_IRQ_Handler,
-    PIO0_IRQ_0_Handler,
-    PIO0_IRQ_1_Handler,
-    PIO1_IRQ_0_Handler,
-    PIO1_IRQ_1_Handler,
-    DMA_IRQ_0_Handler,
-    DMA_IRQ_1_Handler,
-    IO_IRQ_BANK0_Handler,
-    IO_IRQ_QSPI_Handler,
-    SIO_IRQ_PROC0_Handler,
-    SIO_IRQ_PROC1_Handler,
-    CLOCKS_IRQ_Handler,
-    SPI0_IRQ_Handler,
-    SPI1_IRQ_Handler,
-    UART0_IRQ_Handler,
-    UART1_IRQ_Handler,
-    ADC_IRQ_FIFO_Handler,
-    I2C0_IRQ_Handler,
-    I2C1_IRQ_Handler,
-    RTC_IRQ_Handler,
-    
-    Default_Handler,
-    Default_Handler,
-    Default_Handler,
-    Default_Handler,
-    Default_Handler,
-    Default_Handler,
-                                            /* Interrupts 10..31 are left out */
+  TIMER_IRQ_0_Handler,                      /*   0 TIMER_IRQ_0 */
+  TIMER_IRQ_1_Handler,                      /*   1 TIMER_IRQ_1 */
+  TIMER_IRQ_2_Handler,                      /*   2 TIMER_IRQ_2 */
+  TIMER_IRQ_3_Handler,                      /*   3 TIMER_IRQ_3 */
+  PWM_IRQ_WRAP_Handler,                     /*   4 PWM_IRQ_WRAP */
+  USBCTRL_IRQ_Handler,                      /*   5 USBCTRL_IRQ */
+  XIP_IRQ_Handler,                          /*   6 XIP_IRQ */
+  PIO0_IRQ_0_Handler,                       /*   7 PIO0_IRQ_0 */
+  PIO0_IRQ_1_Handler,                       /*   8 PIO0_IRQ_1 */
+  PIO1_IRQ_0_Handler,                       /*   9 PIO1_IRQ_0 */
+  PIO1_IRQ_1_Handler,                       /*  10 PIO1_IRQ_1 */
+  DMA_IRQ_0_Handler,                        /*  11 DMA_IRQ_0 */
+  DMA_IRQ_1_Handler,                        /*  12 DMA_IRQ_1 */
+  IO_IRQ_BANK0_Handler,                     /*  13 IO_IRQ_BANK0 */
+  IO_IRQ_QSPI_Handler,                      /*  14 IO_IRQ_QSPI */
+  SIO_IRQ_PROC0_Handler,                    /*  15 SIO_IRQ_PROC0 */
+  SIO_IRQ_PROC1_Handler,                    /*  16 SIO_IRQ_PROC1 */
+  CLOCKS_IRQ_Handler,                       /*  17 CLOCKS_IRQ */
+  SPI0_IRQ_Handler,                         /*  18 SPI0_IRQ */
+  SPI1_IRQ_Handler,                         /*  19 SPI1_IRQ */
+  UART0_IRQ_Handler,                        /*  20 UART0_IRQ */
+  UART1_IRQ_Handler,                        /*  21 UART1_IRQ */
+  ADC_IRQ_FIFO_Handler,                     /*  22 ADC_IRQ_FIFO */
+  I2C0_IRQ_Handler,                         /*  23 I2C0_IRQ */
+  I2C1_IRQ_Handler,                         /*  24 I2C1_IRQ */
+  RTC_IRQ_Handler                           /*  25 RTC_IRQ */
 };
 
 #if defined ( __GNUC__ )
@@ -148,22 +140,12 @@ __attribute__((aligned(256)))
 /*----------------------------------------------------------------------------
   Reset Handler called on controller reset
  *----------------------------------------------------------------------------*/
-
-__attribute__((constructor(101), used))
-void __pico_entry(void)
+__NO_RETURN void Reset_Handler(void)
 {
-    extern void runtime_init(void);
-    runtime_init();
-} 
-
-__NO_RETURN 
-void Reset_Handler(void)
-{
-    SCB->VTOR = (uintptr_t)__VECTOR_TABLE;
     __set_MSP((uintptr_t)(&__INITIAL_SP));
 
-    //SystemInit();                           /* CMSIS System Initialization */
-    __PROGRAM_START();                        /* Enter PreMain (C library entry point) */
+    SystemInit();                             /* CMSIS System Initialization */
+    __PROGRAM_START();                          /* Enter PreMain (C library entry point) */
 }
 
 
