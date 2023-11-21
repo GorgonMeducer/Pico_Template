@@ -27,7 +27,7 @@
  */
 
 #include <stdint.h>
-#include "rp2040.h"
+#include "RP2040.h"
 
 #define  XTAL            (12000000UL)     /* Oscillator frequency */
 

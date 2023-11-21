@@ -170,18 +170,6 @@ void Default_Handler(void)
   while(1);
 }
 
-/* a non-intrusive way of keep the _stage2_boot */
-extern
-void _stage2_boot(void);
-
-__attribute__((used))
-void __keep_stage2_boot(void)
-{
-    _stage2_boot();
-    while(1) __NOP();
-}
-
-
 #if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
   #pragma clang diagnostic pop
 #endif

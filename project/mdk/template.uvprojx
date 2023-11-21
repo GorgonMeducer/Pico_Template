@@ -340,7 +340,7 @@
               <MiscControls>-include env_wrapper.h -Wno-macro-redefined -Omax</MiscControls>
               <Define>PICO,__RP2040_USE_LCD_1IN28__=0,__PICO_USE_LCD_1IN3__=0</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_flash\include\;..\..\pico-sdk\src\rp2_common\hardware_dma\include\;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include;..\mdk;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_double\include;..\..\pico-sdk\src\rp2_common\hardware_divider\include;..\..\pico-sdk\src\rp2_common\pico_rand\include;..\..\pico-sdk\src\rp2_common\pico_unique_id\include</IncludePath>
+              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;..\..\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_flash\include\;..\..\pico-sdk\src\rp2_common\hardware_dma\include\;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include;..\mdk;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_double\include;..\..\pico-sdk\src\rp2_common\hardware_divider\include;..\..\pico-sdk\src\rp2_common\pico_rand\include;..\..\pico-sdk\src\rp2_common\pico_unique_id\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -358,7 +358,7 @@
               <MiscControls></MiscControls>
               <Define>PICO_MAX_SHARED_IRQ_HANDLERS=4,LIB_CMSIS_CORE=1,PICO_CMSIS_RENAME_EXCEPTIONS=1</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_regs\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\pico_platform\include;..\..\pico-sdk\src\common\pico_base\include;.\wrapper\pico_base;..\..\pico-sdk\src\rp2_common\boot_stage2\asminclude;..\..\pico-sdk\src\rp2_common\boot_stage2\include</IncludePath>
+              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_regs\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\pico_platform\include;..\..\pico-sdk\src\common\pico_base\include;..\..\wrapper\pico_base;..\..\pico-sdk\src\rp2_common\boot_stage2\asminclude;..\..\pico-sdk\src\rp2_common\boot_stage2\include</IncludePath>
             </VariousControls>
           </Aads>
           <LDads>
@@ -374,7 +374,7 @@
             <ScatterFile>.\RTE\Device\RP2040_Core0\rp2040.sct</ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
-            <Misc>--diag_suppress=L6170,L6314,L6306,L6329 --keep=compile_time_choice.o --entry=_stage2_boot
+            <Misc>--diag_suppress=L6170,L6314,L6306,L6329 
 --keep=ram_vector_table</Misc>
             <LinkerInputFile></LinkerInputFile>
             <DisabledWarnings></DisabledWarnings>
@@ -501,11 +501,6 @@
               <FilePath>..\..\pico-sdk\src\rp2_common\hardware_uart\uart.c</FilePath>
             </File>
             <File>
-              <FileName>compile_time_choice.S</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\..\pico-sdk\src\rp2_common\boot_stage2\compile_time_choice.S</FilePath>
-            </File>
-            <File>
               <FileName>boot2_w25q080.S</FileName>
               <FileType>2</FileType>
               <FilePath>..\..\pico-sdk\src\rp2_common\boot_stage2\boot2_w25q080.S</FilePath>
@@ -547,11 +542,6 @@
                   </Aads>
                 </FileArmAds>
               </FileOption>
-            </File>
-            <File>
-              <FileName>runtime.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\wrapper\runtime.c</FilePath>
             </File>
             <File>
               <FileName>printf_none.S</FileName>
@@ -695,36 +685,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>platform</GroupName>
-          <Files>
-            <File>
-              <FileName>env_wrapper.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\wrapper\env_wrapper.h</FilePath>
-            </File>
-            <File>
-              <FileName>platform.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\wrapper\pico\platform.h</FilePath>
-            </File>
-            <File>
-              <FileName>env_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\wrapper\env_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>sync.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\wrapper\hardware\sync.h</FilePath>
-            </File>
-            <File>
-              <FileName>stdio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\wrapper\stdio.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>Application</GroupName>
           <Files>
             <File>
@@ -751,6 +711,36 @@
               <FileName>rp2040_bsp_default.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\bsp\rp2040_bsp_default.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>platform</GroupName>
+          <Files>
+            <File>
+              <FileName>env_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\wrapper\env_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>env_wrapper.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\wrapper\env_wrapper.h</FilePath>
+            </File>
+            <File>
+              <FileName>stdio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\wrapper\stdio.c</FilePath>
+            </File>
+            <File>
+              <FileName>sync.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\wrapper\hardware\sync.h</FilePath>
+            </File>
+            <File>
+              <FileName>runtime.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\wrapper\runtime.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -803,7 +793,7 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </component>
-      <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="Keil" Cversion="1.1.0" condition="RP2040 CMSIS">
+      <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="Keil" Cversion="1.1.0" condition="RP2040 CMSIS" isDefaultVariant="1">
         <package name="RP2040_DFP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="Keil" version="1.0.0-dev4"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
@@ -899,7 +889,7 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </file>
-      <file attr="config" category="sourceC" name="CMSIS\Device\RP2040\Source\startup_rp2040.c" version="1.1.0">
+      <file attr="config" category="sourceC" name="CMSIS\Device\RP2040\Source\startup_rp2040.c" version="1.2.0">
         <instance index="0">RTE\Device\RP2040_Core0\startup_rp2040.c</instance>
         <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="Keil" Cversion="1.1.0" condition="RP2040 CMSIS" isDefaultVariant="1"/>
         <package name="RP2040_DFP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="Keil" version="1.0.0-dev4"/>

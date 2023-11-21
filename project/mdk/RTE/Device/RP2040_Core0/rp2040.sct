@@ -40,9 +40,9 @@
 /*----------------------------------------------------------------------------
   User Stack & Heap boundary definition
  *----------------------------------------------------------------------------*/
-#define __STACK_BASE    (__RW_BASE)
-#define __HEAP_BASE     (AlignExpr(+0, 8))           /* starts after RW_RAM section, 8 byte aligned */
+#define __HEAP_BASE         (AlignExpr(+0, 8))           /* starts after RW_RAM section, 8 byte aligned */
 
+#define __STACK_ONE_SIZE    512
 
 /*----------------------------------------------------------------------------
   Scatter File Definitions definition
@@ -52,24 +52,55 @@
 
 #define __RW_SIZE      (__RAM_SIZE - __STACK_SIZE - __HEAP_SIZE)
 
+/*
+ * Stage two Boot
+ */
 LR_STAGE2_BOOT __RO_BASE 0x100 {
     ER_STAGE2_BOOT +0 0x100 {
+        KEEP(compile_time_choice.o)
         compile_time_choice.o (+RO)
     }
     ER_FILL ImageLimit(ER_STAGE2_BOOT) FILL 0xDEADBEEF 0x100 - ImageLength(ER_STAGE2_BOOT) {
     }
 }
 
-
+/*
+ * next to stage two boot
+ */
 LR_ROM +0 __RO_SIZE - 0x100  {                      ; load region size_region
     ER_ROM +0 __RO_SIZE  {                          ; load address = execution address
         *.o (RESET, +First)
         *(InRoot$$Sections)
-        .ANY (+RO)
-        .ANY (+XO)
+        * (+RO-DATA)
+        
+        
+        startup_RP2040.o (+RO)
+        * (+RO-CODE)
+        * (+XO)
+    }
+
+    /*
+     * This is required by pico-sdk
+     */
+    ER_RAM_VECTOR_TABLE __RAM_BASE {
+        *  (.ram_vector_table)
+    }
+
+    /*
+     * This is required by pico-sdk
+     */
+    ARM_LIB_STACK_ONE +0 ALIGN 8  EMPTY __STACK_ONE_SIZE {
     }
 
     ARM_LIB_STACK +0 ALIGN 8 EMPTY __STACK_SIZE {   ; Reserve empty region for stack
+    }
+
+    /*
+     * This is required by pico-sdk
+     */
+    ER_MUTEX_ARRAY +0 {
+        * (.mutex_array.*)
+        * (.mutex_array)
     }
 
     RW_RAM +0  {                                    ; RW data
@@ -84,7 +115,9 @@ LR_ROM +0 __RO_SIZE - 0x100  {                      ; load region size_region
     ARM_LIB_HEAP  __HEAP_BASE EMPTY  __HEAP_SIZE  {   ; Reserve empty region for heap
     }
     #endif
-    
+
+
+
     /* This empty, zero long execution region is here to mark the limit address
      * of the last execution region that is allocated in SRAM.
      */
