@@ -340,7 +340,7 @@
               <MiscControls>-include env_wrapper.h -Wno-macro-redefined -Omax</MiscControls>
               <Define>__RP2040_USE_LCD_1IN28__=0,__PICO_USE_LCD_1IN3__=0</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;..\..\pico-sdk\src;..\mdk;..\..\wrapper</IncludePath>
+              <IncludePath>..\..\pico-sdk\src\boards\include\boards;..\mdk;..\..\wrapper</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
