@@ -340,7 +340,7 @@
               <MiscControls> -Wno-macro-redefined -Omax</MiscControls>
               <Define>__RP2040_USE_LCD_1IN28__=0,__PICO_USE_LCD_1IN3__=0</Define>
               <Undefine></Undefine>
-              <IncludePath>..\mdk;..\..\wrapper</IncludePath>
+              <IncludePath>..\mdk</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -358,7 +358,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\pico-sdk\src\common\pico_base\include;..\..\wrapper\pico_base</IncludePath>
+              <IncludePath>..\..\pico-sdk\src\common\pico_base\include</IncludePath>
             </VariousControls>
           </Aads>
           <LDads>
