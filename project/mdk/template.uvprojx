@@ -358,7 +358,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\pico-sdk\src\rp2_common\pico_platform\include;..\..\pico-sdk\src\common\pico_base\include;..\..\wrapper\pico_base</IncludePath>
+              <IncludePath>..\..\pico-sdk\src\common\pico_base\include;..\..\wrapper\pico_base</IncludePath>
             </VariousControls>
           </Aads>
           <LDads>
