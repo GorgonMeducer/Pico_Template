@@ -337,7 +337,7 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls>-include env_wrapper.h -Wno-macro-redefined -Omax</MiscControls>
+              <MiscControls> -Wno-macro-redefined -Omax</MiscControls>
               <Define>__RP2040_USE_LCD_1IN28__=0,__PICO_USE_LCD_1IN3__=0</Define>
               <Undefine></Undefine>
               <IncludePath>..\mdk;..\..\wrapper</IncludePath>
@@ -715,36 +715,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>platform</GroupName>
-          <Files>
-            <File>
-              <FileName>env_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\wrapper\env_wrapper.c</FilePath>
-            </File>
-            <File>
-              <FileName>env_wrapper.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\wrapper\env_wrapper.h</FilePath>
-            </File>
-            <File>
-              <FileName>stdio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\wrapper\stdio.c</FilePath>
-            </File>
-            <File>
-              <FileName>sync.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\wrapper\hardware\sync.h</FilePath>
-            </File>
-            <File>
-              <FileName>runtime.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\wrapper\runtime.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
         <Group>
@@ -793,7 +763,7 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </component>
-      <component Cclass="Device" Cgroup="Pico-SDK" Cvendor="Keil" Cversion="1.5.1" condition="RP2040 CMSIS STARTUP">
+      <component Cclass="Device" Cgroup="Pico SDK" Cvendor="Keil" Cversion="1.5.1" condition="RP2040 CMSIS STARTUP">
         <package name="RP2040_DFP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="Keil" version="1.0.0-dev4"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
