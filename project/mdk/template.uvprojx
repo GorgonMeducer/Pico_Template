@@ -10,7 +10,7 @@
       <TargetName>AC6-flash</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6190000::V6.19::ARMCLANG</pCCUsed>
+      <pCCUsed>6200001::V6.20.1::.\ArmCompiler6.20.1</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -340,7 +340,7 @@
               <MiscControls>-include env_wrapper.h -Wno-macro-redefined -Omax</MiscControls>
               <Define>PICO,__RP2040_USE_LCD_1IN28__=0,__PICO_USE_LCD_1IN3__=0</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_flash\include\;..\..\pico-sdk\src\rp2_common\hardware_dma\include\;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include;..\mdk;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_double\include;..\..\pico-sdk\src\rp2_common\hardware_divider\include;..\..\pico-sdk\src\rp2_common\pico_rand\include;..\..\pico-sdk\src\rp2_common\pico_unique_id\include</IncludePath>
+              <IncludePath>..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_flash\include\;..\..\pico-sdk\src\rp2_common\hardware_dma\include\;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include;..\mdk;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_double\include;..\..\pico-sdk\src\rp2_common\hardware_divider\include;..\..\pico-sdk\src\rp2_common\pico_rand\include;..\..\pico-sdk\src\rp2_common\pico_unique_id\include;.\wrapper\pico_base;..\..\pico-sdk\src\rp2_common\hardware_interp\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -389,57 +389,6 @@
               <FileName>startup_RP2040.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\startup_RP2040.c</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <UseCPPCompiler>2</UseCPPCompiler>
-                  <RVCTCodeConst>0</RVCTCodeConst>
-                  <RVCTZI>0</RVCTZI>
-                  <RVCTOtherData>0</RVCTOtherData>
-                  <ModuleSelection>0</ModuleSelection>
-                  <IncludeInBuild>2</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
-                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
-                  <PublicsOnly>2</PublicsOnly>
-                  <StopOnExitCode>11</StopOnExitCode>
-                  <CustomArgument></CustomArgument>
-                  <IncludeLibraryModules></IncludeLibraryModules>
-                  <ComprImg>1</ComprImg>
-                </CommonProperty>
-                <FileArmAds>
-                  <Cads>
-                    <interw>2</interw>
-                    <Optim>6</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <uC99>2</uC99>
-                    <uGnu>2</uGnu>
-                    <useXO>2</useXO>
-                    <v6Lang>0</v6Lang>
-                    <v6LangP>0</v6LangP>
-                    <vShortEn>2</vShortEn>
-                    <vShortWch>2</vShortWch>
-                    <v6Lto>0</v6Lto>
-                    <v6WtE>2</v6WtE>
-                    <v6Rtti>2</v6Rtti>
-                    <VariousControls>
-                      <MiscControls></MiscControls>
-                      <Define></Define>
-                      <Undefine></Undefine>
-                      <IncludePath></IncludePath>
-                    </VariousControls>
-                  </Cads>
-                </FileArmAds>
-              </FileOption>
             </File>
             <File>
               <FileName>system_RP2040.c</FileName>
@@ -565,44 +514,6 @@
               <FileName>compile_time_choice.S</FileName>
               <FileType>2</FileType>
               <FilePath>..\..\pico-sdk\src\rp2_common\boot_stage2\compile_time_choice.S</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <UseCPPCompiler>2</UseCPPCompiler>
-                  <RVCTCodeConst>0</RVCTCodeConst>
-                  <RVCTZI>0</RVCTZI>
-                  <RVCTOtherData>0</RVCTOtherData>
-                  <ModuleSelection>0</ModuleSelection>
-                  <IncludeInBuild>2</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
-                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
-                  <PublicsOnly>2</PublicsOnly>
-                  <StopOnExitCode>11</StopOnExitCode>
-                  <CustomArgument></CustomArgument>
-                  <IncludeLibraryModules></IncludeLibraryModules>
-                  <ComprImg>1</ComprImg>
-                </CommonProperty>
-                <FileArmAds>
-                  <Aads>
-                    <interw>2</interw>
-                    <Ropi>1</Ropi>
-                    <Rwpi>1</Rwpi>
-                    <thumb>2</thumb>
-                    <SplitLS>2</SplitLS>
-                    <SwStkChk>2</SwStkChk>
-                    <NoWarn>2</NoWarn>
-                    <uSurpInc>2</uSurpInc>
-                    <useXO>2</useXO>
-                    <ClangAsOpt>0</ClangAsOpt>
-                    <VariousControls>
-                      <MiscControls></MiscControls>
-                      <Define></Define>
-                      <Undefine></Undefine>
-                      <IncludePath></IncludePath>
-                    </VariousControls>
-                  </Aads>
-                </FileArmAds>
-              </FileOption>
             </File>
             <File>
               <FileName>boot2_w25q080.S</FileName>
@@ -790,6 +701,21 @@
               <FileName>divider.S</FileName>
               <FileType>2</FileType>
               <FilePath>..\..\pico-sdk\src\rp2_common\hardware_divider\divider.S</FilePath>
+            </File>
+            <File>
+              <FileName>interp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\hardware_interp\interp.c</FilePath>
+            </File>
+            <File>
+              <FileName>rand.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_rand\rand.c</FilePath>
+            </File>
+            <File>
+              <FileName>unique_id.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1649,6 +1575,21 @@
               <FileType>2</FileType>
               <FilePath>..\..\pico-sdk\src\rp2_common\hardware_divider\divider.S</FilePath>
             </File>
+            <File>
+              <FileName>interp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\hardware_interp\interp.c</FilePath>
+            </File>
+            <File>
+              <FileName>rand.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_rand\rand.c</FilePath>
+            </File>
+            <File>
+              <FileName>unique_id.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2505,6 +2446,21 @@
               <FileName>divider.S</FileName>
               <FileType>2</FileType>
               <FilePath>..\..\pico-sdk\src\rp2_common\hardware_divider\divider.S</FilePath>
+            </File>
+            <File>
+              <FileName>interp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\hardware_interp\interp.c</FilePath>
+            </File>
+            <File>
+              <FileName>rand.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_rand\rand.c</FilePath>
+            </File>
+            <File>
+              <FileName>unique_id.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c</FilePath>
             </File>
           </Files>
         </Group>

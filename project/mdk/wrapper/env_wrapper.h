@@ -165,12 +165,6 @@ typedef unsigned int        uint;
 #define PICO_CMSIS_RENAME_EXCEPTIONS    1
 #define PICO_ON_DEVICE                  1
 
-enum {
-    PICO_ERROR_NO_DATA = -3,
-    PICO_ERROR_GENERIC = -2,
-    PICO_ERROR_TIMEOUT = -1,
-};
-
 
 #undef __sev  
 #undef __wfe       

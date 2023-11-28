@@ -32,7 +32,9 @@ LR_IROM1 0x10000100 FLASH_SIZE - ImageLength(LR_STAGE2_BOOT)  {    ; load region
         *(InRoot$$Sections)
         * (+RO-DATA)
         
-        startup_RP2040.o (+RO)
+        * (.flashdata.*)
+        * (:gdef:Reset_Handler)
+        * (:gdef:SystemInit)
         * (+RO-CODE)
         * (+XO)
     }
@@ -62,10 +64,13 @@ LR_IROM1 0x10000100 FLASH_SIZE - ImageLength(LR_STAGE2_BOOT)  {    ; load region
     ;}
 
     RW_IRAM +0 RAMSIZE_VALID {  ; RW data
+        .ANY (.time_critical.*)
         .ANY (+RW +ZI)
     }
     
     RW_IRAM_NOINIT +0 UNINIT {  ; RW data
+        .ANY (.after_data.*)
+        .ANY (.unintialized_data.*)
         .ANY (.bss.noinit)
     }
 
