@@ -72,6 +72,15 @@ static void system_init(void)
     stdio_init_all();
 
     bsp_init();
+
+#if defined(RTE_Script_PikaScript)
+    pikaScriptInit();
+#endif
+
+#if defined(__RTE_ACCELERATION_ARM_2D__) || defined(RTE_Acceleration_Arm_2D)
+    arm_2d_init();
+    disp_adapter0_init();
+#endif
 }
 
 int main(void) 
@@ -81,10 +90,7 @@ int main(void)
     __cycleof__("printf") {
         printf("Hello Pico-Template\r\n");
     }
-    
-#if defined(RTE_Script_PikaScript)
-    pikaScriptInit();
-#endif
+
 
 #if defined( __PERF_COUNTER_COREMARK__ ) && __PERF_COUNTER_COREMARK__
     printf("\r\nRun Coremark 1.0...\r\n");
@@ -92,10 +98,7 @@ int main(void)
 #endif
 
 
-
 #if defined(__RTE_ACCELERATION_ARM_2D__) || defined(RTE_Acceleration_Arm_2D)
-    arm_2d_init();
-    disp_adapter0_init();
 
 #   if defined(RTE_Acceleration_Arm_2D_Extra_Benchmark)
     arm_2d_run_benchmark();
@@ -109,7 +112,12 @@ int main(void)
         breath_led();
 
 #if defined(__RTE_ACCELERATION_ARM_2D__) || defined(RTE_Acceleration_Arm_2D)
+    #if ARM_2D_VERISON >= 10105
+        /* lock framerate: 30 FPS */
+        disp_adapter0_task(30);
+    #else
         disp_adapter0_task();
+    #endif
 #endif
     }
     //return 0;
