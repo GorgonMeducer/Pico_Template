@@ -28,19 +28,18 @@ LR_STAGE2_BOOT 0x10000000 0x100 {
 LR_IROM1 0x10000100 FLASH_SIZE - ImageLength(LR_STAGE2_BOOT)  {    ; load region size_region
 
     ER_FLASH +0 0x00200000  {  ; load address = execution address
-        *.o (RESET, +First)
+        * (RESET, +First)
         *(InRoot$$Sections)
-        * (+RO-DATA)
         
         * (.flashdata.*)
         * (:gdef:Reset_Handler)
         * (:gdef:SystemInit)
-        * (+RO-CODE)
-        * (+XO)
+        .ANY (+RO)
+        .ANY (+XO)
     }
     
     ER_RAM_VECTOR_TABLE 0x20000000 {
-        *  (.ram_vector_table)
+        .ANY  (.ram_vector_table)
     }
     
     ARM_LIB_STACK +0 ALIGN 8  EMPTY STACK_0_SIZE {
@@ -54,8 +53,8 @@ LR_IROM1 0x10000100 FLASH_SIZE - ImageLength(LR_STAGE2_BOOT)  {    ; load region
     }
     
     ER_MUTEX_ARRAY +0 {
-        * (.mutex_array.*)
-        * (.mutex_array)
+        .ANY (.mutex_array.*)
+        .ANY (.mutex_array)
     }
     
     ;ER_PREINIT_ARRAY +0 {
@@ -63,7 +62,7 @@ LR_IROM1 0x10000100 FLASH_SIZE - ImageLength(LR_STAGE2_BOOT)  {    ; load region
     ;    * (.preinit_array)
     ;}
 
-    RW_IRAM +0 RAMSIZE_VALID {  ; RW data
+    RW_IRAM +0  {  ; RW data
         .ANY (.time_critical.*)
         .ANY (+RW +ZI)
     }
