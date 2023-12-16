@@ -109,7 +109,7 @@ int main(void)
         breath_led();
 
 #if defined(__RTE_ACCELERATION_ARM_2D__) || defined(RTE_Acceleration_Arm_2D)
-        disp_adapter0_task();
+        disp_adapter0_task(30);
 #endif
     }
     //return 0;
