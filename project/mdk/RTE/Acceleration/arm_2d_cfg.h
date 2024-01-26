@@ -21,7 +21,9 @@
 
 /*============================ INCLUDES ======================================*/
 
-#include "RTE_Components.h"
+#if defined(_RTE_)
+#   include "RTE_Components.h"
+#endif
 
 #ifdef   __cplusplus
 extern "C" {
@@ -54,7 +56,47 @@ extern "C" {
 // <i> Note that enabling this feature will add the support for a special colour type: ARM_2D_CHANNEL_8in32
 // <i> This feature is disabled by default to save code size
 #ifndef __ARM_2D_CFG_SUPPORT_COLOUR_CHANNEL_ACCESS__
-#   define __ARM_2D_CFG_SUPPORT_COLOUR_CHANNEL_ACCESS__             0
+#   define __ARM_2D_CFG_SUPPORT_COLOUR_CHANNEL_ACCESS__             1
+#endif
+// </h>
+
+// <h>Log and Debug
+// =======================
+// <q>Enable Log
+// <i> This feature is disabled by default.
+#ifndef __ARM_2D_CFG_ENABLE_LOG__
+#   define __ARM_2D_CFG_ENABLE_LOG__                                0
+#endif
+
+// <q>The terminal support colour
+// <i> The terminal is compatible with VT100 and support colour display. This feature is disabled by default.
+#ifndef __ARM_2D_CFG_LOG_OUTPUT_SUPPORT_COLOUR__
+#   define __ARM_2D_CFG_LOG_OUTPUT_SUPPORT_COLOUR__                 0
+#endif
+
+// <o>The maximum length of log string <64-65535>
+// <i> The number of bytes requested from heap during log output
+// <i> Default: 256
+#ifndef __ARM_2D_LOG_MAX_STRING_LEN__
+#   define __ARM_2D_LOG_MAX_STRING_LEN__        256
+#endif
+
+/* The filter of log channels. Please comment the channels that you want to mask.
+ */
+#ifndef __ARM_2D_LOG_CHANNEL_MASK_FILTER__
+#   define __ARM_2D_LOG_CHANNEL_MASK_FILTER__                                   \
+            (   ARM_2D_LOG_CHN_TYPE_USER                                        \
+            |   ARM_2D_LOG_CHN_TYPE_INFO                                        \
+            |   ARM_2D_LOG_CHN_TYPE_WARNING                                     \
+            |   ARM_2D_LOG_CHN_TYPE_ERROR                                       \
+            |   ARM_2D_LOG_CHN_PIPELINE                                         \
+            |   ARM_2D_LOG_CHN_OPCODE                                           \
+            |   ARM_2D_LOG_CHN_HELPER                                           \
+            |   ARM_2D_LOG_CHN_HELPER_PFB                                       \
+            |   ARM_2D_LOG_CHN_SCENE_PLAYER                                     \
+            |   ARM_2D_LOG_CHN_DIRTY_REGION_OPTIMISATION                        \
+            |   ARM_2D_LOG_CHN_STATISTICS                                       \
+            |   ARM_2D_LOG_CHN_APP)
 #endif
 // </h>
 
@@ -83,6 +125,14 @@ extern "C" {
 #ifndef __ARM_2D_CFG_OPTIMIZE_FOR_POINTER_LIKE_SHAPES_IN_TRANSFORM__
 #   define __ARM_2D_CFG_OPTIMIZE_FOR_POINTER_LIKE_SHAPES_IN_TRANSFORM__     1
 #endif
+
+// <q> Optimize the scaler version of transform operations for hollow out masks
+// <i> This feature is disabled by default. There is no guarantee that the performance will increase or decrease. It is all depends your applications. If your application uses a lot of hollow out masks, it might help.
+// <i> This feature has no meaning when the anti-alias transform is disabled or the helium acceleration is available.
+#ifndef __ARM_2D_CFG_OPTIMIZE_FOR_HOLLOW_OUT_MASK_IN_TRANSFORM__
+#   define __ARM_2D_CFG_OPTIMIZE_FOR_HOLLOW_OUT_MASK_IN_TRANSFORM__         0
+#endif
+
 // </h>
 
 
@@ -99,20 +149,6 @@ extern "C" {
 #   define __GLCD_CFG_COLOUR_DEPTH__                                    16
 #endif
 
-// <o>Width of the screen <8-32767>
-// <i> The width of your screen
-// <i> Default: 320
-#ifndef __GLCD_CFG_SCEEN_WIDTH__
-#   define __GLCD_CFG_SCEEN_WIDTH__                                     240
-#endif
-
-// <o>Height of the screen <8-32767>
-// <i> The height of your screen
-// <i> Default: 240
-#ifndef __GLCD_CFG_SCEEN_HEIGHT__
-#   define __GLCD_CFG_SCEEN_HEIGHT__                                    240
-#endif
-
 // <o> The size of the LCD printf text buffer <16-65535>
 // <i> The text buffer size for the lcd printf service. It determins how many character you can use in one printf string.
 #ifndef __LCD_PRINTF_CFG_TEXT_BUFFER_SIZE__
@@ -120,6 +156,20 @@ extern "C" {
 #endif
 
 // <h>Benchmark
+
+// <o>Width of the screen <8-32767>
+// <i> The width of your screen for running benchmark
+// <i> Default: 320
+#ifndef __GLCD_CFG_SCEEN_WIDTH__
+#   define __GLCD_CFG_SCEEN_WIDTH__                                     320
+#endif
+
+// <o>Height of the screen <8-32767>
+// <i> The height of your screen for running benchmark
+// <i> Default: 240
+#ifndef __GLCD_CFG_SCEEN_HEIGHT__
+#   define __GLCD_CFG_SCEEN_HEIGHT__                                    240
+#endif
 
 // <o>Number of iterations <1-2000>
 // <i> run number of iterations in arm-2d benchmark before calculating the result.
@@ -131,7 +181,7 @@ extern "C" {
 // <i> Enable this mode to reduce the benchmark memory footprint (removing background picture etc.)
 // <i> This feature is disabled by default.
 #ifndef __ARM_2D_CFG_BENCHMARK_TINY_MODE__
-#   define __ARM_2D_CFG_BENCHMARK_TINY_MODE__                           1
+#   define __ARM_2D_CFG_BENCHMARK_TINY_MODE__                           0
 #endif
 
 // <q> Enable Stopwatch mode in the Benchmark:Watch-panel
@@ -142,9 +192,9 @@ extern "C" {
 #endif
 
 // <q> Enable the nebula effect mode in the Benchmark:Watch-panel
-// <i> This feature is disabled by default.
+// <i> This feature is disabled by default and it is only available in the Tiny mode.
 #ifndef __ARM_2D_CFG_BENCHMARK_WATCH_PANEL_USE_NEBULA__
-#   define __ARM_2D_CFG_BENCHMARK_WATCH_PANEL_USE_NEBULA__              1
+#   define __ARM_2D_CFG_BENCHMARK_WATCH_PANEL_USE_NEBULA__              0
 #endif
 
 // <q> Exit benchmark when finished
