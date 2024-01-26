@@ -14,16 +14,16 @@
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>ARMCM0P_MPU</Device>
+          <Device>ARMCM0P</Device>
           <Vendor>ARM</Vendor>
-          <PackID>ARM.CMSIS.5.9.0</PackID>
-          <PackURL>http://www.keil.com/pack/</PackURL>
+          <PackID>ARM.Cortex_DFP.1.0.0</PackID>
+          <PackURL>https://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000,0x00020000) IROM(0x00000000,0x00040000) CPUTYPE("Cortex-M0+") CLOCK(12000000) ESEL ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
           <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000)</FlashDriverDll>
           <DeviceId>0</DeviceId>
-          <RegisterFile>$$Device:ARMCM0P_MPU$Device\ARM\ARMCM0plus\Include\ARMCM0plus_MPU.h</RegisterFile>
+          <RegisterFile>$$Device:ARMCM0P$Device\ARMCM0plus\Include\ARMCM0plus.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -138,7 +138,7 @@
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -798,16 +798,16 @@
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>ARMCM0P_MPU</Device>
+          <Device>ARMCM0P</Device>
           <Vendor>ARM</Vendor>
-          <PackID>ARM.CMSIS.5.9.0</PackID>
-          <PackURL>http://www.keil.com/pack/</PackURL>
+          <PackID>ARM.Cortex_DFP.1.0.0</PackID>
+          <PackURL>https://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000,0x00020000) IROM(0x00000000,0x00040000) CPUTYPE("Cortex-M0+") CLOCK(12000000) ESEL ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
           <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000)</FlashDriverDll>
           <DeviceId>0</DeviceId>
-          <RegisterFile>$$Device:ARMCM0P_MPU$Device\ARM\ARMCM0plus\Include\ARMCM0plus_MPU.h</RegisterFile>
+          <RegisterFile>$$Device:ARMCM0P$Device\ARMCM0plus\Include\ARMCM0plus.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -922,7 +922,7 @@
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -1671,16 +1671,16 @@
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>ARMCM0P_MPU</Device>
+          <Device>ARMCM0P</Device>
           <Vendor>ARM</Vendor>
-          <PackID>ARM.CMSIS.5.9.0</PackID>
-          <PackURL>http://www.keil.com/pack/</PackURL>
+          <PackID>ARM.Cortex_DFP.1.0.0</PackID>
+          <PackURL>https://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000,0x00020000) IROM(0x00000000,0x00040000) CPUTYPE("Cortex-M0+") CLOCK(12000000) ESEL ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
           <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000)</FlashDriverDll>
           <DeviceId>0</DeviceId>
-          <RegisterFile>$$Device:ARMCM0P_MPU$Device\ARM\ARMCM0plus\Include\ARMCM0plus_MPU.h</RegisterFile>
+          <RegisterFile>$$Device:ARMCM0P$Device\ARMCM0plus\Include\ARMCM0plus.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -1786,7 +1786,7 @@
         </DebugOption>
         <Utilities>
           <Flash1>
-            <UseTargetDll>0</UseTargetDll>
+            <UseTargetDll>1</UseTargetDll>
             <UseExternalTool>1</UseExternalTool>
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
@@ -1795,7 +1795,7 @@
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>

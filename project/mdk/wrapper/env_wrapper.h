@@ -166,15 +166,17 @@ typedef unsigned int        uint;
 #define PICO_ON_DEVICE                  1
 
 
-#undef __sev  
-#undef __wfe       
-#undef __dmb       
-#undef __dsb       
-#undef __isb       
+#undef __sev
+#undef __wfe
+#undef __dmb
+#undef __dsb
+#undef __isb
 
-#define __sev       __SEV
-#define __wfe       __WFE
-#define __dmb       __DMB
+#define __sev()     __builtin_arm_sev()
+#define __wfe()     __builtin_arm_wfe()
+
+#define __dmb(...)  __builtin_arm_dmb(0xF)
+
 #define __dsb       __DSB
 #define __isb       __ISB
 
