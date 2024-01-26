@@ -21,7 +21,7 @@
 #include <stdio.h>
 #include "perf_counter.h"
 
-#ifdef RTE_Compiler_EventRecorder
+#if defined(RTE_Compiler_EventRecorder) || defined(RTE_CMSIS_View_EventRecorder)
 #   include <EventRecorder.h>
 #endif
 
@@ -33,6 +33,7 @@
 /*============================ PROTOTYPES ====================================*/
 extern int _read(int handle, char *buffer, int length);
 extern int _write(int handle, char *buffer, int length);
+extern int stdout_putchar(int ch);
 
 /*============================ IMPLEMENTATION ================================*/
 int __real_vprintf(const char *format, __va_list va) 
@@ -78,7 +79,7 @@ static int stdout_putchar (int ch) {
   }
   return (ch);
 }
-#else
+#elif !defined(RTE_CMSIS_View_EventRecorder)
 __attribute__((weak))
 int stdout_putchar(int ch)
 {
@@ -93,6 +94,7 @@ int stdout_putchar(int ch)
 }
 
 #endif
+
 
 
 int fputc (int c, FILE * stream) 
@@ -140,7 +142,7 @@ void __aeabi_assert(const char *chCond, const char *chLine, int wErrCode)
 
 void _ttywrch(int ch)
 {
-    UNUSED_PARAM(ch);
+    stdout_putchar(ch);
 }
 
 #if !defined(RETARGET_SYS)

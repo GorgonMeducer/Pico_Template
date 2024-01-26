@@ -22,7 +22,7 @@
 #include <stdio.h>
 
 #include "RTE_Components.h"
-#if defined(RTE_Compiler_EventRecorder) && defined(RTE_Compiler_IO_STDOUT_EVR)
+#if defined(RTE_Compiler_EventRecorder) || defined(RTE_CMSIS_View_EventRecorder)
 #   include <EventRecorder.h>
 #endif
 
@@ -66,7 +66,7 @@ static void system_init(void)
      */
     init_cycle_counter(false);
 
-#if defined(RTE_Compiler_EventRecorder) && defined(RTE_Compiler_IO_STDOUT_EVR)
+#if defined(RTE_Compiler_EventRecorder) || defined(RTE_CMSIS_View_EventRecorder)
     EventRecorderInitialize(0, 1);
 #endif
     stdio_init_all();
