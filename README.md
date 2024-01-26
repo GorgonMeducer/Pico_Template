@@ -1,4 +1,4 @@
-# Pico_Template (v2.2.0)
+# Pico_Template (v2.2.1)
 An MDK template for Raspberry Pi Pico
 
 - Add Flash Programming algorithm.
@@ -14,14 +14,11 @@ An MDK template for Raspberry Pi Pico
 
   - Add support for popular [LCD 1.3inc module](https://www.waveshare.com/wiki/Pico-LCD-1.3) : define macro `__PICO_USE_LCD_1IN3__` to enable it.
 
-  - **[new]**Add support for RP2040 [LCD 1.28inch development kit](https://www.waveshare.com/wiki/RP2040-LCD-1.28): define macro `__RP2040_USE_LCD_1IN28__` to enable it.
-
-
-
+  - Add support for RP2040 [LCD 1.28inch development kit](https://www.waveshare.com/wiki/RP2040-LCD-1.28): define macro `__RP2040_USE_LCD_1IN28__` to enable it.
 
 - Support an ultra-lightweight python VM: [PikaScript](https://github.com/pikasTech/pikascript) (via cmsis-pack)
 
-- Compatible with CMSIS 5.7.0, CMSIS 5.8.0 and above
+- Compatible with CMSIS 5.7.0, CMSIS 6.0.0 and above
 
 - Provide users an option to use the ***stdio*** solution from ***pico-sdk (by default)*** or retarget the ***stdin/stdout*** to a user specified location directly. (See note in ***env_wrapper.c***).
 
@@ -40,8 +37,6 @@ An MDK template for Raspberry Pi Pico
   - [**AC6-RunInSRAM**] Running code in SRAM (code is still stored in FLASH)
 
   - [**AC6-DebugInSRAM**] "no_flash" mode in the original pico-sdk.
-
-    
 
 
 # How to Use
