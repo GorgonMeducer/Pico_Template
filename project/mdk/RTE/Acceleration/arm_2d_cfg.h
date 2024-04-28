@@ -58,6 +58,13 @@ extern "C" {
 #ifndef __ARM_2D_CFG_SUPPORT_COLOUR_CHANNEL_ACCESS__
 #   define __ARM_2D_CFG_SUPPORT_COLOUR_CHANNEL_ACCESS__             1
 #endif
+
+// <q>Improve the Quality of IIR Blur
+// <i> Note that enabling this feature will half the performance of IIR Blur and only works correctly in Full framebuffer mode
+// <i> This feature is disabled by default to improve performance
+#ifndef __ARM_2D_CFG_USE_IIR_BLUR_REVERSE_PATH__
+#   define __ARM_2D_CFG_USE_IIR_BLUR_REVERSE_PATH__                 0
+#endif
 // </h>
 
 // <h>Log and Debug
@@ -96,6 +103,7 @@ extern "C" {
             |   ARM_2D_LOG_CHN_SCENE_PLAYER                                     \
             |   ARM_2D_LOG_CHN_DIRTY_REGION_OPTIMISATION                        \
             |   ARM_2D_LOG_CHN_STATISTICS                                       \
+            |   ARM_2D_LOG_CHN_CONTROLS                                         \
             |   ARM_2D_LOG_CHN_APP)
 #endif
 // </h>
@@ -161,7 +169,7 @@ extern "C" {
 // <i> The width of your screen for running benchmark
 // <i> Default: 320
 #ifndef __GLCD_CFG_SCEEN_WIDTH__
-#   define __GLCD_CFG_SCEEN_WIDTH__                                     320
+#   define __GLCD_CFG_SCEEN_WIDTH__                                     240
 #endif
 
 // <o>Height of the screen <8-32767>
@@ -209,6 +217,8 @@ extern "C" {
 
 // <<< end of configuration section >>>
 
+
+#define __ARM_2D_HAS_TIGHTLY_COUPLED_ACC__                              0
 
 /*============================ TYPES =========================================*/
 /*============================ GLOBAL VARIABLES ==============================*/

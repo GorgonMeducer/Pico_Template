@@ -35,6 +35,7 @@
 #   include "arm_2d_helper.h"
 #   include "arm_2d_disp_adapters.h"
 #   include "arm_2d_scenes.h"
+#   include "arm_2d_demos.h"
 #endif
 
 #if defined(RTE_Acceleration_Arm_2D_Extra_Benchmark)
@@ -112,7 +113,7 @@ int main(void)
         breath_led();
 
 #if defined(__RTE_ACCELERATION_ARM_2D__) || defined(RTE_Acceleration_Arm_2D)
-    #if ARM_2D_VERISON >= 10105
+    #if ARM_2D_VERSION >= 10105
         /* lock framerate: 30 FPS */
         disp_adapter0_task(30);
     #else

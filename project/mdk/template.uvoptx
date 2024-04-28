@@ -170,7 +170,7 @@
         </Mm>
       </MemoryWindow1>
       <ScvdPack>
-        <Filename>C:\Users\gabwan01\AppData\Local\Arm\Packs\ARM\CMSIS-View\1.1.0\EventRecorder\EventRecorder.scvd</Filename>
+        <Filename>C:\Users\gabriel\AppData\Local\Arm\Packs\ARM\CMSIS-View\1.1.0\EventRecorder\EventRecorder.scvd</Filename>
         <Type>ARM::CMSIS-View@1.1.0</Type>
         <SubType>1</SubType>
       </ScvdPack>
@@ -1208,17 +1208,41 @@
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
+    <File>
+      <GroupNumber>3</GroupNumber>
+      <FileNumber>48</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\arm_2d_scene_fan.c</PathWithFileName>
+      <FilenameWithoutPath>arm_2d_scene_fan.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>3</GroupNumber>
+      <FileNumber>49</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\arm_2d_scene_fitness.c</PathWithFileName>
+      <FilenameWithoutPath>arm_2d_scene_fitness.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
   </Group>
 
   <Group>
     <GroupName>BSP</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>48</FileNumber>
+      <FileNumber>50</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -1230,7 +1254,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>49</FileNumber>
+      <FileNumber>51</FileNumber>
       <FileType>4</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -1242,7 +1266,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>50</FileNumber>
+      <FileNumber>52</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -1252,6 +1276,14 @@
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
+  </Group>
+
+  <Group>
+    <GroupName>::Acceleration</GroupName>
+    <tvExp>1</tvExp>
+    <tvExpOptDlg>0</tvExpOptDlg>
+    <cbSel>0</cbSel>
+    <RteFlg>1</RteFlg>
   </Group>
 
   <Group>

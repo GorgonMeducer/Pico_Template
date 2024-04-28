@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2009-2021 Arm Limited. All rights reserved.
+ * Copyright (c) 2009-2024 Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -67,6 +67,24 @@ extern "C" {
 #   define __DISP0_CFG_SCEEN_HEIGHT__                              240
 #endif
 
+/*
+  ARM_SCREEN_NO_ROTATION   0
+  ARM_SCREEN_ROTATE_90     1
+  ARM_SCREEN_ROTATE_180    2
+  ARM_SCREEN_ROTATE_270    3
+ */
+
+// <o>Rotate the Screen
+//     <0=>  NO Rotation
+//     <1=>    90 Degree
+//     <2=>   180 Degree
+//     <3=>   270 Degree
+// <i> Rotate the Screen for specified degrees.
+// <i> NOTE: This is extremely slow. Please avoid using it whenever it is possible.
+#ifndef __DISP0_CFG_ROTATE_SCREEN__
+#   define __DISP0_CFG_ROTATE_SCREEN__                             0
+#endif
+
 // <o>Width of the PFB block
 // <i> The width of your PFB block size used in disp0
 #ifndef __DISP0_CFG_PFB_BLOCK_WIDTH__
@@ -76,7 +94,7 @@ extern "C" {
 // <o>Height of the PFB block
 // <i> The height of your PFB block size used in disp0
 #ifndef __DISP0_CFG_PFB_BLOCK_HEIGHT__
-#   define __DISP0_CFG_PFB_BLOCK_HEIGHT__                          240
+#   define __DISP0_CFG_PFB_BLOCK_HEIGHT__                          24
 #endif
 
 // <o>Width Alignment of generated PFBs
@@ -175,7 +193,30 @@ extern "C" {
 #   define __DISP0_CFG_DISABLE_NAVIGATION_LAYER__                  0
 #endif
 
-// <q>Enable the virtual resource helper service
+// <q> Enable Console
+// <i> Add a simple console to the display adapter in a floating window.
+// <i> This feature is disabled by default.
+#ifndef __DISP0_CFG_USE_CONSOLE__
+#   define __DISP0_CFG_USE_CONSOLE__                                0
+#endif
+
+// <o> Console Input Buffer Size
+// <i> The size of console input buffer, 0 means no input buffer
+#ifndef __DISP0_CFG_CONSOLE_INPUT_BUFFER__
+#   define __DISP0_CFG_CONSOLE_INPUT_BUFFER__                       255
+#endif
+
+// <o> Console Display Time in ms <1000-0xFFFFFFFF>
+// <i> The time before the console disappear for each content update.
+#ifndef __DISP0_CFG_CONSOLE_DISPALY_TIME__
+#   define __DISP0_CFG_CONSOLE_DISPALY_TIME__                       3000
+#endif
+
+// <o>Maximum number of Virtual Resources used per API
+//     <0=>     NO Virtual Resource
+//     <1=>     1 Per API
+//     <2=>     2 Per API
+//     <3=>     3 Per API
 // <i> Introduce a helper service for loading virtual resources.
 // <i> This feature is disabled by default.
 #ifndef __DISP0_CFG_VIRTUAL_RESOURCE_HELPER__
@@ -190,6 +231,15 @@ extern "C" {
 #endif
 // <<< end of configuration section >>>
 
+#ifndef __DISP0_COLOUR_FORMAT__
+#   if      __DISP0_CFG_COLOUR_DEPTH__ == 8
+#       define __DISP0_COLOUR_FORMAT__  ARM_2D_COLOUR_GRAY8
+#   elif    __DISP0_CFG_COLOUR_DEPTH__ == 16
+#       define __DISP0_COLOUR_FORMAT__  ARM_2D_COLOUR_RGB565
+#   elif    __DISP0_CFG_COLOUR_DEPTH__ == 32
+#       define __DISP0_COLOUR_FORMAT__  ARM_2D_COLOUR_CCCN888
+#   endif
+#endif
 
 /*============================ MACROFIED FUNCTIONS ===========================*/
 
@@ -447,6 +497,19 @@ void disp_adapter0_insert_async_flushing_complete_event_handler(void);
 extern
 void *disp_adapter0_3fb_get_flush_pointer(void);
 
+#endif
+
+
+#if __DISP0_CFG_USE_CONSOLE__
+extern
+ARM_NONNULL(1)
+int disp_adapter0_printf(const char *format, ...);
+
+extern
+bool disp_adapter0_putchar(uint8_t chChar);
+#else
+#   define disp_adapter0_printf(__format_string, ...)
+#   define disp_adapter0_putchar(...)           (true)
 #endif
 
 #if defined(__clang__)
