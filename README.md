@@ -1,4 +1,4 @@
-# Pico_Template (v2.2.1)
+# Pico_Template (v2.2.2)
 An MDK template for Raspberry Pi Pico
 
 - Add Flash Programming algorithm.
@@ -14,7 +14,9 @@ An MDK template for Raspberry Pi Pico
 
   - Add support for popular [LCD 1.3inc module](https://www.waveshare.com/wiki/Pico-LCD-1.3) : define macro `__PICO_USE_LCD_1IN3__` to enable it.
 
-  - Add support for RP2040 [LCD 1.28inch development kit](https://www.waveshare.com/wiki/RP2040-LCD-1.28): define macro `__RP2040_USE_LCD_1IN28__` to enable it.
+  - Add support for [RP2040 LCD 1.28inch development kit](https://www.waveshare.com/wiki/RP2040-LCD-1.28): define macro `__RP2040_USE_LCD_1IN28__` to enable it.
+
+  - **[new]** Add support for [PR2040 LCD Touch 1.28inch development kit](https://www.waveshare.com/wiki/RP2040-Touch-LCD-1.28): define macro `__RP2040_USE_LCD_TOUCH_1IN28__` to enable it.
 
 - Support an ultra-lightweight python VM: [PikaScript](https://github.com/pikasTech/pikascript) (via cmsis-pack)
 
@@ -170,7 +172,7 @@ To make it easier for people to turn Pico into a 'game pad', I've picked a popul
 In brief,  it is an
 
 >  1.3inch LCD Display Module For Raspberry Pi Pico, 65K RGB Colors, 240×240 Pixels, SPI Interface
-<img src="https://github.com/GorgonMeducer/Pico_Template/assets/13148491/36df1b2b-54da-4059-b44e-25688224ff21" alt="1 3inch-lcd-hat-1" style="zoom:67%;" />
+<img src="./documents/Pictures/pico-lcd-1.3-1.jpg" style="zoom: 80%;" />
 
 
 
@@ -208,9 +210,24 @@ In brief,  it is an
 
 ![EnbaleRP2040LCD1in28](./documents/Pictures/Enable_RP2040_LCD_1in28.png) 
 
+### 2.6 How to enable support for the RP2040 LCD Touch 1.28inch development kit
+
+To make it easier for people to create watch faces, I've picked a popular [PR2040 LCD Touch 1.28inch development kit](https://www.waveshare.com/wiki/RP2040-Touch-LCD-1.28) and added a tailored driver into this Pico template. 
+
+In brief,  it is an
+
+>  RP2040 MCU Board, With 1.28inch Round Touch LCD, accelerometer and gyroscope Sensor
+>  <img src="./documents/Pictures/rp2040-touch-lcd-1.28-1_1.jpg" style="zoom: 60%;" />
 
 
-### 2.6 How to enable the PikaScript Support
+
+ To enable the built in support, please set the macro `__RP2040_USE_LCD_TOUCH_1IN28__` to `1` in MDK project configuration as shown below:
+
+![EnbaleRP2040LCDTouch1in28](./documents/Pictures/Enable_RP2040_LCD_Touch_1in28.png) 
+
+
+
+### 2.7 How to enable the PikaScript Support
 
 > PikaScript is an ultra-lightweight Python engine with zero dependencies and zero-configuration, that can run with 4KB of RAM and 32KB of flash (such as STM32G030C8 and STM32F103C8).
 
@@ -220,7 +237,7 @@ Pico-Template supports [PikaScript](https://github.com/pikasTech/pikascript) via
 
 ![](./documents/Pictures/EnableThePikaBeforeBuild.png) 
 
-### 2.7 How to run Coremark
+### 2.8 How to run Coremark
 
 With the help from `perf_counter v2.0.0` , we can now run **[coremark](https://github.com/eembc/coremark)** on Pico-Template with just one click in RTE as shown below:
 
