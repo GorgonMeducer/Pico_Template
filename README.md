@@ -1,38 +1,28 @@
-# Pico_Template (v2.2.2)
+# Pico_Template (v2.3.0)
 An MDK template for Raspberry Pi Pico
+
+- Use RPi official [RP2xxxx_DFP](https://www.keil.arm.com/packs/rp2xxx_dfp-raspberrypi/boards/)
 
 - Add Flash Programming algorithm.
 
   - Special thanks to [Aladdin-Wang](https://github.com/Aladdin-Wang). [His extraordinary work](https://github.com/Aladdin-Wang/RP2040_Flash_Algorithm) makes our life much easier!
   - Special thanks to [fang316](https://github.com/fang316), whose suggestion improves how the flash programming algorithm is deployed.
-
-- **[new]Support the latest pico-sdk (v1.5.1)**
-
 - Compiler: Arm Compiler 6.15 and above (Using non-intrusive wrapper to support pico-sdk which is written in GCC)
-
 - Improved BSP support
 
   - Add support for popular [LCD 1.3inc module](https://www.waveshare.com/wiki/Pico-LCD-1.3) : define macro `__PICO_USE_LCD_1IN3__` to enable it.
 
   - Add support for [RP2040 LCD 1.28inch development kit](https://www.waveshare.com/wiki/RP2040-LCD-1.28): define macro `__RP2040_USE_LCD_1IN28__` to enable it.
 
-  - **[new]** Add support for [PR2040 LCD Touch 1.28inch development kit](https://www.waveshare.com/wiki/RP2040-Touch-LCD-1.28): define macro `__RP2040_USE_LCD_TOUCH_1IN28__` to enable it.
-
+  - Add support for [PR2040 LCD Touch 1.28inch development kit](https://www.waveshare.com/wiki/RP2040-Touch-LCD-1.28): define macro `__RP2040_USE_LCD_TOUCH_1IN28__` to enable it.
 - Support an ultra-lightweight python VM: [PikaScript](https://github.com/pikasTech/pikascript) (via cmsis-pack)
-
 - Compatible with CMSIS 5.7.0, CMSIS 6.0.0 and above
-
-- Provide users an option to use the ***stdio*** solution from ***pico-sdk (by default)*** or retarget the ***stdin/stdout*** to a user specified location directly. (See note in ***env_wrapper.c***).
-
 - **Ready for running [Arm-2D](https://github.com/ARM-software/Arm-2D) benchmarks**
-
 - **Ready for coremark**
-
 - **Support Debug in MDK**
 
   - [Using CMSIS-DAP](https://github.com/majbthrd/pico-debug) (Validated in MDK and **highly recommended**)
   - **Support Flash Downloading**
-
 - Add dedicated project configurations for:
   - [**AC6-flash**] Running code in Flash (XIP)
 
@@ -58,10 +48,9 @@ git submodule update --init
 
 Instead of using git clone, if you download a release package, then you have to download the [pico-sdk](https://github.com/raspberrypi/pico-sdk) manually and put them into the corresponding folder:
 
-| submodules | URL                                         | Directory      |
-| ---------- | ------------------------------------------- | -------------- |
-| pico-sdk   | https://github.com/raspberrypi/pico-sdk     | ROOT\Pico-sdk\ |
-| bsp        | https://github.com/GorgonMeducer/RP2040_BSP | ROOT\bsp       |
+| submodules | URL                                         | Directory |
+| ---------- | ------------------------------------------- | --------- |
+| bsp        | https://github.com/GorgonMeducer/RP2040_BSP | ROOT\bsp  |
 
 The project template also depends on [perf_counter](https://github.com/GorgonMeducer/perf_counter) which is deployed with a **cmsis-pack** that you can find in the **MDK pack installer**. 
 
@@ -278,12 +267,4 @@ By default, you can observe the test result in **Debug (printf) View** as shown 
 ![](./documents/Pictures/core_portme.png) 
 
 
-
-# Known issue
-
-- Not all peripheral modules are added to the compilation. But I guess it is just a piece of cake for you : P
-
-- ***Please use the elf2uf2 tool in this template*** to convert the generated axf into uf2.
-
-- Might need more documents...
 
