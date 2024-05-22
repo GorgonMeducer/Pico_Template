@@ -26,8 +26,6 @@ An MDK template for Raspberry Pi Pico
 - Add dedicated project configurations for:
   - [**AC6-flash**] Running code in Flash (XIP)
 
-  - [**AC6-RunInSRAM**] Running code in SRAM (code is still stored in FLASH)
-
   - [**AC6-DebugInSRAM**] "no_flash" mode in the original pico-sdk.
 
 
