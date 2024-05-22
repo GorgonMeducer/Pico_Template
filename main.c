@@ -36,11 +36,15 @@
 #   include "arm_2d_disp_adapters.h"
 #   include "arm_2d_scenes.h"
 #   include "arm_2d_demos.h"
+
 #endif
 
 #if defined(RTE_Acceleration_Arm_2D_Extra_Benchmark)
 #   include "arm_2d_benchmark.h"
 #endif
+
+#   include "arm_2d_scene_bubble_charging.h"
+
 
 /*============================ MACROS ========================================*/
 /*============================ MACROFIED FUNCTIONS ===========================*/
@@ -104,6 +108,7 @@ int main(void)
 #   if defined(RTE_Acceleration_Arm_2D_Extra_Benchmark)
     arm_2d_run_benchmark();
 #else
+    arm_2d_scene_bubble_charging_init(&DISP0_ADAPTER);
     //arm_2d_scene_player_switch_to_next_scene(&DISP0_ADAPTER);
 #   endif
 

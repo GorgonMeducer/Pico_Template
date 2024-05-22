@@ -112,6 +112,13 @@ extern "C" {
             |   ARM_2D_LOG_CHN_CONTROLS                                         \
             |   ARM_2D_LOG_CHN_APP)
 #endif
+
+// <q>Enable The Layout Debug Mode
+// <i> Arm-2D will mark the layout areas.
+#ifndef __ARM_2D_HELPER_CFG_LAYOUT_DEBUG_MODE__
+#   define __ARM_2D_HELPER_CFG_LAYOUT_DEBUG_MODE__                  0
+#endif
+
 // </h>
 
 // <h>Patches for improving performance
@@ -195,20 +202,20 @@ extern "C" {
 // <i> Enable this mode to reduce the benchmark memory footprint (removing background picture etc.)
 // <i> This feature is disabled by default.
 #ifndef __ARM_2D_CFG_BENCHMARK_TINY_MODE__
-#   define __ARM_2D_CFG_BENCHMARK_TINY_MODE__                           1
+#   define __ARM_2D_CFG_BENCHMARK_TINY_MODE__                           0
 #endif
 
 // <q> Enable Stopwatch mode in the Benchmark:Watch-panel
 // <i> Only update the second-hand (i.e. red pointer) every second in the watch-panel demo
 // <i> This feature is disabled by default.
 #ifndef __ARM_2D_CFG_WATCH_PANEL_STOPWATCH_MODE__
-#   define __ARM_2D_CFG_WATCH_PANEL_STOPWATCH_MODE__                    1
+#   define __ARM_2D_CFG_WATCH_PANEL_STOPWATCH_MODE__                    0
 #endif
 
 // <q> Enable the nebula effect mode in the Benchmark:Watch-panel
 // <i> This feature is disabled by default and it is only available in the Tiny mode.
 #ifndef __ARM_2D_CFG_BENCHMARK_WATCH_PANEL_USE_NEBULA__
-#   define __ARM_2D_CFG_BENCHMARK_WATCH_PANEL_USE_NEBULA__              1
+#   define __ARM_2D_CFG_BENCHMARK_WATCH_PANEL_USE_NEBULA__              0
 #endif
 
 // <q> Exit benchmark when finished
@@ -227,8 +234,6 @@ extern "C" {
 #if defined(__RP2040_USE_LCD_TOUCH_1IN28__) && __RP2040_USE_LCD_TOUCH_1IN28__
 #   define __DISP0_CFG_SWAP_RGB16_HIGH_AND_LOW_BYTES__  1
 #endif
-
-#define __USE_FVP__
 
 /*============================ TYPES =========================================*/
 /*============================ GLOBAL VARIABLES ==============================*/
