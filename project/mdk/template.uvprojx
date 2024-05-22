@@ -944,20 +944,20 @@
       <TargetName>AC6-DebugInSRAM</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6190000::V6.19::ARMCLANG</pCCUsed>
+      <pCCUsed>6220000::V6.22::.\ArmCompilerforEmbedded6.22</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>ARMCM0P</Device>
-          <Vendor>ARM</Vendor>
-          <PackID>ARM.Cortex_DFP.1.0.0</PackID>
-          <PackURL>https://www.keil.com/pack/</PackURL>
-          <Cpu>IRAM(0x20000000,0x00020000) IROM(0x00000000,0x00040000) CPUTYPE("Cortex-M0+") CLOCK(12000000) ESEL ELITTLE</Cpu>
+          <Device>RP2040:Core0</Device>
+          <Vendor>RPi</Vendor>
+          <PackID>RaspberryPi.RP2xxx_DFP.0.9.5-dev</PackID>
+          <PackURL>https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.4/</PackURL>
+          <Cpu>IRAM(0x20000000,0x00042000) IROM(0x10000000,0x00200000) CPUTYPE("Cortex-M0+") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
-          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000)</FlashDriverDll>
+          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20040000 -FC2000 -FN1 -FF0Raspberry_Pi_Pico -FS010000000 -FL0200000 -FP0($$Device:RP2040$CMSIS\Flash\Raspberry_Pi_Pico.FLM))</FlashDriverDll>
           <DeviceId>0</DeviceId>
-          <RegisterFile>$$Device:ARMCM0P$Device\ARMCM0plus\Include\ARMCM0plus.h</RegisterFile>
+          <RegisterFile>$$Device:RP2040$CMSIS\Device\RP2040\Include\rp2040.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -967,7 +967,7 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile></SFDFile>
+          <SFDFile>$$Device:RP2040$CMSIS\SVD\rp2040.svd</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
@@ -1014,10 +1014,10 @@
             <nStopB2X>0</nStopB2X>
           </BeforeMake>
           <AfterMake>
-            <RunUserProg1>1</RunUserProg1>
-            <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name>.\axf2uf2.bat</UserProg1Name>
-            <UserProg2Name></UserProg2Name>
+            <RunUserProg1>0</RunUserProg1>
+            <RunUserProg2>1</RunUserProg2>
+            <UserProg1Name></UserProg1Name>
+            <UserProg2Name>$Stools\elf2uf2.exe "#L" ".\@L.uf2"</UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopA1X>0</nStopA1X>
@@ -1044,7 +1044,7 @@
         </CommonProperty>
         <DllOption>
           <SimDllName>SARMCM3.DLL</SimDllName>
-          <SimDllArguments> -MPU </SimDllArguments>
+          <SimDllArguments> -REMAP-MPU </SimDllArguments>
           <SimDlgDll>DARMCM1.DLL</SimDlgDll>
           <SimDlgDllArguments>-pCM0+</SimDlgDllArguments>
           <TargetDllName>SARMCM3.DLL</TargetDllName>
@@ -1125,7 +1125,7 @@
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
             <useUlib>0</useUlib>
-            <EndSel>1</EndSel>
+            <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
             <RoSelD>3</RoSelD>
@@ -1181,12 +1181,12 @@
               <IRAM>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x20000</Size>
+                <Size>0x42000</Size>
               </IRAM>
               <IROM>
                 <Type>1</Type>
-                <StartAddress>0x0</StartAddress>
-                <Size>0x40000</Size>
+                <StartAddress>0x10000000</StartAddress>
+                <Size>0x200000</Size>
               </IROM>
               <XRAM>
                 <Type>0</Type>
@@ -1210,8 +1210,8 @@
               </OCR_RVCT3>
               <OCR_RVCT4>
                 <Type>1</Type>
-                <StartAddress>0x0</StartAddress>
-                <Size>0x40000</Size>
+                <StartAddress>0x10000000</StartAddress>
+                <Size>0x200000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -1236,7 +1236,7 @@
               <OCR_RVCT9>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x20000</Size>
+                <Size>0x42000</Size>
               </OCR_RVCT9>
               <OCR_RVCT10>
                 <Type>0</Type>
@@ -1272,9 +1272,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>-include env_wrapper.h  -Wno-macro-redefined -Omax</MiscControls>
-              <Define>PICO, NDEBUG, PICO_NO_FLASH, __PICO_USE_LCD_1IN3__=0</Define>
+              <Define>PICO, PICO_NO_FLASH, __PICO_USE_LCD_1IN3__=0</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\pico-sdk\src\rp2_common\hardware_flash\include\;..\..\pico-sdk\src\rp2_common\hardware_dma\include\;..\..\pico-sdk\src\rp2040\hardware_structs\include;..\..\pico-sdk\src\rp2_common\cmsis\include\cmsis;..\..\pico-sdk\src\rp2_common\cmsis\stub\CMSIS\Device\RaspberryPi\RP2040\Include;..\..\pico-sdk\src\boards\include\boards;..\..\pico-sdk\src\rp2040\hardware_regs\include;.\wrapper;..\..\pico-sdk\src\rp2_common\hardware_base\include;..\..\pico-sdk\src\rp2_common\hardware_watchdog\include;..\..\pico-sdk\src\rp2_common\hardware_pll\include;..\..\pico-sdk\src\rp2_common\hardware_xosc\include;..\..\pico-sdk\src\rp2_common\hardware_irq\include;..\..\pico-sdk\src\rp2_common\hardware_gpio\include;..\..\pico-sdk\src\rp2_common\hardware_resets\include;..\..\pico-sdk\src\rp2_common\hardware_clocks\include;..\..\pico-sdk\src\rp2_common\hardware_timer\include;..\..\pico-sdk\src\rp2_common\hardware_sync\include;..\..\pico-sdk\src\rp2_common\hardware_claim\include;..\..\pico-sdk\src\rp2_common\hardware_spi\include;..\..\pico-sdk\src\rp2_common\hardware_pwm\include;..\..\pico-sdk\src\rp2_common\hardware_i2c\include;..\..\pico-sdk\src\rp2_common\hardware_uart\include;..\..\pico-sdk\src\rp2_common\hardware_adc\include;..\..\pico-sdk\src\common\pico_base\include;..\..\pico-sdk\src\rp2_common\pico_multicore\include;..\..\pico-sdk\src\common\pico_sync\include;..\..\pico-sdk\src\common\pico_time\include;..\..\pico-sdk\src\common\pico_util\include;..\..\pico-sdk\src\common\pico_stdlib\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src;..\..\pico-sdk\src\rp2_common\pico_runtime\include;..\..\pico-sdk\src\rp2_common\pico_printf\include;..\..\pico-sdk\src\rp2_common\pico_bootrom\include;..\..\pico-sdk\src\rp2_common\pico_stdio\include;..\..\pico-sdk\src\rp2_common\pico_stdio_uart\include;..\..\pico-sdk\src\rp2_common\pico_stdio_usb\include;..\..\pico-sdk\src\common\pico_binary_info\include;..\..\pico-sdk\src\rp2_common\pico_stdio_semihosting\include;..\..\pico-sdk\src\rp2_common\boot_stage2\include;.\wrapper\pico_base;..\..\bsp\Config;..\..\bsp\LCD;..\..\bsp;..\mdk</IncludePath>
+              <IncludePath>..\mdk</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1373,7 +1373,7 @@
               <RVCTZI>0</RVCTZI>
               <RVCTOtherData>0</RVCTOtherData>
               <ModuleSelection>0</ModuleSelection>
-              <IncludeInBuild>0</IncludeInBuild>
+              <IncludeInBuild>1</IncludeInBuild>
               <AlwaysBuild>2</AlwaysBuild>
               <GenerateAssemblyFile>2</GenerateAssemblyFile>
               <AssembleAssemblyFile>2</AssembleAssemblyFile>
@@ -1506,18 +1506,21 @@
       <component Cclass="Device" Cgroup="Pico Board" Cvariant="Pico" Cvendor="RaspberryPi" Cversion="1.5.1" condition="RP2040">
         <package name="RP2xxx_DFP" schemaVersion="1.7.28" url="https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.4/" vendor="RaspberryPi" version="0.9.5-dev"/>
         <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="Pico SDK" Cvendor="RaspberryPi" Cversion="1.5.1" condition="RP2040 BOARD">
         <package name="RP2xxx_DFP" schemaVersion="1.7.28" url="https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.4/" vendor="RaspberryPi" version="0.9.5-dev"/>
         <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="RaspberryPi" Cversion="1.1.0" condition="RP2040 CMSIS">
         <package name="RP2xxx_DFP" schemaVersion="1.7.28" url="https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.4/" vendor="RaspberryPi" version="0.9.5-dev"/>
         <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </component>
@@ -1634,6 +1637,7 @@
         <component Cclass="Device" Cgroup="Pico SDK" Cvendor="RaspberryPi" Cversion="1.5.1" condition="RP2040 BOARD"/>
         <package name="RP2xxx_DFP" schemaVersion="1.7.28" url="https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.4/" vendor="RaspberryPi" version="0.9.5-dev"/>
         <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </file>
@@ -1642,6 +1646,7 @@
         <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="RaspberryPi" Cversion="1.1.0" condition="RP2040 CMSIS" isDefaultVariant="1"/>
         <package name="RP2xxx_DFP" schemaVersion="1.7.28" url="https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.4/" vendor="RaspberryPi" version="0.9.5-dev"/>
         <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </file>
@@ -1650,6 +1655,7 @@
         <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="RaspberryPi" Cversion="1.1.0" condition="RP2040 CMSIS" isDefaultVariant="1"/>
         <package name="RP2xxx_DFP" schemaVersion="1.7.28" url="https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.4/" vendor="RaspberryPi" version="0.9.5-dev"/>
         <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </file>
@@ -1658,6 +1664,7 @@
         <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="RaspberryPi" Cversion="1.1.0" condition="RP2040 CMSIS" isDefaultVariant="1"/>
         <package name="RP2xxx_DFP" schemaVersion="1.7.28" url="https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.4/" vendor="RaspberryPi" version="0.9.5-dev"/>
         <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </file>
