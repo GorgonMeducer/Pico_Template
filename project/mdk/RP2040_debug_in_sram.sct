@@ -31,10 +31,10 @@ LR_IROM1 0x20000000 SRAM_SIZE  {    ; load region size_region
         * (:gdef:Reset_Handler)     //!< please always make sure that Reset_Handler is placed here.
         * (.binary_info_header)
     }
-    
-    ;ER_RAM_VECTOR_TABLE +0 ALIGN 256 {
-    ;    *  (.ram_vector_table)
-    ;}
+
+    ER_RAM_VECTOR_TABLE +0 ALIGN 256 {
+        *  (.ram_vector_table)
+    }
 
 
     ER_FLASH +0  {  ; load address = execution address
@@ -43,6 +43,8 @@ LR_IROM1 0x20000000 SRAM_SIZE  {    ; load region size_region
         * (+RO-DATA)
         startup_RP2040.o (+RO)
     }
+
+
     
     ER_MUTEX_ARRAY +0 {
         * (.mutex_array.*)
