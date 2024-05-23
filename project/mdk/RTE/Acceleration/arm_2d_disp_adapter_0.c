@@ -113,12 +113,12 @@ IMPL_ARM_2D_REGION_LIST(s_tNavDirtyRegionList, static)
     /* a region for the status bar on the bottom of the screen */
     ADD_LAST_REGION_TO_LIST(s_tNavDirtyRegionList,
         .tSize = {
-            .iWidth = 84,
-            .iHeight = 16,
+            .iWidth = 100,
+            .iHeight = 24,
         },
     ),
 
-END_IMPL_ARM_2D_REGION_LIST()
+END_IMPL_ARM_2D_REGION_LIST(s_tNavDirtyRegionList)
 #endif
 
 ARM_NOINIT 
@@ -275,12 +275,16 @@ IMPL_PFB_ON_DRAW(__disp_adapter0_draw_navigation)
         arm_lcd_text_location(0,0);
         if (DISP0_ADAPTER.Benchmark.wAverage) {
             arm_lcd_printf(
-                " FPS:%3"PRIu32":%"PRIu32"ms\r\n",
+                "  FPS:%3"PRIu32":%"PRIu32"ms\r\n",
                 MIN(arm_2d_helper_get_reference_clock_frequency() / DISP0_ADAPTER.Benchmark.wAverage, 999),
                 (uint32_t)arm_2d_helper_convert_ticks_to_ms(DISP0_ADAPTER.Benchmark.wAverage));
         }
         arm_lcd_printf( 
-            " LCD:%2"PRIu32"ms",
+            "  CPU:%2.2f%% \r\n", 
+            DISP0_ADAPTER.Benchmark.fCPUUsage);
+
+        arm_lcd_printf( 
+            "  LCD:%2"PRIu32"ms",
             (uint32_t)arm_2d_helper_convert_ticks_to_ms(DISP0_ADAPTER.Benchmark.wLCDLatency) );
         
     }
@@ -307,27 +311,29 @@ IMPL_PFB_ON_DRAW(__disp_adapter0_draw_navigation)
                     }, 
                     (__arm_2d_color_t){__RGB(64,64,64)}, 
                     255 - 32);
-        arm_2d_op_wait_async(NULL);
+
+        ARM_2D_OP_WAIT_ASYNC();
+
         arm_lcd_text_set_colour(GLCD_COLOR_GREEN, GLCD_COLOR_WHITE);
         arm_lcd_text_location((__DISP0_CFG_SCEEN_HEIGHT__ + 7) / 8 - 2,
                               0);
 
         if (DISP0_ADAPTER.Benchmark.wAverage) {
             arm_lcd_printf(
-                "FPS:%3d:%dms ",
+                "FPS:%3"PRIu32":%"PRIu32"ms ",
                 MIN(arm_2d_helper_get_reference_clock_frequency() / DISP0_ADAPTER.Benchmark.wAverage, 999),
-                (int32_t)arm_2d_helper_convert_ticks_to_ms(DISP0_ADAPTER.Benchmark.wAverage));
+                (uint32_t)arm_2d_helper_convert_ticks_to_ms(DISP0_ADAPTER.Benchmark.wAverage));
         }
 
 #if __DISP0_CFG_SCEEN_WIDTH__ >= 240
         arm_lcd_printf( 
-            "CPU:%2.2f%% LCD-Latency:%2dms", 
+            "CPU:%2.2f%% LCD-Latency:%2"PRIu32"ms", 
             DISP0_ADAPTER.Benchmark.fCPUUsage,
-            (int32_t)arm_2d_helper_convert_ticks_to_ms(DISP0_ADAPTER.Benchmark.wLCDLatency));
+            (uint32_t)arm_2d_helper_convert_ticks_to_ms(DISP0_ADAPTER.Benchmark.wLCDLatency));
 #else
         arm_lcd_printf( 
-            "LCD:%2dms",
-            (int32_t)arm_2d_helper_convert_ticks_to_ms(DISP0_ADAPTER.Benchmark.wLCDLatency) );
+            "LCD:%2"PRIu32"ms",
+            (uint_fast64_t)arm_2d_helper_convert_ticks_to_ms(DISP0_ADAPTER.Benchmark.wLCDLatency) );
 #endif
     }
 
@@ -347,8 +353,6 @@ IMPL_PFB_ON_DRAW(__disp_adapter0_draw_navigation)
                     ARM_2D_VERSION_STR
                     );
 #endif
-
-    
 #endif
     ARM_2D_OP_WAIT_ASYNC();
 
@@ -712,7 +716,7 @@ void disp_adapter0_navigator_init(void)
 {
 #if __DISP0_CFG_NAVIGATION_LAYER_MODE__ == 2
     
-    arm_2d_region_t tScreen = {
+    static const arm_2d_region_t tScreen = {
         .tSize = {
             .iWidth = __DISP0_CFG_SCEEN_WIDTH__,
             .iHeight = __DISP0_CFG_SCEEN_HEIGHT__,
@@ -738,7 +742,7 @@ void disp_adapter0_navigator_init(void)
             },
         ),
 
-    END_IMPL_ARM_2D_REGION_LIST()
+    END_IMPL_ARM_2D_REGION_LIST(s_tNavDirtyRegionList)
 #endif
 
 #if __DISP0_CFG_USE_CONSOLE__

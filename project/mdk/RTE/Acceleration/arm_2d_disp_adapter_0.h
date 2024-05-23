@@ -94,7 +94,7 @@ extern "C" {
 // <o>Height of the PFB block
 // <i> The height of your PFB block size used in disp0
 #ifndef __DISP0_CFG_PFB_BLOCK_HEIGHT__
-#   define __DISP0_CFG_PFB_BLOCK_HEIGHT__                          240
+#   define __DISP0_CFG_PFB_BLOCK_HEIGHT__                          24
 #endif
 
 // <o>Width Alignment of generated PFBs
@@ -189,12 +189,12 @@ extern "C" {
 
 // <o>Navigation Layer Mode
 //     <0=>     Disable Navigation Layer
-//     <1=>     Normal Mode
-//     <2=>     Round Mode
+//     <1=>     Normal Mode (Bottom)
+//     <2=>     Tiny Mode (Bottom Centre)
 // <i> Configure the default navigation layer of this display adapter. 
 // <i> NOTE: Disable the navigation layer will also remove the real-time FPS display.
 #ifndef __DISP0_CFG_NAVIGATION_LAYER_MODE__
-#   define __DISP0_CFG_NAVIGATION_LAYER_MODE__                     2
+#   define __DISP0_CFG_NAVIGATION_LAYER_MODE__                              2
 #endif
 
 // <q> Enable Console
