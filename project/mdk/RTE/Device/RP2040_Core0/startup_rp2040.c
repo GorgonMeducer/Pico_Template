@@ -140,7 +140,8 @@ extern const VECTOR_TABLE_Type __VECTOR_TABLE[48];
 /*----------------------------------------------------------------------------
   Reset Handler called on controller reset
  *----------------------------------------------------------------------------*/
-__NO_RETURN void Reset_Handler(void)
+__NO_RETURN 
+__USED void Reset_Handler(void)
 {
     __set_MSP((uintptr_t)(&__INITIAL_SP));
 
