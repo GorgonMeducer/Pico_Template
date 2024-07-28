@@ -10,14 +10,14 @@
       <TargetName>AC6-flash</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6220000::V6.22::.\ArmCompilerforEmbedded6.22</pCCUsed>
+      <pCCUsed>6220000::V6.22::ARMCLANG</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>RP2040:Core0</Device>
           <Vendor>RPi</Vendor>
-          <PackID>RaspberryPi.RP2xxx_DFP.0.9.5-dev</PackID>
-          <PackURL>https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.4/</PackURL>
+          <PackID>RaspberryPi.RP2xxx_DFP.9.9.9</PackID>
+          <PackURL>https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.5/</PackURL>
           <Cpu>IRAM(0x20000000,0x00042000) IROM(0x10000000,0x00200000) CPUTYPE("Cortex-M0+") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
@@ -448,8 +448,8 @@
         <TargetCommonOption>
           <Device>RP2040:Core0</Device>
           <Vendor>RPi</Vendor>
-          <PackID>RaspberryPi.RP2xxx_DFP.0.9.5-dev</PackID>
-          <PackURL>https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.4/</PackURL>
+          <PackID>RaspberryPi.RP2xxx_DFP.9.9.9</PackID>
+          <PackURL>https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.5/</PackURL>
           <Cpu>IRAM(0x20000000,0x00042000) IROM(0x10000000,0x00200000) CPUTYPE("Cortex-M0+") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
@@ -806,7 +806,7 @@
             <ScatterFile>.\RP2040_debug_in_sram.sct</ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
-            <Misc>--diag_suppress=L6170,L6314,L6306,L6329 --entry=Reset_Handler</Misc>
+            <Misc>--diag_suppress=L6170,L6314,L6306,L6329</Misc>
             <LinkerInputFile></LinkerInputFile>
             <DisabledWarnings></DisabledWarnings>
           </LDads>
@@ -942,9 +942,44 @@
   </Targets>
 
   <RTE>
+    <packages>
+      <filter>
+        <targetInfos/>
+      </filter>
+      <package name="CMSIS-Compiler" vendor="ARM" version="2.1.0">
+        <targetInfos>
+          <targetInfo name="AC6-flash" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package name="CMSIS-DSP" vendor="ARM" version="1.16.0">
+        <targetInfos>
+          <targetInfo name="AC6-flash" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package name="CMSIS-View" vendor="ARM" version="1.2.0">
+        <targetInfos>
+          <targetInfo name="AC6-flash" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package name="CMSIS" vendor="ARM" version="6.1.0-rc1">
+        <targetInfos>
+          <targetInfo name="AC6-flash" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package name="perf_counter" vendor="GorgonMeducer" version="2.3.3">
+        <targetInfos>
+          <targetInfo name="AC6-flash" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package name="RP2xxx_DFP" vendor="RaspberryPi" version="9.9.9">
+        <targetInfos>
+          <targetInfo name="AC6-flash" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+    </packages>
     <apis>
-      <api Capiversion="1.0.0" Cclass="CMSIS-Compiler" Cgroup="STDOUT" condition="CortexDevice" exclusive="1">
-        <package name="CMSIS-Compiler" schemaVersion="1.7.27" url="https://www.keil.com/pack/" vendor="ARM" version="2.0.0"/>
+      <api Capiversion="1.1.0" Cclass="CMSIS-Compiler" Cgroup="STDOUT" condition="CortexDevice" exclusive="1">
+        <package name="CMSIS-Compiler" schemaVersion="1.7.36" url="https://www.keil.com/pack/" vendor="ARM" version="2.1.0"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-flash"/>
@@ -952,22 +987,22 @@
       </api>
     </apis>
     <components>
-      <component Cclass="CMSIS-Compiler" Cgroup="CORE" Cvendor="ARM" Cversion="1.0.0" condition="ARMCC CortexDevice">
-        <package name="CMSIS-Compiler" schemaVersion="1.7.27" url="https://www.keil.com/pack/" vendor="ARM" version="2.0.0"/>
+      <component Cclass="CMSIS-Compiler" Cgroup="CORE" Cvendor="ARM" Cversion="1.1.0" condition="ARMCC CortexDevice">
+        <package name="CMSIS-Compiler" schemaVersion="1.7.36" url="https://www.keil.com/pack/" vendor="ARM" version="2.1.0"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </component>
-      <component Capiversion="1.0.0" Cclass="CMSIS-Compiler" Cgroup="STDOUT" Csub="Event Recorder" Cvendor="ARM" Cversion="1.0.0" condition="CORE EVR">
-        <package name="CMSIS-Compiler" schemaVersion="1.7.27" url="https://www.keil.com/pack/" vendor="ARM" version="2.0.0"/>
+      <component Capiversion="1.1.0" Cclass="CMSIS-Compiler" Cgroup="STDOUT" Csub="Event Recorder" Cvendor="ARM" Cversion="1.1.0" condition="CORE EVR">
+        <package name="CMSIS-Compiler" schemaVersion="1.7.36" url="https://www.keil.com/pack/" vendor="ARM" version="2.1.0"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </component>
-      <component Cclass="CMSIS-View" Cgroup="Event Recorder" Cvariant="DAP" Cvendor="ARM" Cversion="1.5.3" condition="EventRecorder">
-        <package name="CMSIS-View" schemaVersion="1.7.25" url="https://www.keil.com/pack/" vendor="ARM" version="1.1.0"/>
+      <component Cclass="CMSIS-View" Cgroup="Event Recorder" Cvariant="DAP" Cvendor="ARM" Cversion="1.6.0" condition="EventRecorder">
+        <package name="CMSIS-View" schemaVersion="1.7.36" url="https://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-flash"/>
@@ -980,15 +1015,15 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </component>
-      <component Cclass="CMSIS" Cgroup="DSP" Cvariant="Source" Cvendor="ARM" Cversion="1.15.0" condition="CMSISCORE">
-        <package name="CMSIS-DSP" schemaVersion="1.7.7" url="https://www.keil.com/pack/" vendor="ARM" version="1.15.0"/>
+      <component Cclass="CMSIS" Cgroup="DSP" Cvariant="Source" Cvendor="ARM" Cversion="0.0.0" condition="CMSISCORE">
+        <package name="CMSIS-DSP" schemaVersion="1.7.27" url="https://www.keil.com/pack/" vendor="ARM" version="1.16.0"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </component>
-      <component Cclass="Utilities" Cgroup="perf_counter" Csub="Core" Cvariant="Source" Cvendor="GorgonMeducer" Cversion="2.3.1" condition="CMSIS-CORE">
-        <package name="perf_counter" schemaVersion="1.7.28" url="https://raw.githubusercontent.com/GorgonMeducer/perf_counter/CMSIS-Pack/cmsis-pack/" vendor="GorgonMeducer" version="9.9.9"/>
+      <component Cclass="Utilities" Cgroup="perf_counter" Csub="Core" Cvariant="Source" Cvendor="GorgonMeducer" Cversion="2.3.3" condition="CMSIS-CORE">
+        <package name="perf_counter" schemaVersion="1.7.37" url="https://raw.githubusercontent.com/GorgonMeducer/perf_counter/CMSIS-Pack/cmsis-pack/" vendor="GorgonMeducer" version="2.3.3"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-flash"/>
@@ -1008,8 +1043,8 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </component>
-      <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="RaspberryPi" Cversion="1.1.0" condition="RP2040 CMSIS">
-        <package name="RP2xxx_DFP" schemaVersion="1.7.28" url="https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.4/" vendor="RaspberryPi" version="0.9.5-dev"/>
+      <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="RaspberryPi" Cversion="1.1.0" condition="RP2040 CMSIS" isDefaultVariant="1">
+        <package name="RP2xxx_DFP" schemaVersion="1.7.28" url="https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.5/" vendor="RaspberryPi" version="9.9.9"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-flash"/>
@@ -1109,8 +1144,8 @@
       </file>
       <file attr="config" category="header" name="EventRecorder\Config\EventRecorderConf.h" version="1.1.0">
         <instance index="0">RTE\CMSIS-View\EventRecorderConf.h</instance>
-        <component Cclass="CMSIS-View" Cgroup="Event Recorder" Cvariant="DAP" Cvendor="ARM" Cversion="1.5.3" condition="EventRecorder"/>
-        <package name="CMSIS-View" schemaVersion="1.7.25" url="https://www.keil.com/pack/" vendor="ARM" version="1.1.0"/>
+        <component Cclass="CMSIS-View" Cgroup="Event Recorder" Cvariant="DAP" Cvendor="ARM" Cversion="1.6.0" condition="EventRecorder"/>
+        <package name="CMSIS-View" schemaVersion="1.7.36" url="https://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-flash"/>
@@ -1125,7 +1160,7 @@
       <file attr="config" category="preIncludeGlobal" name="__wrapper\env_wrapper.h" version="1.5.2">
         <instance index="0">RTE\Device\RP2040_Core0\env_wrapper.h</instance>
         <component Cclass="Device" Cgroup="Pico SDK" Cvendor="RaspberryPi" Cversion="1.5.1" condition="RP2040 BOARD"/>
-        <package name="RP2xxx_DFP" schemaVersion="1.7.28" url="https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.4/" vendor="RaspberryPi" version="0.9.5-dev"/>
+        <package name="RP2xxx_DFP" schemaVersion="1.7.28" url="https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.5/" vendor="RaspberryPi" version="9.9.9"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-flash"/>
@@ -1134,16 +1169,25 @@
       <file attr="config" category="linkerScript" condition="ARMCC" name="CMSIS\Device\RP2040\Source\ARM\rp2040.sct" version="1.2.1">
         <instance index="0">RTE\Device\RP2040_Core0\rp2040.sct</instance>
         <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="RaspberryPi" Cversion="1.1.0" condition="RP2040 CMSIS" isDefaultVariant="1"/>
-        <package name="RP2xxx_DFP" schemaVersion="1.7.28" url="https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.4/" vendor="RaspberryPi" version="0.9.5-dev"/>
+        <package name="RP2xxx_DFP" schemaVersion="1.7.28" url="https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.5/" vendor="RaspberryPi" version="9.9.9"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </file>
-      <file attr="config" category="sourceC" name="CMSIS\Device\RP2040\Source\startup_rp2040.c" version="1.2.0">
+      <file attr="config" category="linkerScript" condition="ARMCC" name="CMSIS\Device\RP2040\Source\ARM\rp2040_no_flash.sct" version="1.0.0">
+        <instance index="0">RTE\Device\RP2040_Core0\rp2040_no_flash.sct</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="RaspberryPi" Cversion="1.1.0" condition="RP2040 CMSIS" isDefaultVariant="1"/>
+        <package name="RP2xxx_DFP" schemaVersion="1.7.28" url="https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.5/" vendor="RaspberryPi" version="9.9.9"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="CMSIS\Device\RP2040\Source\startup_rp2040.c" version="1.2.1">
         <instance index="0">RTE\Device\RP2040_Core0\startup_rp2040.c</instance>
         <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="RaspberryPi" Cversion="1.1.0" condition="RP2040 CMSIS" isDefaultVariant="1"/>
-        <package name="RP2xxx_DFP" schemaVersion="1.7.28" url="https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.4/" vendor="RaspberryPi" version="0.9.5-dev"/>
+        <package name="RP2xxx_DFP" schemaVersion="1.7.28" url="https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.5/" vendor="RaspberryPi" version="9.9.9"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-flash"/>
@@ -1152,7 +1196,7 @@
       <file attr="config" category="sourceC" name="CMSIS\Device\RP2040\Source\system_rp2040.c" version="1.1.0">
         <instance index="0">RTE\Device\RP2040_Core0\system_rp2040.c</instance>
         <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="RaspberryPi" Cversion="1.1.0" condition="RP2040 CMSIS" isDefaultVariant="1"/>
-        <package name="RP2xxx_DFP" schemaVersion="1.7.28" url="https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.4/" vendor="RaspberryPi" version="0.9.5-dev"/>
+        <package name="RP2xxx_DFP" schemaVersion="1.7.28" url="https://github.com/raspberrypi/cmsis-rp2xxx-dfp/releases/download/v0.9.5/" vendor="RaspberryPi" version="9.9.9"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-flash"/>

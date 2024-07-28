@@ -143,17 +143,6 @@ typedef unsigned int        uint;
 #   define __CONCAT(a,b)        ____CONCAT(a,b)
 #endif
 
-#ifndef __PLOOC_VA_NUM_ARGS_IMPL
-#   define __PLOOC_VA_NUM_ARGS_IMPL( _0,_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,     \
-                                    _12,_13,_14,_15,_16,__N,...)      __N
-#endif
-
-#ifndef __PLOOC_VA_NUM_ARGS
-#define __PLOOC_VA_NUM_ARGS(...)                                                \
-            __PLOOC_VA_NUM_ARGS_IMPL( 0,##__VA_ARGS__,16,15,14,13,12,11,10,9,   \
-                                      8,7,6,5,4,3,2,1,0)
-#endif
-
 ///**
 //  \brief   Get Control Register
 //  \details Returns the content of the Control Register.
@@ -182,26 +171,37 @@ typedef unsigned int        uint;
 #undef __wfi
 #undef __wfe
 #undef __dmb
-#undef __dsb
-#undef __isb
+//#undef __dsb
+//#undef __isb
 
 #define __sev       __builtin_arm_sev
 #define __wfi       __builtin_arm_wfi
 #define __wfe       __builtin_arm_wfe
+
+#ifndef __PLOOC_VA_NUM_ARGS_IMPL
+#   define __PLOOC_VA_NUM_ARGS_IMPL( _0,_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,     \
+                                    _12,_13,_14,_15,_16,__N,...)      __N
+#endif
+
+#ifndef __PLOOC_VA_NUM_ARGS
+#define __PLOOC_VA_NUM_ARGS(...)                                                \
+            __PLOOC_VA_NUM_ARGS_IMPL( 0,##__VA_ARGS__,16,15,14,13,12,11,10,9,   \
+                                      8,7,6,5,4,3,2,1,0)
+#endif
 
 #define __dmb0()    __builtin_arm_dmb(0xF)
 #define __dmb1(__N) __builtin_arm_dmb(__N)
 
 #define __dmb(...)  __CONCAT(__dmb, __PLOOC_VA_NUM_ARGS(__VA_ARGS__))(__VA_ARGS__)
 
-#define __dsb       __DSB
-#define __isb       __ISB
+//#define __dsb       __DSB
+//#define __isb       __ISB
 
 typedef uint16_t __uint16_t;
 
 #include "pico/platform.h"
 
-#if 1
+#if 0 /* a configuration for over-clocking to 250MHz */
 #define PLL_SYS_POSTDIV2                    1
 #define PLL_SYS_POSTDIV1                    6
 #define PLL_SYS_VCO_FREQ_KHZ                (1500 * KHZ)
