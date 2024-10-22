@@ -338,7 +338,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>__RP2040_USE_OLED_1IN3__=1,__RP2040_USE_LCD_1IN28__=0,__RP2040_USE_LCD_TOUCH_1IN28__=1,__PICO_USE_LCD_1IN3__=0,ITERATIONS=7000</Define>
+              <Define>__RP2040_USE_OLED_1IN3__=1,__RP2040_USE_LCD_1IN28__=0,__RP2040_USE_LCD_TOUCH_1IN28__=0,__PICO_USE_LCD_1IN3__=0,ITERATIONS=7000</Define>
               <Undefine></Undefine>
               <IncludePath>.</IncludePath>
             </VariousControls>

@@ -88,6 +88,26 @@ static void system_init(void)
 #endif
 }
 
+
+
+void OLED_1in3_C_Clear()
+{
+    uint32_t Width, Height, column;
+    Width = (OLED_1in3_C_WIDTH % 8 == 0)? (OLED_1in3_C_WIDTH / 8 ): (OLED_1in3_C_WIDTH / 8 + 1);
+    Height = OLED_1in3_C_HEIGHT;  
+    OLED_WriteReg(0xb0); 	//Set the row  start address
+    for (UWORD j = 0; j < Height; j++) {
+        column = 63 - j;
+        OLED_WriteReg(0x00 + (column & 0x0f));  //Set column low start address
+        OLED_WriteReg(0x10 + (column >> 4));  //Set column higt start address
+        for (UWORD i = 0; i < Width; i++) {
+            OLED_WriteData(0x00);
+        }
+    }
+}
+
+
+
 int main(void) 
 {
     system_init();
