@@ -1,4 +1,4 @@
-# Pico_Template (v2.3.1)
+# Pico_Template (v2.3.2)
 An MDK template for Raspberry Pi Pico
 
 - Use RPi official [RP2xxxx_DFP](https://www.keil.arm.com/packs/rp2xxx_dfp-raspberrypi/boards/)
