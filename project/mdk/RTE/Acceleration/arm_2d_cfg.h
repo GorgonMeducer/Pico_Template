@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2009-2022 Arm Limited. All rights reserved.
+ * Copyright (c) 2009-2024 Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -25,6 +25,10 @@
 #   include "RTE_Components.h"
 #endif
 
+#if defined(__ARM_2D_USER_APP_CFG_H__)
+#   include __ARM_2D_USER_APP_CFG_H__
+#endif
+
 #ifdef   __cplusplus
 extern "C" {
 #endif
@@ -45,7 +49,9 @@ extern "C" {
 #   define __ARM_2D_HAS_ASYNC__                                     0
 #endif
 
-// <q>Enable anti-alias support for all tranform operations.
+// <o>Enable Anti-Alias support for all transform operations.
+//     <0=>     No Anti-Alias
+//     <1=>     Use 4x Supersampling Anti-Alias (4xSSAA)
 // <i> Note that enabling this feature suffers a non-negligible performance drop.
 // <i> This feature is disabled by default.
 #ifndef __ARM_2D_HAS_ANTI_ALIAS_TRANSFORM__
@@ -56,20 +62,26 @@ extern "C" {
 // <i> Note that enabling this feature will add the support for a special colour type: ARM_2D_CHANNEL_8in32
 // <i> This feature is disabled by default to save code size
 #ifndef __ARM_2D_CFG_SUPPORT_COLOUR_CHANNEL_ACCESS__
-#   define __ARM_2D_CFG_SUPPORT_COLOUR_CHANNEL_ACCESS__             0
+#   define __ARM_2D_CFG_SUPPORT_COLOUR_CHANNEL_ACCESS__             1
 #endif
 
 // <q>Enable ccca8888(ARGB8888) implicit conversion 
 // <i> This feature is disabled by default to save code size
 #ifndef __ARM_2D_CFG_SUPPORT_CCCA8888_IMPLICIT_CONVERSION__
-#   define __ARM_2D_CFG_SUPPORT_CCCA8888_IMPLICIT_CONVERSION__      0
+#   define __ARM_2D_CFG_SUPPORT_CCCA8888_IMPLICIT_CONVERSION__      1
 #endif
 
 // <q>Improve the Quality of IIR Blur
 // <i> Note that enabling this feature will half the performance of IIR Blur and only works correctly in Full framebuffer mode
 // <i> This feature is disabled by default to improve performance
 #ifndef __ARM_2D_CFG_USE_IIR_BLUR_REVERSE_PATH__
-#   define __ARM_2D_CFG_USE_IIR_BLUR_REVERSE_PATH__                 1
+#   define __ARM_2D_CFG_USE_IIR_BLUR_REVERSE_PATH__                 0
+#endif
+
+// <q>Support Scaling for A1, A2 and A4 fonts
+// <i> Note that enabling this feature will reduces performance when using A1, A2 and A4 fonts when using scaling.
+#ifndef __ARM_2D_CFG_SUPPORT_TRANSFORM_FOR_NON_A8_FONTS__
+#   define __ARM_2D_CFG_SUPPORT_TRANSFORM_FOR_NON_A8_FONTS__        1
 #endif
 // </h>
 
@@ -110,6 +122,7 @@ extern "C" {
             |   ARM_2D_LOG_CHN_DIRTY_REGION_OPTIMISATION                        \
             |   ARM_2D_LOG_CHN_STATISTICS                                       \
             |   ARM_2D_LOG_CHN_CONTROLS                                         \
+            |   ARM_2D_LOG_CHN_GUI_STACK                                        \
             |   ARM_2D_LOG_CHN_APP)
 #endif
 
@@ -121,7 +134,7 @@ extern "C" {
 
 // </h>
 
-// <h>Patches for improving performance
+// <h>Patches for improving performance or memory footprint
 // =======================
 // 
 // <c1> Do NOT treat alpha value 255 as completely opaque in mask related operations
@@ -139,6 +152,27 @@ extern "C" {
 //#define __ARM_2D_CFG_UNSAFE_NO_SATURATION_IN_FIXED_POINT__ 
 // </c>
 
+// <c1> Remove the Helium RGB565 Patch in IIR Blur operations
+// <i> This option is used to remove helium rgb565 patch in IIR Blur to gain a better performance, a ghost-shadow effects might noticible when background is white or light.
+//#define __ARM_2D_CFG_UNSAFE_NO_HELIUM_RGB565_PATCH_IN_IIR_BLUR__ 
+// </c>
+
+// <c1> Remove the PFB support in IIR Blur Helium acceleration
+// <i> This option is used to remove the PFB support in IIR Blur Helium backend to gain a better performance.
+//#define __ARM_2D_CFG_UNSAFE_NO_PFB_SUPPORT_IN_IIR_BLUR_HELIUM__ 
+// </c>
+
+// <c1> Disable Dirty Region Optimization Algorithm permanently in PFB helper service
+// <i> This option is used to remove dirty region optimization in PFB helper service. Warning: Some of the application behaviours would be affected, and the dirty region debug mode is no longer available. Disable the dirty region optimization can reduce memory footprint.
+//#define __ARM_2D_CFG_PFB_DISABLE_DIRTY_REGION_OPTIMIZATION__
+// </c>
+
+// <q> When opacity is 255, call the non-opacity version of API implicitily
+// <i> This option is used to improve the performance and reduce the application complexity in API selection. Disable this feature allows linker to remove unused APIs further.
+// <i> This option is enabled by default
+#ifndef __ARM_2D_CFG_CALL_NON_OPACITY_VERSION_IMPLICITILY_FOR_255__
+#   define __ARM_2D_CFG_CALL_NON_OPACITY_VERSION_IMPLICITILY_FOR_255__         1
+#endif
 
 // <q> Optimize the scaler version of transform operations for pointer-like resources
 // <i> This feature is enabled by default. There is no guarantee that the performance will increase or decrease. It is all depends your applications. In most of the case, enabling it helps.
@@ -154,8 +188,14 @@ extern "C" {
 #   define __ARM_2D_CFG_OPTIMIZE_FOR_HOLLOW_OUT_MASK_IN_TRANSFORM__         0
 #endif
 
-// </h>
+// <q> Improve the User Application Performance with optimization in Layout Assistant. 
+// <i> Ignore the user application code when a PFB is output of the areas that generated with the layout assistant. Enabling this feature can improve the user application performance. This feature is disabled by default. It is recommended when you trys to optimize the application performance.
+// <i> If you see some visual elements are imcomplete, you can choose those layout assistants with "_open" as posfix in corresonding area. For example, arm_2d_align_centre() can be changed to arm_2d_align_centre_open().
+#ifndef __ARM_2D_CFG_OPTIMIZE_FOR_PFB_IN_LAYOUT_ASSISTANT__
+#   define __ARM_2D_CFG_OPTIMIZE_FOR_PFB_IN_LAYOUT_ASSISTANT__              0
+#endif
 
+// </h>
 
 // <h>Extra Components
 // =======================
@@ -167,7 +207,7 @@ extern "C" {
 //     <32=>    32Bits
 // <i> The colour depth of your LCD
 // <i> Default: 16
-#   define __GLCD_CFG_COLOUR_DEPTH__                                    16
+#   define __GLCD_CFG_COLOUR_DEPTH__                                    8
 #endif
 
 // <o> The size of the LCD printf text buffer <16-65535>
@@ -182,14 +222,14 @@ extern "C" {
 // <i> The width of your screen for running benchmark
 // <i> Default: 320
 #ifndef __GLCD_CFG_SCEEN_WIDTH__
-#   define __GLCD_CFG_SCEEN_WIDTH__                                     240
+#   define __GLCD_CFG_SCEEN_WIDTH__                                     296
 #endif
 
 // <o>Height of the screen <8-32767>
 // <i> The height of your screen for running benchmark
 // <i> Default: 240
 #ifndef __GLCD_CFG_SCEEN_HEIGHT__
-#   define __GLCD_CFG_SCEEN_HEIGHT__                                    240
+#   define __GLCD_CFG_SCEEN_HEIGHT__                                    128
 #endif
 
 // <o>Number of iterations <1-2000>
@@ -225,15 +265,18 @@ extern "C" {
 #   define __ARM_2D_CFG_BENCHMARK_EXIT_WHEN_FINISH__                    0
 #endif
 
+// <q> Enable Context in Text Box
+// <i> When your PFB is small (< 1/10 FB) and the text box visual area is big, you can enable the context feature and see whether the performance is improved or not.
+// <i> This feature is disabled by default to save memory footprint
+#ifndef __ARM_2D_CFG_CONTROL_USE_CONTEXT__
+#   define __ARM_2D_CFG_CONTROL_USE_CONTEXT__                           0
+#endif
+
 //</h>
 // </h>
 
 // <<< end of configuration section >>>
 
-
-#if defined(__RP2040_USE_LCD_TOUCH_1IN28__) && __RP2040_USE_LCD_TOUCH_1IN28__
-#   define __DISP0_CFG_SWAP_RGB16_HIGH_AND_LOW_BYTES__  1
-#endif
 
 /*============================ TYPES =========================================*/
 /*============================ GLOBAL VARIABLES ==============================*/

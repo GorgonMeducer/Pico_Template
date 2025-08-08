@@ -59,6 +59,13 @@ void SysTick_Handler(void)
 
 }
 
+#if defined(__RTE_ACCELERATION_ARM_2D__) || defined(RTE_Acceleration_Arm_2D)
+static bool __lcd_sync_handler(void *pTarget)
+{
+    return Disp0_Flush();
+}
+#endif
+
 static void system_init(void)
 {
     extern void SystemCoreClockUpdate();
@@ -85,6 +92,20 @@ static void system_init(void)
 #if defined(__RTE_ACCELERATION_ARM_2D__) || defined(RTE_Acceleration_Arm_2D)
     arm_2d_init();
     disp_adapter0_init();
+
+    /* register a low level sync-up handler to wait LCD finish rendering the previous frame */
+    do {
+        arm_2d_helper_pfb_dependency_t tDependency = {
+            .evtOnLowLevelSyncUp = {
+                .fnHandler = &__lcd_sync_handler,
+            },
+        };
+        arm_2d_helper_pfb_update_dependency(&DISP0_ADAPTER.use_as__arm_2d_helper_pfb_t, 
+                                            ARM_2D_PFB_DEPEND_ON_LOW_LEVEL_SYNC_UP,
+                                            &tDependency);
+    } while(0);
+
+
 #endif
 }
 

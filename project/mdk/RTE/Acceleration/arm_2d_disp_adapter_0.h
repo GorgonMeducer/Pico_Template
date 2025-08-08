@@ -19,12 +19,9 @@
 #ifndef __ARM_2D_DISP_ADAPTER0_H__
 #define __ARM_2D_DISP_ADAPTER0_H__
 
-#include "arm_2d.h"
+#include "arm_2d_helper.h"
 
 #ifdef RTE_Acceleration_Arm_2D_Helper_Disp_Adapter0
-
-#include "arm_2d_helper_scene.h"
-#include "__common.h"
 
 #ifdef   __cplusplus
 extern "C" {
@@ -43,28 +40,39 @@ extern "C" {
 /*============================ MACROS ========================================*/
 
 //-------- <<< Use Configuration Wizard in Context Menu >>> -----------------
-//
+
+// <h>Screen and Framebuffer
+// =======================
+
+// <o> Select the screen colour solution
+//     <0=>     None
+//     <1=>     Monochrome
+// <i> When specifying a colour solution, the __DISP0_CFG_COLOUR_DEPTH__ and other corresponding options will be configured (overriden) accordingly.
+#ifndef __DISP0_CFG_COLOR_SOLUTION__
+#   define __DISP0_CFG_COLOR_SOLUTION__                            1
+#endif
+
 // <o> Select the screen colour depth
 //     <8=>     8 Bits
 //     <16=>    16Bits
 //     <32=>    32Bits
 // <i> The colour depth of your screen
 #ifndef __DISP0_CFG_COLOUR_DEPTH__
-#   define __DISP0_CFG_COLOUR_DEPTH__                              16
+#   define __DISP0_CFG_COLOUR_DEPTH__                              8
 #endif
 
 // <o>Width of the screen <8-32767>
 // <i> The width of your screen
 // <i> Default: 320
 #ifndef __DISP0_CFG_SCEEN_WIDTH__
-#   define __DISP0_CFG_SCEEN_WIDTH__                               240
+#   define __DISP0_CFG_SCEEN_WIDTH__                               296
 #endif
 
 // <o>Height of the screen <8-32767>
 // <i> The height of your screen
 // <i> Default: 240
 #ifndef __DISP0_CFG_SCEEN_HEIGHT__
-#   define __DISP0_CFG_SCEEN_HEIGHT__                              240
+#   define __DISP0_CFG_SCEEN_HEIGHT__                              128
 #endif
 
 /*
@@ -88,13 +96,13 @@ extern "C" {
 // <o>Width of the PFB block
 // <i> The width of your PFB block size used in disp0
 #ifndef __DISP0_CFG_PFB_BLOCK_WIDTH__
-#   define __DISP0_CFG_PFB_BLOCK_WIDTH__                           240
+#   define __DISP0_CFG_PFB_BLOCK_WIDTH__                           296
 #endif
 
 // <o>Height of the PFB block
 // <i> The height of your PFB block size used in disp0
 #ifndef __DISP0_CFG_PFB_BLOCK_HEIGHT__
-#   define __DISP0_CFG_PFB_BLOCK_HEIGHT__                          24
+#   define __DISP0_CFG_PFB_BLOCK_HEIGHT__                          16
 #endif
 
 // <o>Width Alignment of generated PFBs
@@ -108,7 +116,7 @@ extern "C" {
 //     <7=>   128 pixel
 // <i> Make sure the x and width of the PFB is always aligned to 2^n pixels
 #ifndef __DISP0_CFG_PFB_PIXEL_ALIGN_WIDTH__
-#   define __DISP0_CFG_PFB_PIXEL_ALIGN_WIDTH__                     1
+#   define __DISP0_CFG_PFB_PIXEL_ALIGN_WIDTH__                     3
 #endif
 
 // <o>Height Alignment of generated PFBs
@@ -122,13 +130,28 @@ extern "C" {
 //     <7=>   128 pixel
 // <i> Make sure the y and height of the PFB is always aligned to 2^n pixels
 #ifndef __DISP0_CFG_PFB_PIXEL_ALIGN_HEIGHT__
-#   define __DISP0_CFG_PFB_PIXEL_ALIGN_HEIGHT__                    0
+#   define __DISP0_CFG_PFB_PIXEL_ALIGN_HEIGHT__                    3
 #endif
 
 // <o>PFB Block Count <1-65535>
 // <i> The number of blocks in the PFB pool.
 #ifndef __DISP0_CFG_PFB_HEAP_SIZE__
 #   define __DISP0_CFG_PFB_HEAP_SIZE__                             1
+#endif
+
+// </h>
+
+// <h>Navigation Layer
+// =======================
+
+// <o>Navigation Layer Mode
+//     <0=>     Disable Navigation Layer
+//     <1=>     Normal Mode (Bottom)
+//     <2=>     Tiny Mode (Bottom Centre)
+// <i> Configure the default navigation layer of this display adapter. 
+// <i> NOTE: Disable the navigation layer will also remove the real-time FPS display.
+#ifndef __DISP0_CFG_NAVIGATION_LAYER_MODE__
+#   define __DISP0_CFG_NAVIGATION_LAYER_MODE__                     1
 #endif
 
 // <o>Number of iterations <0-2000>
@@ -144,6 +167,30 @@ extern "C" {
 #ifndef __DISP0_CFG_FPS_CACULATION_MODE__
 #   define __DISP0_CFG_FPS_CACULATION_MODE__                       1
 #endif
+
+// <q> Enable Console
+// <i> Add a simple console to the display adapter in a floating window.
+// <i> This feature is disabled by default.
+#ifndef __DISP0_CFG_USE_CONSOLE__
+#   define __DISP0_CFG_USE_CONSOLE__                                0
+#endif
+
+// <o> Console Input Buffer Size
+// <i> The size of console input buffer, 0 means no input buffer
+#ifndef __DISP0_CFG_CONSOLE_INPUT_BUFFER__
+#   define __DISP0_CFG_CONSOLE_INPUT_BUFFER__                       255
+#endif
+
+// <o> Console Display Time in ms <1000-0xFFFFFFFF>
+// <i> The time before the console disappear for each content update.
+#ifndef __DISP0_CFG_CONSOLE_DISPALY_TIME__
+#   define __DISP0_CFG_CONSOLE_DISPALY_TIME__                       3000
+#endif
+
+// </h>
+
+// <h>Optimization and Misc
+// =======================
 
 // <q> Enable Dirty Region Debug Mode
 // <i> Draw dirty regions on the screen for debug.
@@ -187,42 +234,15 @@ extern "C" {
 #   define __DISP0_CFG_DISABLE_DEFAULT_SCENE__                     0
 #endif
 
-// <o>Navigation Layer Mode
-//     <0=>     Disable Navigation Layer
-//     <1=>     Normal Mode (Bottom)
-//     <2=>     Tiny Mode (Bottom Centre)
-// <i> Configure the default navigation layer of this display adapter. 
-// <i> NOTE: Disable the navigation layer will also remove the real-time FPS display.
-#ifndef __DISP0_CFG_NAVIGATION_LAYER_MODE__
-#   define __DISP0_CFG_NAVIGATION_LAYER_MODE__                              2
-#endif
-
-// <q> Enable Console
-// <i> Add a simple console to the display adapter in a floating window.
-// <i> This feature is disabled by default.
-#ifndef __DISP0_CFG_USE_CONSOLE__
-#   define __DISP0_CFG_USE_CONSOLE__                                0
-#endif
-
-// <o> Console Input Buffer Size
-// <i> The size of console input buffer, 0 means no input buffer
-#ifndef __DISP0_CFG_CONSOLE_INPUT_BUFFER__
-#   define __DISP0_CFG_CONSOLE_INPUT_BUFFER__                       255
-#endif
-
-// <o> Console Display Time in ms <1000-0xFFFFFFFF>
-// <i> The time before the console disappear for each content update.
-#ifndef __DISP0_CFG_CONSOLE_DISPALY_TIME__
-#   define __DISP0_CFG_CONSOLE_DISPALY_TIME__                       3000
-#endif
-
 // <o>Maximum number of Virtual Resources used per API
 //     <0=>     NO Virtual Resource
-//     <1=>     1 Per API
-//     <2=>     2 Per API
-//     <3=>     3 Per API
+//     <1=>     Background Loading Mode
+//     <2=>     1 Per API
+//     <3=>     2 Per API
+//     <4=>     3 Per API
 // <i> Introduce a helper service for loading virtual resources.
 // <i> This feature is disabled by default.
+// <i> NOTE: When selecting the background loading mode, you can ONLY use virtual resource as the source tile in the tile-copy-only APIs. 
 #ifndef __DISP0_CFG_VIRTUAL_RESOURCE_HELPER__
 #   define __DISP0_CFG_VIRTUAL_RESOURCE_HELPER__                   0
 #endif
@@ -233,7 +253,16 @@ extern "C" {
 #ifndef __DISP0_CFG_USE_HEAP_FOR_VIRTUAL_RESOURCE_HELPER__
 #   define __DISP0_CFG_USE_HEAP_FOR_VIRTUAL_RESOURCE_HELPER__      0
 #endif
+
+// </h>
+
 // <<< end of configuration section >>>
+
+#if __DISP0_CFG_COLOR_SOLUTION__ == 1
+/* the colour solution for monochrome screen */
+#   undef __DISP0_CFG_COLOUR_DEPTH__
+#   define __DISP0_CFG_COLOUR_DEPTH__                               8
+#endif
 
 #ifndef __DISP0_COLOUR_FORMAT__
 #   if      __DISP0_CFG_COLOUR_DEPTH__ == 8
