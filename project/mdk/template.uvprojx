@@ -338,7 +338,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>__RP2040_USE_BADGER__=1,__RP2040_USE_OLED_1IN3__=0,__RP2040_USE_LCD_1IN28__=0,__RP2040_USE_LCD_TOUCH_1IN28__=0,__PICO_USE_LCD_1IN3__=0,ITERATIONS=7000</Define>
+              <Define>__RP2040_USE_BADGER__=0,__RP2040_USE_OLED_1IN3__=0,__RP2040_USE_LCD_1IN28__=0,__RP2040_USE_LCD_TOUCH_1IN28__=0,__PICO_USE_LCD_1IN3__=0,ITERATIONS=7000</Define>
               <Undefine></Undefine>
               <IncludePath>.</IncludePath>
             </VariousControls>
@@ -410,9 +410,6 @@
               <FilePath>..\..\bsp\rp2040_bsp_default.c</FilePath>
             </File>
           </Files>
-        </Group>
-        <Group>
-          <GroupName>::Acceleration</GroupName>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>
@@ -837,9 +834,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>::Acceleration</GroupName>
-        </Group>
-        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
         <Group>
@@ -938,62 +932,6 @@
       </api>
     </apis>
     <components>
-      <component Cclass="Acceleration" Cgroup="Arm-2D Extras" Csub="Controls" Cvendor="ARM" Cversion="2.7.1" condition="Arm-2D-Controls" ymlID="Acceleration:Arm-2D Extras:Controls">
-        <package name="Arm-2D" schemaVersion="1.7.37" url="https://www.keil.com/pack/" vendor="ARM" version="9.9.99"/>
-        <targetInfos>
-          <targetInfo name="AC6-DebugInSRAM"/>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
-      </component>
-      <component Cclass="Acceleration" Cgroup="Arm-2D Extras" Csub="LCD ASCII Printf" Cvendor="ARM" Cversion="2.13.1" condition="Arm-2D-Printf" ymlID="Acceleration:Arm-2D Extras:LCD ASCII Printf">
-        <package name="Arm-2D" schemaVersion="1.7.37" url="https://www.keil.com/pack/" vendor="ARM" version="9.9.99"/>
-        <targetInfos>
-          <targetInfo name="AC6-DebugInSRAM"/>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
-      </component>
-      <component Cclass="Acceleration" Cgroup="Arm-2D Helper" Csub="Display Adapter" Cvendor="ARM" Cversion="3.5.0" condition="Arm-2D-Displayer-Adapter" maxInstances="8" ymlID="Acceleration:Arm-2D Helper:Display Adapter">
-        <package name="Arm-2D" schemaVersion="1.7.37" url="https://www.keil.com/pack/" vendor="ARM" version="9.9.99"/>
-        <targetInfos>
-          <targetInfo name="AC6-DebugInSRAM"/>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
-      </component>
-      <component Cclass="Acceleration" Cgroup="Arm-2D Helper" Csub="PFB" Cvendor="ARM" Cversion="2.8.1" condition="Arm-2D-CORE" ymlID="Acceleration:Arm-2D Helper:PFB">
-        <package name="Arm-2D" schemaVersion="1.7.37" url="https://www.keil.com/pack/" vendor="ARM" version="9.9.99"/>
-        <targetInfos>
-          <targetInfo name="AC6-DebugInSRAM"/>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
-      </component>
-      <component Cclass="Acceleration" Cgroup="Arm-2D" Csub="Alpha-Blending" Cvendor="ARM" Cversion="1.2.4-dev" condition="Arm-2D-CORE" ymlID="Acceleration:Arm-2D:Alpha-Blending">
-        <package name="Arm-2D" schemaVersion="1.7.37" url="https://www.keil.com/pack/" vendor="ARM" version="9.9.99"/>
-        <targetInfos>
-          <targetInfo name="AC6-DebugInSRAM"/>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
-      </component>
-      <component Cclass="Acceleration" Cgroup="Arm-2D" Csub="Core" Cvendor="ARM" Cversion="1.2.4-dev" condition="CMSIS-DSP" ymlID="Acceleration:Arm-2D:Core">
-        <package name="Arm-2D" schemaVersion="1.7.37" url="https://www.keil.com/pack/" vendor="ARM" version="9.9.99"/>
-        <targetInfos>
-          <targetInfo name="AC6-DebugInSRAM"/>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
-      </component>
-      <component Cclass="Acceleration" Cgroup="Arm-2D" Csub="Filter" Cvendor="ARM" Cversion="1.2.4-dev" condition="Arm-2D-CORE" ymlID="Acceleration:Arm-2D:Filter">
-        <package name="Arm-2D" schemaVersion="1.7.37" url="https://www.keil.com/pack/" vendor="ARM" version="9.9.99"/>
-        <targetInfos>
-          <targetInfo name="AC6-DebugInSRAM"/>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
-      </component>
-      <component Cclass="Acceleration" Cgroup="Arm-2D" Csub="Transform" Cvendor="ARM" Cversion="1.2.4-dev" condition="Arm-2D-CORE" ymlID="Acceleration:Arm-2D:Transform">
-        <package name="Arm-2D" schemaVersion="1.7.37" url="https://www.keil.com/pack/" vendor="ARM" version="9.9.99"/>
-        <targetInfos>
-          <targetInfo name="AC6-DebugInSRAM"/>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
-      </component>
       <component Cclass="CMSIS-Compiler" Cgroup="CORE" Cvendor="ARM" Cversion="1.1.0" condition="ARMCC CortexDevice" ymlID="CMSIS-Compiler:CORE">
         <package name="CMSIS-Compiler" schemaVersion="1.7.36" url="https://www.keil.com/pack/" vendor="ARM" version="2.1.0"/>
         <targetInfos>
@@ -1090,40 +1028,28 @@
         <targetInfos/>
       </file>
       <file attr="config" category="sourceC" name="Library\Source\arm_2d.c" version="1.5.0">
-        <instance index="0">RTE\Acceleration\arm_2d.c</instance>
+        <instance index="0" removed="1">RTE\Acceleration\arm_2d.c</instance>
         <component Cclass="Acceleration" Cgroup="Arm-2D" Csub="Core" Cvendor="ARM" Cversion="1.2.4-dev" condition="CMSIS-DSP"/>
         <package name="Arm-2D" schemaVersion="1.7.37" url="https://www.keil.com/pack/" vendor="ARM" version="9.9.99"/>
-        <targetInfos>
-          <targetInfo name="AC6-DebugInSRAM"/>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+        <targetInfos/>
       </file>
       <file attr="config" category="preIncludeGlobal" name="Library\Include\template\arm_2d_cfg.h" version="1.5.6">
-        <instance index="0">RTE\Acceleration\arm_2d_cfg.h</instance>
+        <instance index="0" removed="1">RTE\Acceleration\arm_2d_cfg.h</instance>
         <component Cclass="Acceleration" Cgroup="Arm-2D" Csub="Core" Cvendor="ARM" Cversion="1.2.4-dev" condition="CMSIS-DSP"/>
         <package name="Arm-2D" schemaVersion="1.7.37" url="https://www.keil.com/pack/" vendor="ARM" version="9.9.99"/>
-        <targetInfos>
-          <targetInfo name="AC6-DebugInSRAM"/>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+        <targetInfos/>
       </file>
       <file attr="config" category="sourceC" name="Helper\template\arm_2d_disp_adapter.c" version="3.5.0">
-        <instance index="0">RTE\Acceleration\arm_2d_disp_adapter_0.c</instance>
+        <instance index="0" removed="1">RTE\Acceleration\arm_2d_disp_adapter_0.c</instance>
         <component Cclass="Acceleration" Cgroup="Arm-2D Helper" Csub="Display Adapter" Cvendor="ARM" Cversion="3.5.0" condition="Arm-2D-Displayer-Adapter" maxInstances="8"/>
         <package name="Arm-2D" schemaVersion="1.7.37" url="https://www.keil.com/pack/" vendor="ARM" version="9.9.99"/>
-        <targetInfos>
-          <targetInfo name="AC6-DebugInSRAM"/>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+        <targetInfos/>
       </file>
       <file attr="config" category="header" name="Helper\template\arm_2d_disp_adapter.h" version="3.5.0">
-        <instance index="0">RTE\Acceleration\arm_2d_disp_adapter_0.h</instance>
+        <instance index="0" removed="1">RTE\Acceleration\arm_2d_disp_adapter_0.h</instance>
         <component Cclass="Acceleration" Cgroup="Arm-2D Helper" Csub="Display Adapter" Cvendor="ARM" Cversion="3.5.0" condition="Arm-2D-Displayer-Adapter" maxInstances="8"/>
         <package name="Arm-2D" schemaVersion="1.7.37" url="https://www.keil.com/pack/" vendor="ARM" version="9.9.99"/>
-        <targetInfos>
-          <targetInfo name="AC6-DebugInSRAM"/>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+        <targetInfos/>
       </file>
       <file attr="config" category="sourceC" name="examples\demos\arm_2d_scene_atom.c" version="1.0.1">
         <instance index="0" removed="1">RTE\Acceleration\arm_2d_scene_atom.c</instance>
@@ -1162,22 +1088,16 @@
         <targetInfos/>
       </file>
       <file attr="config" category="utility" name="tools\img2c.py" version="1.2.5">
-        <instance index="0">RTE\Acceleration\img2c.py</instance>
+        <instance index="0" removed="1">RTE\Acceleration\img2c.py</instance>
         <component Cclass="Acceleration" Cgroup="Arm-2D" Csub="Core" Cvendor="ARM" Cversion="1.2.4-dev" condition="CMSIS-DSP"/>
         <package name="Arm-2D" schemaVersion="1.7.37" url="https://www.keil.com/pack/" vendor="ARM" version="9.9.99"/>
-        <targetInfos>
-          <targetInfo name="AC6-DebugInSRAM"/>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+        <targetInfos/>
       </file>
       <file attr="config" category="utility" name="tools\ttf2c.py" version="2.3.1">
-        <instance index="0">RTE\Acceleration\ttf2c.py</instance>
+        <instance index="0" removed="1">RTE\Acceleration\ttf2c.py</instance>
         <component Cclass="Acceleration" Cgroup="Arm-2D" Csub="Core" Cvendor="ARM" Cversion="1.2.4-dev" condition="CMSIS-DSP"/>
         <package name="Arm-2D" schemaVersion="1.7.37" url="https://www.keil.com/pack/" vendor="ARM" version="9.9.99"/>
-        <targetInfos>
-          <targetInfo name="AC6-DebugInSRAM"/>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+        <targetInfos/>
       </file>
       <file attr="config" category="header" name="EventRecorder\Config\EventRecorderConf.h" version="1.1.0">
         <instance index="0">RTE\CMSIS-View\EventRecorderConf.h</instance>
